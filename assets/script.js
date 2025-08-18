@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link.type = "image/x-icon";
     link.rel = "shortcut icon";
     // Use a path that works from both root and mindmap subdirectory
-    const faviconPath = window.location.pathname.includes('/mindmap/') ? "../assets/logo.webp" : "assets/logo.webp";
+    const faviconPath = window.location.pathname.includes('/mindmap/') ? "../assets/logo.png" : "assets/logo.png";
     link.href = faviconPath;
     document.getElementsByTagName("head")[0].appendChild(link);
     console.log("Favicon set to:", faviconPath);
