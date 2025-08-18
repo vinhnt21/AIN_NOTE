@@ -31,6 +31,22 @@
         text-decoration: underline;
         font-style: italic;
       }
+      /* make logo have infinite animation rotate */
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+          filter: hue-rotate(0deg);
+          scale: 1;
+        }
+        to {
+          transform: rotate(360deg);
+          filter: hue-rotate(360deg);
+          scale: 1.5;
+        }
+      }
+      img {
+        animation: rotate 3s linear infinite;
+      }
     </style>
   </head>
   <body>
