@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Search Mindmap</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+      #mindmap {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+      }
+      .markmap-dark {
+        background: #27272a;
+        color: white;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css"
+    />
+  </head>
+  <body>
+    <svg id="mindmap"></svg>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script>
+    <script>
+      ((r) => {
+        setTimeout(r);
+      })(function renderToolbar() {
+        const { markmap, mm } = window;
+        const { el } = markmap.Toolbar.create(mm);
+        el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+        document.body.append(el);
+      });
+    </script>
+    <script>
+      ((getMarkmap, getOptions, root2, jsonOptions) => {
+        const markmap = getMarkmap();
+        window.mm = markmap.Markmap.create(
+          "svg#mindmap",
+          (getOptions || markmap.deriveOptions)(jsonOptions),
+          root2
+        );
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.classList.add("markmap-dark");
+        }
+      })(
+        () => window.markmap,
+        null,
+        {
+          content: "Search in AI",
+          children: [
+            {
+              content: "B&#x1ea3;n ch&#x1ea5;t",
+              children: [
+                {
+                  content:
+                    "<em>T&#xec;m ki&#x1ebf;m l&#xe0; qu&#xe1; tr&#xec;nh kh&#xe1;m ph&#xe1; m&#x1ed9;t chu&#x1ed7;i c&#xe1;c h&#xe0;nh &#x111;&#x1ed9;ng (m&#x1ed9;t con &#x111;&#x1b0;&#x1edd;ng) &#x111;&#x1ec3; &#x111;i t&#x1eeb; tr&#x1ea1;ng th&#xe1;i ban &#x111;&#x1ea7;u &#x111;&#x1ebf;n tr&#x1ea1;ng th&#xe1;i m&#x1ee5;c ti&#xea;u.</em>",
+                  children: [],
+                  payload: { tag: "li", lines: "13,15" },
+                },
+              ],
+              payload: { tag: "h2", lines: "11,12" },
+            },
+            {
+              content:
+                "1. C&#xe1;c th&#xe0;nh ph&#x1ea7;n c&#x1ee7;a m&#x1ed9;t b&#xe0;i to&#xe1;n t&#xec;m ki&#x1ebf;m",
+              children: [
+                {
+                  content:
+                    '\n<p data-lines="17,18"><em>L&#xe0; nh&#x1eef;ng y&#x1ebf;u t&#x1ed1; c&#x1a1; b&#x1ea3;n &#x111;&#x1ec3; &#x111;&#x1ecb;nh ngh&#x129;a b&#x1ea5;t k&#x1ef3; b&#xe0;i to&#xe1;n t&#xec;m ki&#x1ebf;m n&#xe0;o.</em></p>',
+                  children: [],
+                  payload: { tag: "li", lines: "17,19" },
+                },
+                {
+                  content:
+                    '\n<p data-lines="19,20"><strong>T&#xe1;c nh&#xe2;n (Agent)</strong>: Th&#x1ef1;c th&#x1ec3; nh&#x1ead;n th&#x1ee9;c m&#xf4;i tr&#x1b0;&#x1edd;ng v&#xe0; h&#xe0;nh &#x111;&#x1ed9;ng tr&#xea;n &#x111;&#xf3;.</p>',
+                  children: [
+                    {
+                      content:
+                        "<em>V&#xed; d&#x1ee5;</em>: M&#x1ed9;t robot h&#xfa;t b&#x1ee5;i, m&#x1ed9;t ch&#x1b0;&#x1a1;ng tr&#xec;nh ch&#x1a1;i c&#x1edd; vua, ho&#x1eb7;c m&#x1ed9;t &#x1ee9;ng d&#x1ee5;ng ch&#x1ec9; &#x111;&#x1b0;&#x1edd;ng.",
+                      children: [],
+                      payload: { tag: "li", lines: "20,21" },
+                    },
+                  ],
+                  payload: { tag: "li", lines: "19,21" },
+                },
+                {
+                  content:
+                    '\n<p data-lines="21,22"><strong>Tr&#x1ea1;ng th&#xe1;i (State)</strong>: M&#x1ed9;t c&#x1ea5;u h&#xec;nh c&#x1ee5; th&#x1ec3; c&#x1ee7;a t&#xe1;c nh&#xe2;n v&#xe0; m&#xf4;i tr&#x1b0;&#x1edd;ng.</p>',
+                  children: [
+                    {
+                      content:
+                        "<em>V&#xed; d&#x1ee5;</em>: V&#x1ecb; tr&#xed; hi&#x1ec7;n t&#x1ea1;i c&#x1ee7;a robot trong m&#x1ed9;t c&#x103;n ph&#xf2;ng, th&#x1ebf; c&#x1edd; tr&#xea;n b&#xe0;n c&#x1edd;.",
+                      children: [],
+                      payload: { tag: "li", lines: "22,23" },
+                    },
+                  ],
+                  payload: { tag: "li", lines: "21,23" },
+                },
+                {
+                  content:
+                    '\n<p data-lines="23,24"><strong>Tr&#x1ea1;ng th&#xe1;i ban &#x111;&#x1ea7;u (Initial State)</strong>: Tr&#x1ea1;ng th&#xe1;i m&#xe0; t&#xe1;c nh&#xe2;n b&#x1eaf;t &#x111;&#x1ea7;u.</p>',
+                  children: [
+                    {
+                      content:
+                        "<em>V&#xed; d&#x1ee5;</em>: Robot &#x1edf; tr&#x1ea1;m s&#x1ea1;c, b&#xe0;n c&#x1edd; &#x1edf; th&#x1ebf; khai cu&#x1ed9;c.",
+                      children: [],
+                      payload: { tag: "li", lines: "24,25" },
+                    },
+                  ],
+                  payload: { tag: "li", lines: "23,25" },
+                },
+                {
+                  content:
+                    '\n<p data-lines="25,26"><strong>H&#xe0;nh &#x111;&#x1ed9;ng (Actions)</strong>: C&#xe1;c l&#x1ef1;a ch&#x1ecd;n m&#xe0; t&#xe1;c nh&#xe2;n c&#xf3; th&#x1ec3; th&#x1ef1;c hi&#x1ec7;n &#x1edf; m&#x1ed9;t tr&#x1ea1;ng th&#xe1;i.</p>',
+                  children: [
+                    {
+                      content:
+                        "<em>V&#xed; d&#x1ee5;</em>: Di chuy&#x1ec3;n sang tr&#xe1;i, &#x111;i l&#xea;n, &#x111;i qu&#xe2;n M&#xe3; &#x111;&#x1ebf;n v&#x1ecb; tr&#xed; X.",
+                      children: [],
+                      payload: { tag: "li", lines: "26,27" },
+                    },
+                  ],
+                  payload: { tag: "li", lines: "25,27" },
+                },
+                {
+                  content:
+                    '\n<p data-lines="27,28"><strong>M&#xf4; h&#xec;nh chuy&#x1ec3;n &#x111;&#x1ed5;i (Transition Model)</strong>: M&#xf4; t&#x1ea3; tr&#x1ea1;ng th&#xe1;i k&#x1ebf;t qu&#x1ea3; sau khi th&#x1ef1;c hi&#x1ec7;n m&#x1ed9;t h&#xe0;nh &#x111;&#x1ed9;ng.</p>',
+                  children: [
+                    {
+                      content:
+                        "<em>V&#xed; d&#x1ee5;</em>: N&#x1ebf;u robot &#x1edf; &#xf4; (1,1) v&#xe0; h&#xe0;nh &#x111;&#x1ed9;ng l&#xe0; &quot;&#x111;i l&#xea;n&quot;, tr&#x1ea1;ng th&#xe1;i m&#x1edb;i s&#x1ebd; l&#xe0; (1,2).",
+                      children: [],
+                      payload: { tag: "li", lines: "28,29" },
+                    },
+                  ],
+                  payload: { tag: "li", lines: "27,29" },
+                },
+                {
+                  content:
+                    '\n<p data-lines="29,30"><strong>Kh&#xf4;ng gian tr&#x1ea1;ng th&#xe1;i (State Space)</strong>: T&#x1ead;p h&#x1ee3;p t&#x1ea5;t c&#x1ea3; c&#xe1;c tr&#x1ea1;ng th&#xe1;i c&#xf3; th&#x1ec3; &#x111;&#x1ea1;t &#x111;&#x1b0;&#x1ee3;c t&#x1eeb; tr&#x1ea1;ng th&#xe1;i ban &#x111;&#x1ea7;u.</p>',
+                  children: [
+                    {
+                      content:
+                        "<em>V&#xed; d&#x1ee5;</em>: T&#x1ea5;t c&#x1ea3; c&#xe1;c v&#x1ecb; tr&#xed; m&#xe0; robot c&#xf3; th&#x1ec3; &#x111;&#x1ebf;n, t&#x1ea5;t c&#x1ea3; c&#xe1;c th&#x1ebf; c&#x1edd; h&#x1ee3;p l&#x1ec7;.",
+                      children: [],
+                      payload: { tag: "li", lines: "30,31" },
+                    },
+                  ],
+                  payload: { tag: "li", lines: "29,31" },
+                },
+                {
+                  content:
+                    '\n<p data-lines="31,32"><strong>Ki&#x1ec3;m tra m&#x1ee5;c ti&#xea;u (Goal Test)</strong>: Ph&#x1b0;&#x1a1;ng ph&#xe1;p x&#xe1;c &#x111;&#x1ecb;nh xem m&#x1ed9;t tr&#x1ea1;ng th&#xe1;i c&#xf3; ph&#x1ea3;i l&#xe0; tr&#x1ea1;ng th&#xe1;i m&#x1ee5;c ti&#xea;u hay kh&#xf4;ng.</p>',
+                  children: [
+                    {
+                      content:
+                        "<em>V&#xed; d&#x1ee5;</em>: Robot &#x111;&#xe3; d&#x1ecd;n d&#x1eb9;p h&#x1ebf;t ph&#xf2;ng ch&#x1b0;a? &#x110;&#xe3; chi&#x1ebf;u h&#x1ebf;t Vua &#x111;&#x1ed1;i ph&#x1b0;&#x1a1;ng ch&#x1b0;a?",
+                      children: [],
+                      payload: { tag: "li", lines: "32,33" },
+                    },
+                  ],
+                  payload: { tag: "li", lines: "31,33" },
+                },
+                {
+                  content:
+                    '\n<p data-lines="33,34"><strong>Chi ph&#xed; &#x111;&#x1b0;&#x1edd;ng &#x111;i (Path Cost)</strong>: Chi ph&#xed; s&#x1ed1; h&#x1ecd;c g&#x1eaf;n v&#x1edb;i m&#x1ed9;t &#x111;&#x1b0;&#x1edd;ng &#x111;i nh&#x1ea5;t &#x111;&#x1ecb;nh.</p>',
+                  children: [
+                    {
+                      content:
+                        "<em>V&#xed; d&#x1ee5;</em>: T&#x1ed5;ng qu&#xe3;ng &#x111;&#x1b0;&#x1edd;ng di chuy&#x1ec3;n, s&#x1ed1; n&#x1b0;&#x1edb;c &#x111;i &#x111;&#x1ec3; chi&#x1ebf;n th&#x1eaf;ng.",
+                      children: [],
+                      payload: { tag: "li", lines: "34,36" },
+                    },
+                  ],
+                  payload: { tag: "li", lines: "33,36" },
+                },
+              ],
+              payload: { tag: "h2", lines: "15,16" },
+            },
+            {
+              content:
+                "2. Ph&#x1b0;&#x1a1;ng ph&#xe1;p ti&#x1ebf;p c&#x1ead;n t&#xec;m ki&#x1ebf;m",
+              children: [
+                {
+                  content:
+                    '\n<p data-lines="38,39"><em>C&#xe1;ch th&#x1ee9;c t&#x1ed5; ch&#x1ee9;c qu&#xe1; tr&#xec;nh t&#xec;m ki&#x1ebf;m m&#x1ed9;t c&#xe1;ch c&#xf3; h&#x1ec7; th&#x1ed1;ng.</em></p>',
+                  children: [],
+                  payload: { tag: "li", lines: "38,40" },
+                },
+                {
+                  content:
+                    '\n<p data-lines="40,41"><strong>N&#xfa;t (Node)</strong>: M&#x1ed9;t c&#x1ea5;u tr&#xfa;c d&#x1eef; li&#x1ec7;u l&#x1b0;u tr&#x1eef; th&#xf4;ng tin v&#x1ec1; m&#x1ed9;t tr&#x1ea1;ng th&#xe1;i, n&#xfa;t cha, h&#xe0;nh &#x111;&#x1ed9;ng t&#x1ea1;o ra n&#xf3; v&#xe0; chi ph&#xed; &#x111;&#x1b0;&#x1edd;ng &#x111;i.</p>',
+                  children: [],
+                  payload: { tag: "li", lines: "40,41" },
+                },
+                {
+                  content:
+                    '\n<p data-lines="41,42"><strong>Bi&#xea;n (Frontier)</strong>: M&#x1ed9;t t&#x1ead;p h&#x1ee3;p c&#xe1;c n&#xfa;t &#x111;ang ch&#x1edd; &#x111;&#x1b0;&#x1ee3;c kh&#xe1;m ph&#xe1; (gi&#x1ed1;ng nh&#x1b0; danh s&#xe1;ch &quot;nh&#x1eef;ng n&#x1a1;i c&#x1ea7;n &#x111;&#x1ebf;n&quot;).</p>',
+                  children: [],
+                  payload: { tag: "li", lines: "41,42" },
+                },
+                {
+                  content:
+                    '\n<p data-lines="42,43"><strong>T&#x1ead;p &#x111;&#xe3; kh&#xe1;m ph&#xe1; (Explored Set)</strong>: M&#x1ed9;t t&#x1ead;p h&#x1ee3;p c&#xe1;c n&#xfa;t &#x111;&#xe3; &#x111;&#x1b0;&#x1ee3;c gh&#xe9; th&#x103;m &#x111;&#x1ec3; tr&#xe1;nh vi&#x1ec7;c x&#x1eed; l&#xfd; l&#x1eb7;p l&#x1ea1;i v&#xe0; c&#xe1;c v&#xf2;ng l&#x1eb7;p v&#xf4; h&#x1ea1;n.</p>',
+                  children: [],
+                  payload: { tag: "li", lines: "42,43" },
+                },
+                {
+                  content:
+                    '\n<p data-lines="43,44"><strong>Quy tr&#xec;nh c&#x1a1; b&#x1ea3;n</strong>:</p>',
+                  children: [
+                    {
+                      content:
+                        "1. B&#x1eaf;t &#x111;&#x1ea7;u v&#x1edb;i <code>Frontier</code> ch&#x1ee9;a n&#xfa;t ban &#x111;&#x1ea7;u.",
+                      children: [],
+                      payload: { tag: "li", lines: "44,45", listIndex: 1 },
+                    },
+                    {
+                      content: "2. L&#x1eb7;p l&#x1ea1;i:",
+                      children: [
+                        {
+                          content:
+                            "L&#x1ea5;y m&#x1ed9;t n&#xfa;t ra kh&#x1ecf;i <code>Frontier</code>.",
+                          children: [],
+                          payload: { tag: "li", lines: "46,47" },
+                        },
+                        {
+                          content:
+                            "N&#x1ebf;u l&#xe0; m&#x1ee5;c ti&#xea;u -&gt; T&#xec;m th&#x1ea5;y l&#x1edd;i gi&#x1ea3;i!",
+                          children: [],
+                          payload: { tag: "li", lines: "47,48" },
+                        },
+                        {
+                          content:
+                            "N&#x1ebf;u kh&#xf4;ng, th&#xea;m n&#xfa;t n&#xe0;y v&#xe0;o <code>Explored Set</code>.",
+                          children: [],
+                          payload: { tag: "li", lines: "48,49" },
+                        },
+                        {
+                          content:
+                            "M&#x1edf; r&#x1ed9;ng n&#xfa;t n&#xe0;y: t&#x1ea1;o c&#xe1;c n&#xfa;t con t&#x1eeb; c&#xe1;c h&#xe0;nh &#x111;&#x1ed9;ng h&#x1ee3;p l&#x1ec7;.",
+                          children: [],
+                          payload: { tag: "li", lines: "49,50" },
+                        },
+                        {
+                          content:
+                            "Th&#xea;m c&#xe1;c n&#xfa;t con v&#xe0;o <code>Frontier</code> n&#x1ebf;u ch&#xfa;ng ch&#x1b0;a c&#xf3; trong <code>Frontier</code> ho&#x1eb7;c <code>Explored Set</code>.",
+                          children: [],
+                          payload: { tag: "li", lines: "50,51" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "45,51", listIndex: 2 },
+                    },
+                    {
+                      content:
+                        "3. N&#x1ebf;u <code>Frontier</code> r&#x1ed7;ng m&#xe0; ch&#x1b0;a t&#xec;m th&#x1ea5;y m&#x1ee5;c ti&#xea;u -&gt; Kh&#xf4;ng c&#xf3; l&#x1edd;i gi&#x1ea3;i.",
+                      children: [],
+                      payload: { tag: "li", lines: "51,53", listIndex: 3 },
+                    },
+                  ],
+                  payload: { tag: "li", lines: "43,53" },
+                },
+              ],
+              payload: { tag: "h2", lines: "36,37" },
+            },
+            {
+              content:
+                "3. C&#xe1;c thu&#x1ead;t to&#xe1;n t&#xec;m ki&#x1ebf;m",
+              children: [
+                {
+                  content:
+                    "3.1. T&#xec;m ki&#x1ebf;m kh&#xf4;ng c&#xf3; th&#xf4;ng tin (Uninformed Search)",
+                  children: [
+                    {
+                      content:
+                        '\n<p data-lines="57,58"><em>Ch&#x1ec9; s&#x1eed; d&#x1ee5;ng th&#xf4;ng tin c&#xf3; trong &#x111;&#x1ecb;nh ngh&#x129;a b&#xe0;i to&#xe1;n, kh&#xf4;ng c&#xf3; ki&#x1ebf;n th&#x1ee9;c b&#x1ed5; sung.</em></p>',
+                      children: [],
+                      payload: { tag: "li", lines: "57,59" },
+                    },
+                    {
+                      content:
+                        '\n<p data-lines="59,60"><strong>T&#xec;m ki&#x1ebf;m theo chi&#x1ec1;u s&#xe2;u (Depth-First Search - DFS)</strong>:</p>',
+                      children: [
+                        {
+                          content:
+                            "<em>B&#x1ea3;n ch&#x1ea5;t</em>: Lu&#xf4;n &#x1b0;u ti&#xea;n &#x111;i s&#xe2;u nh&#x1ea5;t c&#xf3; th&#x1ec3; v&#xe0;o m&#x1ed9;t nh&#xe1;nh tr&#x1b0;&#x1edb;c khi quay l&#x1ea1;i. Gi&#x1ed1;ng nh&#x1b0; kh&#xe1;m ph&#xe1; m&#x1ed9;t m&#xea; cung b&#x1eb1;ng c&#xe1;ch lu&#xf4;n &#x111;i v&#x1ec1; b&#xea;n ph&#x1ea3;i.",
+                          children: [],
+                          payload: { tag: "li", lines: "60,61" },
+                        },
+                        {
+                          content:
+                            "<em>C&#x1ea5;u tr&#xfa;c d&#x1eef; li&#x1ec7;u</em>: S&#x1eed; d&#x1ee5;ng <strong>ng&#x103;n x&#x1ebf;p (Stack - LIFO)</strong>.",
+                          children: [],
+                          payload: { tag: "li", lines: "61,62" },
+                        },
+                        {
+                          content:
+                            "<em>&#x110;&#x1eb7;c &#x111;i&#x1ec3;m</em>: Nhanh t&#xec;m th&#x1ea5;y l&#x1edd;i gi&#x1ea3;i n&#x1ebf;u n&#xf3; n&#x1eb1;m s&#xe2;u, nh&#x1b0;ng c&#xf3; th&#x1ec3; kh&#xf4;ng t&#x1ed1;i &#x1b0;u v&#xe0; c&#xf3; th&#x1ec3; b&#x1ecb; l&#x1ea1;c trong c&#xe1;c nh&#xe1;nh v&#xf4; h&#x1ea1;n.",
+                          children: [],
+                          payload: { tag: "li", lines: "62,63" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "59,63" },
+                    },
+                    {
+                      content:
+                        '\n<p data-lines="63,64"><strong>T&#xec;m ki&#x1ebf;m theo chi&#x1ec1;u r&#x1ed9;ng (Breadth-First Search - BFS)</strong>:</p>',
+                      children: [
+                        {
+                          content:
+                            "<em>B&#x1ea3;n ch&#x1ea5;t</em>: Kh&#xe1;m ph&#xe1; t&#x1ea5;t c&#x1ea3; c&#xe1;c n&#xfa;t &#x1edf; m&#x1ed9;t &#x111;&#x1ed9; s&#xe2;u tr&#x1b0;&#x1edb;c khi chuy&#x1ec3;n sang &#x111;&#x1ed9; s&#xe2;u ti&#x1ebf;p theo. Gi&#x1ed1;ng nh&#x1b0; n&#xe9;m m&#x1ed9;t vi&#xea;n s&#x1ecf;i xu&#x1ed1;ng n&#x1b0;&#x1edb;c v&#xe0; quan s&#xe1;t c&#xe1;c g&#x1ee3;n s&#xf3;ng lan ra.",
+                          children: [],
+                          payload: { tag: "li", lines: "64,65" },
+                        },
+                        {
+                          content:
+                            "<em>C&#x1ea5;u tr&#xfa;c d&#x1eef; li&#x1ec7;u</em>: S&#x1eed; d&#x1ee5;ng <strong>h&#xe0;ng &#x111;&#x1ee3;i (Queue - FIFO)</strong>.",
+                          children: [],
+                          payload: { tag: "li", lines: "65,66" },
+                        },
+                        {
+                          content:
+                            "<em>&#x110;&#x1eb7;c &#x111;i&#x1ec3;m</em>: Lu&#xf4;n t&#xec;m th&#x1ea5;y l&#x1edd;i gi&#x1ea3;i n&#xf4;ng nh&#x1ea5;t (t&#x1ed1;i &#x1b0;u n&#x1ebf;u chi ph&#xed; m&#x1ed7;i b&#x1b0;&#x1edb;c l&#xe0; nh&#x1b0; nhau), nh&#x1b0;ng t&#x1ed1;n nhi&#x1ec1;u b&#x1ed9; nh&#x1edb;.",
+                          children: [],
+                          payload: { tag: "li", lines: "66,68" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "63,68" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "55,56" },
+                },
+                {
+                  content:
+                    "3.2. T&#xec;m ki&#x1ebf;m c&#xf3; th&#xf4;ng tin (Informed Search)",
+                  children: [
+                    {
+                      content:
+                        '\n<p data-lines="70,71"><em>S&#x1eed; d&#x1ee5;ng ki&#x1ebf;n th&#x1ee9;c &#x111;&#x1eb7;c th&#xf9; c&#x1ee7;a b&#xe0;i to&#xe1;n &#x111;&#x1ec3; t&#xec;m ki&#x1ebf;m hi&#x1ec7;u qu&#x1ea3; h&#x1a1;n.</em></p>',
+                      children: [],
+                      payload: { tag: "li", lines: "70,72" },
+                    },
+                    {
+                      content:
+                        '\n<p data-lines="72,73"><strong>H&#xe0;m Heuristic (h(n))</strong>: M&#x1ed9;t h&#xe0;m &#x1b0;&#x1edb;c t&#xed;nh chi ph&#xed; t&#x1eeb; n&#xfa;t <code>n</code> &#x111;&#x1ebf;n m&#x1ee5;c ti&#xea;u. &#x110;&#xe2;y l&#xe0; &quot;linh c&#x1ea3;m&quot; ho&#x1eb7;c &quot;s&#x1ef1; ph&#x1ecf;ng &#x111;o&#xe1;n c&#xf3; c&#x1a1; s&#x1edf;&quot;.</p>',
+                      children: [],
+                      payload: { tag: "li", lines: "72,73" },
+                    },
+                    {
+                      content:
+                        '\n<p data-lines="73,74"><strong>T&#xec;m ki&#x1ebf;m Tham lam T&#x1ed1;t nh&#x1ea5;t &#x111;&#x1ea7;u ti&#xea;n (Greedy Best-First Search)</strong>:</p>',
+                      children: [
+                        {
+                          content:
+                            "<em>B&#x1ea3;n ch&#x1ea5;t</em>: Lu&#xf4;n m&#x1edf; r&#x1ed9;ng n&#xfa;t &#x111;&#x1b0;&#x1ee3;c &#x1b0;&#x1edb;c t&#xed;nh l&#xe0; g&#x1ea7;n m&#x1ee5;c ti&#xea;u nh&#x1ea5;t theo h&#xe0;m heuristic. R&#x1ea5;t &quot;tham lam&quot; v&#xe0; ch&#x1ec9; nh&#xec;n v&#xe0;o l&#x1ee3;i &#xed;ch tr&#x1b0;&#x1edb;c m&#x1eaf;t.",
+                          children: [],
+                          payload: { tag: "li", lines: "74,75" },
+                        },
+                        {
+                          content:
+                            "<em>&#x110;&#x1eb7;c &#x111;i&#x1ec3;m</em>: Nhanh nh&#x1b0;ng c&#xf3; th&#x1ec3; b&#x1ecb; m&#x1eaf;c k&#x1eb9;t &#x1edf; c&#xe1;c l&#x1edd;i gi&#x1ea3;i kh&#xf4;ng t&#x1ed1;i &#x1b0;u.",
+                          children: [],
+                          payload: { tag: "li", lines: "75,76" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "73,76" },
+                    },
+                    {
+                      content:
+                        '\n<p data-lines="76,77"><strong>A* Search</strong>:</p>',
+                      children: [
+                        {
+                          content:
+                            "<em>B&#x1ea3;n ch&#x1ea5;t</em>: K&#x1ebf;t h&#x1ee3;p gi&#x1eef;a chi ph&#xed; th&#x1ef1;c t&#x1ebf; v&#xe0; chi ph&#xed; &#x1b0;&#x1edb;c t&#xed;nh. M&#x1edf; r&#x1ed9;ng n&#xfa;t c&#xf3; t&#x1ed5;ng <code>g(n) + h(n)</code> th&#x1ea5;p nh&#x1ea5;t.",
+                          children: [
+                            {
+                              content:
+                                "<code>g(n)</code>: chi ph&#xed; th&#x1ef1;c t&#x1ebf; t&#x1eeb; &#x111;i&#x1ec3;m b&#x1eaf;t &#x111;&#x1ea7;u &#x111;&#x1ebf;n n&#xfa;t <code>n</code>.",
+                              children: [],
+                              payload: { tag: "li", lines: "78,79" },
+                            },
+                            {
+                              content:
+                                "<code>h(n)</code>: chi ph&#xed; &#x1b0;&#x1edb;c t&#xed;nh t&#x1eeb; <code>n</code> &#x111;&#x1ebf;n m&#x1ee5;c ti&#xea;u.",
+                              children: [],
+                              payload: { tag: "li", lines: "79,80" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "77,80" },
+                        },
+                        {
+                          content:
+                            "<em>&#x110;&#x1eb7;c &#x111;i&#x1ec3;m</em>: T&#x1ed1;i &#x1b0;u v&#xe0; &#x111;&#x1ea7;y &#x111;&#x1ee7; n&#x1ebf;u h&#xe0;m heuristic l&#xe0; <strong>admissible</strong> (kh&#xf4;ng bao gi&#x1edd; &#x111;&#xe1;nh gi&#xe1; qu&#xe1; cao chi ph&#xed; th&#x1ef1;c) v&#xe0; <strong>consistent</strong>.",
+                          children: [],
+                          payload: { tag: "li", lines: "80,82" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "76,82" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "68,69" },
+                },
+                {
+                  content:
+                    "3.3. T&#xec;m ki&#x1ebf;m &#x111;&#x1ed1;i kh&#xe1;ng (Adversarial Search)",
+                  children: [
+                    {
+                      content:
+                        '\n<p data-lines="84,85"><em>S&#x1eed; d&#x1ee5;ng trong c&#xe1;c tr&#xf2; ch&#x1a1;i c&#xf3; &#x111;&#x1ed1;i th&#x1ee7; c&#x1ea1;nh tranh (c&#x1edd; vua, c&#x1edd; caro).</em></p>',
+                      children: [],
+                      payload: { tag: "li", lines: "84,86" },
+                    },
+                    {
+                      content:
+                        '\n<p data-lines="86,87"><strong>Thu&#x1ead;t to&#xe1;n Minimax</strong>:</p>',
+                      children: [
+                        {
+                          content:
+                            "<em>B&#x1ea3;n ch&#x1ea5;t</em>: Gi&#x1ea3; &#x111;&#x1ecb;nh r&#x1eb1;ng c&#x1ea3; hai ng&#x1b0;&#x1edd;i ch&#x1a1;i &#x111;&#x1ec1;u ch&#x1a1;i m&#x1ed9;t c&#xe1;ch t&#x1ed1;i &#x1b0;u.",
+                          children: [],
+                          payload: { tag: "li", lines: "87,88" },
+                        },
+                        {
+                          content:
+                            "<strong>MAX (ng&#x1b0;&#x1edd;i ch&#x1a1;i)</strong>: C&#x1ed1; g&#x1eaf;ng t&#x1ed1;i &#x111;a h&#xf3;a &#x111;i&#x1ec3;m s&#x1ed1; c&#x1ee7;a m&#xec;nh.",
+                          children: [],
+                          payload: { tag: "li", lines: "88,89" },
+                        },
+                        {
+                          content:
+                            "<strong>MIN (&#x111;&#x1ed1;i th&#x1ee7;)</strong>: C&#x1ed1; g&#x1eaf;ng t&#x1ed1;i thi&#x1ec3;u h&#xf3;a &#x111;i&#x1ec3;m s&#x1ed1; c&#x1ee7;a MAX.",
+                          children: [],
+                          payload: { tag: "li", lines: "89,90" },
+                        },
+                        {
+                          content:
+                            "<em>Logic</em>: MAX s&#x1ebd; ch&#x1ecd;n n&#x1b0;&#x1edb;c &#x111;i d&#x1eab;n &#x111;&#x1ebf;n tr&#x1ea1;ng th&#xe1;i c&#xf3; gi&#xe1; tr&#x1ecb; cao nh&#x1ea5;t (sau khi MIN &#x111;&#xe3; ch&#x1a1;i n&#x1b0;&#x1edb;c &#x111;i t&#x1ed1;t nh&#x1ea5;t c&#x1ee7;a h&#x1ecd;).",
+                          children: [],
+                          payload: { tag: "li", lines: "90,91" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "86,91" },
+                    },
+                    {
+                      content:
+                        '\n<p data-lines="91,92"><strong>T&#x1ed1;i &#x1b0;u h&#xf3;a</strong>:</p>',
+                      children: [
+                        {
+                          content:
+                            "<strong>C&#x1eaf;t t&#x1ec9;a Alpha-Beta (Alpha-Beta Pruning)</strong>: M&#x1ed9;t k&#x1ef9; thu&#x1ead;t &#x111;&#x1ec3; b&#x1ecf; qua vi&#x1ec7;c &#x111;&#xe1;nh gi&#xe1; c&#xe1;c nh&#xe1;nh trong c&#xe2;y tr&#xf2; ch&#x1a1;i m&#xe0; ch&#x1eaf;c ch&#x1eaf;n s&#x1ebd; kh&#xf4;ng &#x1ea3;nh h&#x1b0;&#x1edf;ng &#x111;&#x1ebf;n quy&#x1ebf;t &#x111;&#x1ecb;nh cu&#x1ed1;i c&#xf9;ng, gi&#xfa;p t&#x103;ng t&#x1ed1;c &#x111;&#x1ed9; &#x111;&#xe1;ng k&#x1ec3;.",
+                          children: [],
+                          payload: { tag: "li", lines: "92,93" },
+                        },
+                        {
+                          content:
+                            "<strong>Minimax gi&#x1edb;i h&#x1ea1;n &#x111;&#x1ed9; s&#xe2;u</strong>: Ng&#x1eeb;ng t&#xec;m ki&#x1ebf;m sau m&#x1ed9;t s&#x1ed1; n&#x1b0;&#x1edb;c &#x111;i nh&#x1ea5;t &#x111;&#x1ecb;nh v&#xe0; s&#x1eed; d&#x1ee5;ng m&#x1ed9;t <strong>h&#xe0;m &#x111;&#xe1;nh gi&#xe1; (evaluation function)</strong> &#x111;&#x1ec3; &#x1b0;&#x1edb;c t&#xed;nh gi&#xe1; tr&#x1ecb; c&#x1ee7;a th&#x1ebf; c&#x1edd;.",
+                          children: [],
+                          payload: { tag: "li", lines: "93,94" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "91,94" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "82,83" },
+                },
+              ],
+              payload: { tag: "h2", lines: "53,54" },
+            },
+          ],
+          payload: { tag: "h1", lines: "9,10" },
+        },
+        {
+          colorFreezeLevel: 2,
+          maxWidth: 300,
+          activeNode: { placement: "center" },
+          initialExpandLevel: 2,
+        }
+      );
+    </script>
+  </body>
+  <script src="../assets/script.js"></script>
+</html>
