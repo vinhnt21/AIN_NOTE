@@ -7,7 +7,7 @@ Tài liệu này chứa các biểu đồ Mermaid minh họa các thuật toán 
 DFS sử dụng cấu trúc Stack (LIFO - Last In First Out) để khám phá mê cung theo chiều sâu.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[Start: Initialize Stack with start node] --> B[Is Stack empty?]
     B -->|Yes| C[No solution found]
     B -->|No| D[Remove node from Stack top]
@@ -38,7 +38,7 @@ flowchart LR
 BFS sử dụng cấu trúc Queue (FIFO - First In First Out) để khám phá theo chiều rộng.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[Start: Initialize Queue with start node] --> B[Is Queue empty?]
     B -->|Yes| C[No solution found]
     B -->|No| D[Remove node from Queue front]
@@ -69,7 +69,7 @@ flowchart LR
 Greedy Best-First Search sử dụng hàm heuristic để chọn node có vẻ gần đích nhất.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[Start: Initialize Priority Queue with start node] --> B[Is Queue empty?]
     B -->|Yes| C[No solution found]
     B -->|No| D[Remove node with smallest h_n]
@@ -111,7 +111,7 @@ graph LR
 A* kết hợp chi phí thực tế g(n) và heuristic h(n) để tạo ra f(n) = g(n) + h(n).
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[Start: Initialize Priority Queue with start node] --> B[Is Queue empty?]
     B -->|Yes| C[No solution found]
     B -->|No| D[Remove node with smallest f_n]
