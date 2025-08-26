@@ -7,7 +7,7 @@ Tài liệu này chứa các biểu đồ Mermaid minh họa các thuật toán 
 DFS sử dụng cấu trúc Stack (LIFO - Last In First Out) để khám phá mê cung theo chiều sâu.
 
 ```mermaid
-flowchart TD
+flowchart LR
     A[Start: Initialize Stack with start node] --> B[Is Stack empty?]
     B -->|Yes| C[No solution found]
     B -->|No| D[Remove node from Stack top]
@@ -38,7 +38,7 @@ flowchart TD
 BFS sử dụng cấu trúc Queue (FIFO - First In First Out) để khám phá theo chiều rộng.
 
 ```mermaid
-flowchart TD
+flowchart LR
     A[Start: Initialize Queue with start node] --> B[Is Queue empty?]
     B -->|Yes| C[No solution found]
     B -->|No| D[Remove node from Queue front]
@@ -69,7 +69,7 @@ flowchart TD
 Greedy Best-First Search sử dụng hàm heuristic để chọn node có vẻ gần đích nhất.
 
 ```mermaid
-flowchart TD
+flowchart LR
     A[Start: Initialize Priority Queue with start node] --> B[Is Queue empty?]
     B -->|Yes| C[No solution found]
     B -->|No| D[Remove node with smallest h_n]
@@ -111,7 +111,7 @@ graph LR
 A* kết hợp chi phí thực tế g(n) và heuristic h(n) để tạo ra f(n) = g(n) + h(n).
 
 ```mermaid
-flowchart TD
+flowchart LR
     A[Start: Initialize Priority Queue with start node] --> B[Is Queue empty?]
     B -->|Yes| C[No solution found]
     B -->|No| D[Remove node with smallest f_n]
@@ -155,12 +155,12 @@ graph LR
 ## 5. So Sánh Các Thuật Toán
 
 ```mermaid
-graph TD
+graph LR
     A[Search Algorithms] --> B[Uninformed Search]
     A --> C[Informed Search]
     
-    B --> D[DFS<br/>- Stack (LIFO)<br/>- Not optimal<br/>- Low memory]
-    B --> E[BFS<br/>- Queue (FIFO)<br/>- Optimal<br/>- High memory]
+    B --> D["DFS<br/>- Stack (LIFO)<br/>- Not optimal<br/>- Low memory"]
+    B --> E["BFS<br/>- Queue (FIFO)<br/>- Optimal<br/>- High memory"]
     
     C --> F["Greedy Best-First<br/>- Priority Queue h(n)<br/>- Fast but not optimal<br/>- Uses heuristic"]
     C --> G["A* Search<br/>- Priority Queue f(n)<br/>- Optimal + Efficient<br/>- f(n) = g(n) + h(n)"]
