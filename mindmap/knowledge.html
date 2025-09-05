@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- icon  -->
+    <link rel="icon" href="../assets/logo.png" type="image/x-icon" />
+    <title>Knowledge Mindmap</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+      #mindmap {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+      }
+      .markmap-dark {
+        background: #27272a;
+        color: white;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.11.1/styles/default.min.css"
+    />
+  </head>
+  <body>
+    <svg id="mindmap"></svg>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script>
+    <script>
+      ((r) => {
+        setTimeout(r);
+      })(function renderToolbar() {
+        const { markmap, mm } = window;
+        const { el } = markmap.Toolbar.create(mm);
+        el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+        document.body.append(el);
+      });
+    </script>
+    <script>
+      ((getMarkmap, getOptions, root2, jsonOptions) => {
+        const markmap = getMarkmap();
+        window.mm = markmap.Markmap.create(
+          "svg#mindmap",
+          (getOptions || markmap.deriveOptions)(jsonOptions),
+          root2
+        );
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.classList.add("markmap-dark");
+        }
+      })(
+        () => window.markmap,
+        null,
+        {
+          content:
+            "<strong>Bi&#x1ec3;u di&#x1ec5;n Tri th&#x1ee9;c trong AI</strong> &#x1f9e0;",
+          children: [
+            {
+              content: "<strong>I. Knowledge-Based Agents</strong> &#x1f916;",
+              children: [
+                {
+                  content:
+                    "<strong>Kh&#xe1;i ni&#x1ec7;m c&#x1a1; b&#x1ea3;n</strong>",
+                  children: [
+                    {
+                      content:
+                        "<strong>&#x110;&#x1ecb;nh ngh&#x129;a</strong>: AI c&#xf3; kh&#x1ea3; n&#x103;ng suy lu&#x1ead;n d&#x1ef1;a tr&#xea;n tri th&#x1ee9;c &#x111;&#xe3; l&#x1b0;u tr&#x1eef;",
+                      children: [],
+                      payload: { tag: "li", lines: "15,16" },
+                    },
+                    {
+                      content:
+                        "<strong>Sentence</strong>: Kh&#x1eb3;ng &#x111;&#x1ecb;nh v&#x1ec1; th&#x1ebf; gi&#x1edb;i b&#x1eb1;ng ng&#xf4;n ng&#x1eef; AI hi&#x1ec3;u &#x111;&#x1b0;&#x1ee3;c",
+                      children: [],
+                      payload: { tag: "li", lines: "16,18" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "13,14" },
+                },
+                {
+                  content:
+                    "<strong>V&#xed; d&#x1ee5; minh h&#x1ecd;a - C&#xe2;u chuy&#x1ec7;n Harry Potter</strong> &#x26a1;",
+                  children: [
+                    {
+                      content:
+                        "<strong>Tri th&#x1ee9;c 1</strong>: Tr&#x1edd;i kh&#xf4;ng m&#x1b0;a &#x2192; Harry th&#x103;m Hagrid",
+                      children: [],
+                      payload: { tag: "li", lines: "20,21" },
+                    },
+                    {
+                      content:
+                        "<strong>Tri th&#x1ee9;c 2</strong>: Harry th&#x103;m (Hagrid XOR Dumbledore)",
+                      children: [],
+                      payload: { tag: "li", lines: "21,22" },
+                    },
+                    {
+                      content:
+                        "<strong>Tri th&#x1ee9;c 3</strong>: Harry &#x111;&#xe3; th&#x103;m Dumbledore",
+                      children: [],
+                      payload: { tag: "li", lines: "22,23" },
+                    },
+                    {
+                      content:
+                        "<strong>&#x2b50; Suy lu&#x1ead;n</strong>: (2)+(3) &#x2192; kh&#xf4;ng th&#x103;m Hagrid &#x2192; (1) &#x2192; tr&#x1edd;i m&#x1b0;a",
+                      children: [],
+                      payload: { tag: "li", lines: "23,25" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "18,19" },
+                },
+                {
+                  content:
+                    "<strong>&#x1ee8;ng d&#x1ee5;ng th&#x1ef1;c t&#x1ebf;</strong>",
+                  children: [
+                    {
+                      content: "H&#x1ec7; chuy&#xea;n gia y t&#x1ebf;",
+                      children: [],
+                      payload: { tag: "li", lines: "27,28" },
+                    },
+                    {
+                      content: "Chatbot th&#xf4;ng minh",
+                      children: [],
+                      payload: { tag: "li", lines: "28,29" },
+                    },
+                    {
+                      content: "H&#x1ec7; th&#x1ed1;ng g&#x1ee3;i &#xfd;",
+                      children: [],
+                      payload: { tag: "li", lines: "29,31" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "25,26" },
+                },
+              ],
+              payload: { tag: "h2", lines: "11,12" },
+            },
+            {
+              content: "<strong>II. Propositional Logic</strong> &#x1f4dd;",
+              children: [
+                {
+                  content:
+                    "<strong>A. Kh&#xe1;i ni&#x1ec7;m n&#x1ec1;n t&#x1ea3;ng</strong>",
+                  children: [
+                    {
+                      content:
+                        "<strong>Propositional Symbols</strong> &#x1f524;",
+                      children: [
+                        {
+                          content:
+                            "<strong>L&#xe0; g&#xec;</strong>: K&#xfd; hi&#x1ec7;u &#x111;&#x1ea1;i di&#x1ec7;n cho m&#x1ec7;nh &#x111;&#x1ec1; (ch&#x1ec9; True/False)",
+                          children: [],
+                          payload: { tag: "li", lines: "37,38" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; &#x111;&#x1a1;n gi&#x1ea3;n</strong>:",
+                          children: [
+                            {
+                              content:
+                                "P = &quot;H&#xf4;m nay tr&#x1edd;i n&#x1eaf;ng&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "39,40" },
+                            },
+                            {
+                              content:
+                                "Q = &quot;T&#xf4;i &#x111;i ch&#x1a1;i&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "40,41" },
+                            },
+                            {
+                              content: "R = &quot;T&#xf4;i vui&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "41,43" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "38,43" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "35,36" },
+                    },
+                    {
+                      content: "<strong>Logical Connectives</strong> &#x1f517;",
+                      children: [
+                        {
+                          content:
+                            "<strong>1. NOT (&#xac;) - Ph&#x1ee7; &#x111;&#x1ecb;nh</strong>",
+                          children: [
+                            {
+                              content:
+                                "<strong>C&#xf4;ng d&#x1ee5;ng</strong>: &#x110;&#x1ea3;o ng&#x1b0;&#x1ee3;c gi&#xe1; tr&#x1ecb;",
+                              children: [],
+                              payload: { tag: "li", lines: "47,48" },
+                            },
+                            {
+                              content:
+                                "<strong>V&#xed; d&#x1ee5; sinh &#x111;&#x1ed9;ng</strong>:",
+                              children: [
+                                {
+                                  content:
+                                    "P = &quot;T&#xf4;i th&#xed;ch c&#xe0; ph&#xea;&quot; (True)",
+                                  children: [],
+                                  payload: { tag: "li", lines: "49,50" },
+                                },
+                                {
+                                  content:
+                                    "&#xac;P = &quot;T&#xf4;i KH&#xd4;NG th&#xed;ch c&#xe0; ph&#xea;&quot; (False)",
+                                  children: [],
+                                  payload: { tag: "li", lines: "50,51" },
+                                },
+                              ],
+                              payload: { tag: "li", lines: "48,51" },
+                            },
+                            {
+                              content:
+                                "<strong>B&#x1ea3;ng ch&#xe2;n l&#xfd;</strong>: P=T &#x2192; &#xac;P=F; P=F &#x2192; &#xac;P=T",
+                              children: [],
+                              payload: { tag: "li", lines: "51,53" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "45,46" },
+                        },
+                        {
+                          content:
+                            "<strong>2. AND (&#x2227;) - V&#xe0;</strong>",
+                          children: [
+                            {
+                              content:
+                                "<strong>Nguy&#xea;n t&#x1eaf;c</strong>: T&#x1ea4;T C&#x1ea2; ph&#x1ea3;i &#x111;&#xfa;ng",
+                              children: [],
+                              payload: { tag: "li", lines: "55,56" },
+                            },
+                            {
+                              content:
+                                "<strong>V&#xed; d&#x1ee5; th&#x1ef1;c t&#x1ebf;</strong>:",
+                              children: [
+                                {
+                                  content:
+                                    "&quot;&#x110;&#x1ec3; &#x111;&#x1b0;&#x1ee3;c h&#x1ecd;c b&#x1ed5;ng: &#x110;i&#x1ec3;m cao &#x2227; H&#x1ea1;nh ki&#x1ec3;m t&#x1ed1;t&quot;",
+                                  children: [],
+                                  payload: { tag: "li", lines: "57,58" },
+                                },
+                                {
+                                  content:
+                                    "Thi&#x1ebf;u 1 &#x111;i&#x1ec1;u ki&#x1ec7;n &#x2192; KH&#xd4;NG c&#xf3; h&#x1ecd;c b&#x1ed5;ng",
+                                  children: [],
+                                  payload: { tag: "li", lines: "58,59" },
+                                },
+                              ],
+                              payload: { tag: "li", lines: "56,59" },
+                            },
+                            {
+                              content:
+                                "<strong>B&#x1ea3;ng ch&#xe2;n l&#xfd;</strong>: Ch&#x1ec9; T&#x2227;T=T, c&#xf2;n l&#x1ea1;i &#x111;&#x1ec1;u False",
+                              children: [],
+                              payload: { tag: "li", lines: "59,61" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "53,54" },
+                        },
+                        {
+                          content:
+                            "<strong>3. OR (&#x2228;) - Ho&#x1eb7;c</strong>",
+                          children: [
+                            {
+                              content:
+                                "<strong>Nguy&#xea;n t&#x1eaf;c</strong>: CH&#x1ec8; C&#x1ea6;N 1 &#x111;i&#x1ec1;u &#x111;&#xfa;ng",
+                              children: [],
+                              payload: { tag: "li", lines: "63,64" },
+                            },
+                            {
+                              content:
+                                "<strong>V&#xed; d&#x1ee5; h&#xe0;ng ng&#xe0;y</strong>:",
+                              children: [
+                                {
+                                  content:
+                                    "&quot;B&#x1eef;a s&#xe1;ng: Ph&#x1edf; &#x2228; B&#xe1;nh m&#xec; &#x2228; C&#x1a1;m&quot;",
+                                  children: [],
+                                  payload: { tag: "li", lines: "65,66" },
+                                },
+                                {
+                                  content:
+                                    "&#x102;n m&#xf3;n n&#xe0;o c&#x169;ng &#x111;&#x1b0;&#x1ee3;c, c&#xf3; th&#x1ec3; &#x103;n nhi&#x1ec1;u m&#xf3;n",
+                                  children: [],
+                                  payload: { tag: "li", lines: "66,67" },
+                                },
+                              ],
+                              payload: { tag: "li", lines: "64,67" },
+                            },
+                            {
+                              content:
+                                "<strong>B&#x1ea3;ng ch&#xe2;n l&#xfd;</strong>: Ch&#x1ec9; F&#x2228;F=F, c&#xf2;n l&#x1ea1;i &#x111;&#x1ec1;u True",
+                              children: [],
+                              payload: { tag: "li", lines: "67,69" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "61,62" },
+                        },
+                        {
+                          content:
+                            "<strong>4. IMPLICATION (&#x2192;) - K&#xe9;o theo</strong>",
+                          children: [
+                            {
+                              content:
+                                "<strong>C&#x1ea5;u tr&#xfa;c</strong>: &quot;N&#x1ebf;u P th&#xec; Q&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "71,72" },
+                            },
+                            {
+                              content:
+                                "<strong>V&#xed; d&#x1ee5; t&#xec;nh hu&#x1ed1;ng</strong>:",
+                              children: [
+                                {
+                                  content:
+                                    "&quot;N&#x1ebf;u h&#x1ecd;c ch&#x103;m &#x2192; &#x111;i&#x1ec3;m cao&quot;",
+                                  children: [],
+                                  payload: { tag: "li", lines: "73,74" },
+                                },
+                                {
+                                  content:
+                                    "H&#x1ecd;c ch&#x103;m m&#xe0; &#x111;i&#x1ec3;m th&#x1ea5;p = V&#xd4; L&#xdd; (False)",
+                                  children: [],
+                                  payload: { tag: "li", lines: "74,75" },
+                                },
+                                {
+                                  content:
+                                    "Kh&#xf4;ng h&#x1ecd;c ch&#x103;m = kh&#xf4;ng r&#xe0;ng bu&#x1ed9;c g&#xec; (True)",
+                                  children: [],
+                                  payload: { tag: "li", lines: "75,76" },
+                                },
+                              ],
+                              payload: { tag: "li", lines: "72,76" },
+                            },
+                            {
+                              content:
+                                "<strong>&#x26a0;&#xfe0f; L&#x1b0;u &#xfd;</strong>: Ch&#x1ec9; sai khi P=True m&#xe0; Q=False",
+                              children: [],
+                              payload: { tag: "li", lines: "76,78" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "69,70" },
+                        },
+                        {
+                          content:
+                            "<strong>5. BICONDITIONAL (&#x2194;) - T&#x1b0;&#x1a1;ng &#x111;&#x1b0;&#x1a1;ng</strong>",
+                          children: [
+                            {
+                              content:
+                                "<strong>&#xdd; ngh&#x129;a</strong>: &quot;P khi v&#xe0; ch&#x1ec9; khi Q&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "80,81" },
+                            },
+                            {
+                              content:
+                                "<strong>V&#xed; d&#x1ee5; quy &#x111;&#x1ecb;nh</strong>:",
+                              children: [
+                                {
+                                  content:
+                                    "&quot;&#x110;&#x1b0;&#x1ee3;c v&#xe0;o ph&#xf2;ng thi &#x2194; C&#xf3; th&#x1ebb; sinh vi&#xea;n&quot;",
+                                  children: [],
+                                  payload: { tag: "li", lines: "82,83" },
+                                },
+                                {
+                                  content:
+                                    "C&#xf3; th&#x1ebb; = v&#xe0;o &#x111;&#x1b0;&#x1ee3;c; Kh&#xf4;ng c&#xf3; = kh&#xf4;ng v&#xe0;o &#x111;&#x1b0;&#x1ee3;c",
+                                  children: [],
+                                  payload: { tag: "li", lines: "83,84" },
+                                },
+                              ],
+                              payload: { tag: "li", lines: "81,84" },
+                            },
+                            {
+                              content:
+                                "<strong>T&#xed;nh ch&#x1ea5;t</strong>: P v&#xe0; Q ph&#x1ea3;i c&#xf9;ng gi&#xe1; tr&#x1ecb;",
+                              children: [],
+                              payload: { tag: "li", lines: "84,86" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "78,79" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "43,44" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "33,34" },
+                },
+                {
+                  content:
+                    "<strong>B. Kh&#xe1;i ni&#x1ec7;m n&#xe2;ng cao</strong>",
+                  children: [
+                    {
+                      content:
+                        "<strong>Model (M&#xf4; h&#xec;nh)</strong> &#x1f30d;",
+                      children: [
+                        {
+                          content:
+                            "<strong>L&#xe0; g&#xec;</strong>: M&#x1ed9;t &quot;th&#x1ebf; gi&#x1edb;i kh&#x1ea3; d&#x129;&quot; v&#x1edb;i gi&#xe1; tr&#x1ecb; c&#x1ee5; th&#x1ec3; cho m&#x1ed7;i m&#x1ec7;nh &#x111;&#x1ec1;",
+                          children: [],
+                          payload: { tag: "li", lines: "90,91" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; minh h&#x1ecd;a</strong>:",
+                          children: [
+                            {
+                              content: "Model 1: {P=True, Q=False, R=True}",
+                              children: [],
+                              payload: { tag: "li", lines: "92,93" },
+                            },
+                            {
+                              content: "Model 2: {P=False, Q=True, R=False}",
+                              children: [],
+                              payload: { tag: "li", lines: "93,95" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "91,95" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "88,89" },
+                    },
+                    {
+                      content: "<strong>Knowledge Base (KB)</strong> &#x1f4da;",
+                      children: [
+                        {
+                          content:
+                            "<strong>&#x110;&#x1ecb;nh ngh&#x129;a</strong>: T&#x1ead;p h&#x1ee3;p tri th&#x1ee9;c AI &quot;tin&quot; l&#xe0; &#x111;&#xfa;ng",
+                          children: [],
+                          payload: { tag: "li", lines: "97,98" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; KB &#x111;&#x1a1;n gi&#x1ea3;n</strong>:",
+                          children: [
+                            {
+                              content:
+                                "&quot;Tr&#x1edd;i m&#x1b0;a &#x2192; Mang &#xf4;&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "99,100" },
+                            },
+                            {
+                              content:
+                                "&quot;H&#xf4;m nay tr&#x1edd;i m&#x1b0;a&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "100,101" },
+                            },
+                            {
+                              content:
+                                "&quot;C&#xf3; ti&#x1ebf;t kinh t&#x1ebf; &#x2192; Mang m&#xe1;y t&#xed;nh&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "101,103" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "98,103" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "95,96" },
+                    },
+                    {
+                      content:
+                        "<strong>Entailment (&#x22a8;)</strong> &#x27a1;&#xfe0f;",
+                      children: [
+                        {
+                          content:
+                            "<strong>&#xdd; ngh&#x129;a</strong>: &#x3b1; &#x22a8; &#x3b2; = &quot;&#x3b1; k&#xe9;o theo &#x3b2; trong m&#x1ecd;i tr&#x1b0;&#x1edd;ng h&#x1ee3;p&quot;",
+                          children: [],
+                          payload: { tag: "li", lines: "105,106" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; d&#x1ec5; hi&#x1ec3;u</strong>:",
+                          children: [
+                            {
+                              content:
+                                "&#x3b1; = &quot;Lan l&#xe0; sinh vi&#xea;n HANU&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "107,108" },
+                            },
+                            {
+                              content:
+                                "&#x3b2; = &quot;Lan l&#xe0; sinh vi&#xea;n&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "108,109" },
+                            },
+                            {
+                              content:
+                                "R&#xf5; r&#xe0;ng &#x3b1; &#x22a8; &#x3b2; (HANU &#x2286; sinh vi&#xea;n)",
+                              children: [],
+                              payload: { tag: "li", lines: "109,111" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "106,111" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "103,104" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "86,87" },
+                },
+              ],
+              payload: { tag: "h2", lines: "31,32" },
+            },
+            {
+              content:
+                "<strong>III. Inference (Suy di&#x1ec5;n)</strong> &#x1f50d;",
+              children: [
+                {
+                  content: "<strong>A. Model Checking</strong>",
+                  children: [
+                    {
+                      content:
+                        "<strong>M&#x1ee5;c &#x111;&#xed;ch</strong>: Ki&#x1ec3;m tra KB &#x22a8; &#x3b1; c&#xf3; &#x111;&#xfa;ng kh&#xf4;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "115,116" },
+                    },
+                    {
+                      content:
+                        "<strong>Thu&#x1ead;t to&#xe1;n 3 b&#x1b0;&#x1edb;c</strong>:",
+                      children: [
+                        {
+                          content:
+                            "1. <strong>Li&#x1ec7;t k&#xea;</strong>: T&#x1ea5;t c&#x1ea3; th&#x1ebf; gi&#x1edb;i kh&#x1ea3; d&#x129;",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "117,118",
+                            listIndex: 1,
+                          },
+                        },
+                        {
+                          content:
+                            "2. <strong>L&#x1ecd;c</strong>: Th&#x1ebf; gi&#x1edb;i n&#xe0;o KB &#x111;&#xfa;ng",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "118,119",
+                            listIndex: 2,
+                          },
+                        },
+                        {
+                          content:
+                            "3. <strong>Ki&#x1ec3;m tra</strong>: &#x3b1; c&#xf3; &#x111;&#xfa;ng trong T&#x1ea4;T C&#x1ea2; th&#x1ebf; gi&#x1edb;i &#x111;&#xe3; l&#x1ecd;c?",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "119,121",
+                            listIndex: 3,
+                          },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "116,121" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "113,114" },
+                },
+                {
+                  content:
+                    "<strong>B. Inference Rules</strong> &#x2696;&#xfe0f;",
+                  children: [
+                    {
+                      content:
+                        "<strong>1. Modus Ponens</strong> (Quy t&#x1eaf;c v&#xe0;ng)",
+                      children: [
+                        {
+                          content:
+                            "<strong>C&#xf4;ng th&#x1ee9;c</strong>: (&#x3b1; &#x2192; &#x3b2;) &#x2227; &#x3b1; &#x22a8; &#x3b2;",
+                          children: [],
+                          payload: { tag: "li", lines: "125,126" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; h&#xe0;ng ng&#xe0;y</strong>:",
+                          children: [
+                            {
+                              content:
+                                "&quot;N&#x1ebf;u tr&#x1edd;i m&#x1b0;a &#x2192; mang &#xf4;&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "127,128" },
+                            },
+                            {
+                              content:
+                                "&quot;H&#xf4;m nay tr&#x1edd;i m&#x1b0;a&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "128,129" },
+                            },
+                            {
+                              content:
+                                "<strong>&#x21d2; K&#x1ebf;t lu&#x1ead;n</strong>: &quot;H&#xf4;m nay ph&#x1ea3;i mang &#xf4;&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "129,131" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "126,131" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "123,124" },
+                    },
+                    {
+                      content: "<strong>2. And Elimination</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>C&#xf4;ng th&#x1ee9;c</strong>: (&#x3b1; &#x2227; &#x3b2;) &#x22a8; &#x3b1; (ho&#x1eb7;c &#x3b2;)",
+                          children: [],
+                          payload: { tag: "li", lines: "133,134" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5;</strong>: &quot;Nam v&#x1eeb;a gi&#x1ecf;i v&#x1eeb;a &#x111;&#x1eb9;p trai&quot; &#x2192; &quot;Nam gi&#x1ecf;i&quot;",
+                          children: [],
+                          payload: { tag: "li", lines: "134,136" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "131,132" },
+                    },
+                    {
+                      content:
+                        "<strong>3. Double Negation Elimination</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>C&#xf4;ng th&#x1ee9;c</strong>: &#xac;(&#xac;&#x3b1;) &#x2261; &#x3b1;",
+                          children: [],
+                          payload: { tag: "li", lines: "138,139" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5;</strong>: &quot;Kh&#xf4;ng th&#x1ec3; n&#xf3;i t&#xf4;i kh&#xf4;ng th&#xed;ch&quot; = &quot;T&#xf4;i th&#xed;ch&quot;",
+                          children: [],
+                          payload: { tag: "li", lines: "139,141" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "136,137" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "121,122" },
+                },
+                {
+                  content:
+                    "<strong>C. Resolution (H&#x1ee3;p gi&#x1ea3;i)</strong> &#x1f504;",
+                  children: [
+                    {
+                      content:
+                        "<strong>Nguy&#xea;n l&#xfd; c&#x1ed1;t l&#xf5;i</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>&#xdd; t&#x1b0;&#x1edf;ng</strong>: Lo&#x1ea1;i b&#x1ecf; m&#x1ec7;nh &#x111;&#x1ec1; &#x111;&#x1ed1;i ngh&#x1ecb;ch nhau",
+                          children: [],
+                          payload: { tag: "li", lines: "145,146" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; &#x111;&#x1a1;n gi&#x1ea3;n</strong>:",
+                          children: [
+                            {
+                              content:
+                                "C&#xf3;: (P &#x2228; Q) v&#xe0; (&#xac;P)",
+                              children: [],
+                              payload: { tag: "li", lines: "147,148" },
+                            },
+                            {
+                              content:
+                                "&#xac;P &#x111;&#xfa;ng &#x2192; P sai &#x2192; Q ph&#x1ea3;i &#x111;&#xfa;ng (&#x111;&#x1ec3; P&#x2228;Q &#x111;&#xfa;ng)",
+                              children: [],
+                              payload: { tag: "li", lines: "148,150" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "146,150" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "143,144" },
+                    },
+                    {
+                      content: "<strong>CNF (Conjunctive Normal Form)</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>&#x110;&#x1ecb;nh ngh&#x129;a</strong>: D&#x1ea1;ng (A&#x2228;B&#x2228;C) &#x2227; (D&#x2228;E) &#x2227; (F&#x2228;G&#x2228;H)",
+                          children: [],
+                          payload: { tag: "li", lines: "152,153" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; chuy&#x1ec3;n &#x111;&#x1ed5;i</strong>:",
+                          children: [
+                            {
+                              content: "G&#x1ed1;c: (P&#x2192;Q) &#x2227; R",
+                              children: [],
+                              payload: { tag: "li", lines: "154,155" },
+                            },
+                            {
+                              content: "CNF: (&#xac;P&#x2228;Q) &#x2227; R",
+                              children: [],
+                              payload: { tag: "li", lines: "155,157" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "153,157" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "150,151" },
+                    },
+                    {
+                      content: "<strong>Proof by Contradiction</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Ph&#x1b0;&#x1a1;ng ph&#xe1;p</strong>: &#x110;&#x1ec3; ch&#x1ee9;ng minh KB &#x22a8; &#x3b1;",
+                          children: [
+                            {
+                              content: "1. Th&#xea;m &#xac;&#x3b1; v&#xe0;o KB",
+                              children: [],
+                              payload: {
+                                tag: "li",
+                                lines: "160,161",
+                                listIndex: 1,
+                              },
+                            },
+                            {
+                              content:
+                                "2. N&#x1ebf;u d&#x1eab;n &#x111;&#x1ebf;n m&#xe2;u thu&#x1eab;n &#x2192; &#x3b1; &#x111;&#xfa;ng",
+                              children: [],
+                              payload: {
+                                tag: "li",
+                                lines: "161,162",
+                                listIndex: 2,
+                              },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "159,162" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5;</strong>: Ch&#x1ee9;ng minh &quot;2+2=4&quot;",
+                          children: [
+                            {
+                              content:
+                                "Gi&#x1ea3; s&#x1eed; &quot;2+2&#x2260;4&quot; &#x2192; m&#xe2;u thu&#x1eab;n &#x2192; &quot;2+2=4&quot; &#x111;&#xfa;ng",
+                              children: [],
+                              payload: { tag: "li", lines: "163,165" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "162,165" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "157,158" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "141,142" },
+                },
+              ],
+              payload: { tag: "h2", lines: "111,112" },
+            },
+            {
+              content: "<strong>IV. Knowledge Engineering</strong> &#x1f527;",
+              children: [
+                {
+                  content:
+                    "<strong>Quy tr&#xec;nh th&#x1ef1;c hi&#x1ec7;n</strong>",
+                  children: [
+                    {
+                      content:
+                        "1. <strong>Ph&#xe2;n t&#xed;ch v&#x1ea5;n &#x111;&#x1ec1;</strong>: Hi&#x1ec3;u r&#xf5; domain",
+                      children: [],
+                      payload: { tag: "li", lines: "169,170", listIndex: 1 },
+                    },
+                    {
+                      content:
+                        "2. <strong>X&#xe1;c &#x111;&#x1ecb;nh m&#x1ec7;nh &#x111;&#x1ec1;</strong>: Bi&#x1ebf;n &#x111;&#x1ed5;i th&#xe0;nh logic",
+                      children: [],
+                      payload: { tag: "li", lines: "170,171", listIndex: 2 },
+                    },
+                    {
+                      content:
+                        "3. <strong>X&#xe2;y d&#x1ef1;ng KB</strong>: T&#x1ead;p h&#x1ee3;p lu&#x1ead;t v&#xe0; s&#x1ef1; ki&#x1ec7;n",
+                      children: [],
+                      payload: { tag: "li", lines: "171,172", listIndex: 3 },
+                    },
+                    {
+                      content:
+                        "4. <strong>Ki&#x1ec3;m th&#x1eed;</strong>: Th&#x1eed; nghi&#x1ec7;m suy lu&#x1ead;n",
+                      children: [],
+                      payload: { tag: "li", lines: "172,174", listIndex: 4 },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "167,168" },
+                },
+                {
+                  content:
+                    "<strong>V&#xed; d&#x1ee5; game Clue</strong> &#x1f3b2;",
+                  children: [
+                    {
+                      content:
+                        "<strong>Lu&#x1ead;t</strong>: (Mustard &#x2228; Plum &#x2228; Scarlet) - 1 trong 3 l&#xe0; hung th&#x1ee7;",
+                      children: [],
+                      payload: { tag: "li", lines: "176,177" },
+                    },
+                    {
+                      content:
+                        "<strong>Quan s&#xe1;t</strong>: Th&#x1ea5;y b&#xe0;i Plum &#x2192; &#xac;Plum (Plum kh&#xf4;ng ph&#x1ea3;i hung th&#x1ee7;)",
+                      children: [],
+                      payload: { tag: "li", lines: "177,178" },
+                    },
+                    {
+                      content:
+                        "<strong>Suy lu&#x1ead;n</strong>: Hung th&#x1ee7; l&#xe0; Mustard ho&#x1eb7;c Scarlet",
+                      children: [],
+                      payload: { tag: "li", lines: "178,180" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "174,175" },
+                },
+                {
+                  content:
+                    "<strong>V&#xed; d&#x1ee5; th&#x1ef1;c t&#x1ebf; - H&#x1ec7; th&#x1ed1;ng giao th&#xf4;ng</strong>",
+                  children: [
+                    {
+                      content: "<strong>Lu&#x1ead;t</strong>:",
+                      children: [
+                        {
+                          content:
+                            "&#x110;&#xe8;n &#x111;&#x1ecf; &#x2192; Xe d&#x1eeb;ng",
+                          children: [],
+                          payload: { tag: "li", lines: "183,184" },
+                        },
+                        {
+                          content:
+                            "C&#xf3; ambulance &#x2192; Nh&#x1b0;&#x1edd;ng &#x111;&#x1b0;&#x1edd;ng",
+                          children: [],
+                          payload: { tag: "li", lines: "184,185" },
+                        },
+                        {
+                          content:
+                            "&#x110;&#xe8;n xanh &#x2227; Kh&#xf4;ng c&#xf3; ambulance &#x2192; Xe &#x111;i",
+                          children: [],
+                          payload: { tag: "li", lines: "185,186" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "182,186" },
+                    },
+                    {
+                      content:
+                        "<strong>&#xc1;p d&#x1ee5;ng</strong>: AI t&#x1ef1; &#x111;&#x1ed9;ng &#x111;i&#x1ec1;u khi&#x1ec3;n xe",
+                      children: [],
+                      payload: { tag: "li", lines: "186,188" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "180,181" },
+                },
+              ],
+              payload: { tag: "h2", lines: "165,166" },
+            },
+            {
+              content:
+                "<strong>V. First-Order Logic</strong> &#x1f3db;&#xfe0f;",
+              children: [
+                {
+                  content: "<strong>A. T&#x1ea1;i sao c&#x1ea7;n FOL?</strong>",
+                  children: [
+                    {
+                      content:
+                        "<strong>H&#x1ea1;n ch&#x1ebf; c&#x1ee7;a Propositional Logic</strong>: Kh&#xf4;ng bi&#x1ec3;u di&#x1ec5;n &#x111;&#x1b0;&#x1ee3;c quan h&#x1ec7; ph&#x1ee9;c t&#x1ea1;p",
+                      children: [],
+                      payload: { tag: "li", lines: "192,193" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5; kh&#xf3; kh&#x103;n</strong>: &quot;M&#x1ecd;i sinh vi&#xea;n &#x111;&#x1ec1;u th&#xed;ch &#xed;t nh&#x1ea5;t m&#x1ed9;t m&#xf4;n h&#x1ecd;c&quot;",
+                      children: [
+                        {
+                          content:
+                            "Propositional: C&#x1ea7;n v&#xf4; s&#x1ed1; m&#x1ec7;nh &#x111;&#x1ec1;",
+                          children: [],
+                          payload: { tag: "li", lines: "194,195" },
+                        },
+                        {
+                          content:
+                            "FOL: &#x2200;x (SinhVien(x) &#x2192; &#x2203;y (MonHoc(y) &#x2227; Th&#xed;ch(x,y)))",
+                          children: [],
+                          payload: { tag: "li", lines: "195,197" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "193,197" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "190,191" },
+                },
+                {
+                  content:
+                    "<strong>B. Th&#xe0;nh ph&#x1ea7;n c&#x1a1; b&#x1ea3;n</strong>",
+                  children: [
+                    {
+                      content:
+                        "<strong>1. Constant Symbols</strong> &#x1f3f7;&#xfe0f;",
+                      children: [
+                        {
+                          content:
+                            "<strong>L&#xe0; g&#xec;</strong>: &#x110;&#x1ea1;i di&#x1ec7;n &#x111;&#x1ed1;i t&#x1b0;&#x1ee3;ng c&#x1ee5; th&#x1ec3;",
+                          children: [],
+                          payload: { tag: "li", lines: "201,202" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5;</strong>: SonTung, HaNoi, iPhone14, HANU",
+                          children: [],
+                          payload: { tag: "li", lines: "202,204" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "199,200" },
+                    },
+                    {
+                      content:
+                        "<strong>2. Predicate Symbols</strong> &#x1f50d;",
+                      children: [
+                        {
+                          content:
+                            "<strong>M&#x1ed9;t ng&#xf4;i</strong>: CaSi(SonTung) - &quot;S&#x1a1;n T&#xf9;ng l&#xe0; ca s&#x129;&quot;",
+                          children: [],
+                          payload: { tag: "li", lines: "206,207" },
+                        },
+                        {
+                          content:
+                            "<strong>Hai ng&#xf4;i</strong>: ThuDo(HaNoi, VietNam) - &quot;H&#xe0; N&#x1ed9;i l&#xe0; th&#x1ee7; &#x111;&#xf4; VN&quot;",
+                          children: [],
+                          payload: { tag: "li", lines: "207,208" },
+                        },
+                        {
+                          content:
+                            "<strong>Ba ng&#xf4;i</strong>: Cho(Nam, Sach, Lan) - &quot;Nam cho Lan quy&#x1ec3;n s&#xe1;ch&quot;",
+                          children: [],
+                          payload: { tag: "li", lines: "208,210" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "204,205" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "197,198" },
+                },
+                {
+                  content: "<strong>C. Quantification</strong> &#x1f522;",
+                  children: [
+                    {
+                      content:
+                        "<strong>Universal (&#x2200;) - &quot;V&#x1edb;i m&#x1ecd;i&quot;</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; &#x111;&#x1edd;i th&#x1b0;&#x1edd;ng</strong>:",
+                          children: [
+                            {
+                              content:
+                                "&#x2200;x (SinhVien(x) &#x2192; CanHoc(x))",
+                              children: [],
+                              payload: { tag: "li", lines: "215,216" },
+                            },
+                            {
+                              content:
+                                "&quot;M&#x1ecd;i sinh vi&#xea;n &#x111;&#x1ec1;u c&#x1ea7;n h&#x1ecd;c&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "216,217" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "214,217" },
+                        },
+                        {
+                          content:
+                            "<strong>&#x1ee8;ng d&#x1ee5;ng</strong>: Quy lu&#x1ead;t t&#x1ed5;ng qu&#xe1;t",
+                          children: [],
+                          payload: { tag: "li", lines: "217,219" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "212,213" },
+                    },
+                    {
+                      content:
+                        "<strong>Existential (&#x2203;) - &quot;T&#x1ed3;n t&#x1ea1;i&quot;</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; c&#x1ee5; th&#x1ec3;</strong>:",
+                          children: [
+                            {
+                              content:
+                                "&#x2203;x (GiaoVien(x) &#x2227; Day(x, AI))",
+                              children: [],
+                              payload: { tag: "li", lines: "222,223" },
+                            },
+                            {
+                              content:
+                                "&quot;C&#xf3; gi&#xe1;o vi&#xea;n d&#x1ea1;y AI&quot;",
+                              children: [],
+                              payload: { tag: "li", lines: "223,224" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "221,224" },
+                        },
+                        {
+                          content:
+                            "<strong>&#x1ee8;ng d&#x1ee5;ng</strong>: Kh&#x1eb3;ng &#x111;&#x1ecb;nh s&#x1ef1; t&#x1ed3;n t&#x1ea1;i",
+                          children: [],
+                          payload: { tag: "li", lines: "224,226" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "219,220" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "210,211" },
+                },
+                {
+                  content:
+                    "<strong>D. V&#xed; d&#x1ee5; t&#x1ed5;ng h&#x1ee3;p</strong>",
+                  children: [
+                    {
+                      content:
+                        '<pre data-lines="228,248"><code data-lines="228,248">Domain: Tr&#x1b0;&#x1edd;ng &#x111;&#x1ea1;<span class="hljs-selector-tag">i</span> h&#x1ecd;c\nConstants: Nam, Lan, AI, HANU\nPredicates:\n- <span class="hljs-built_in">SinhVien</span>(<span class="hljs-attribute">x</span>): x l&#xe0; sinh vi&#xea;n\n- <span class="hljs-built_in">GiaoVien</span>(<span class="hljs-attribute">x</span>): x l&#xe0; gi&#xe1;o vi&#xea;n\n- <span class="hljs-built_in">MonHoc</span>(<span class="hljs-attribute">x</span>): x l&#xe0; m&#xf4;n h&#x1ecd;c\n- <span class="hljs-built_in">Day</span>(<span class="hljs-attribute">x</span>,y): x d&#x1ea1;y y\n- <span class="hljs-built_in">Hoc</span>(<span class="hljs-attribute">x</span>,y): x h&#x1ecd;c y\n\nSentences:\n<span class="hljs-number">1</span>. &#x2200;<span class="hljs-attribute">x</span> (<span class="hljs-built_in">SinhVien</span>(x) &#x2192; &#x2203;y (<span class="hljs-built_in">MonHoc</span>(y) &#x2227; <span class="hljs-built_in">Hoc</span>(x,y)))\n   <span class="hljs-string">&quot;M&#x1ecd;i sinh vi&#xea;n &#x111;&#x1ec1;u h&#x1ecd;c &#xed;t nh&#x1ea5;t 1 m&#xf4;n&quot;</span>\n\n<span class="hljs-number">2</span>. &#x2203;<span class="hljs-attribute">x</span> (<span class="hljs-built_in">GiaoVien</span>(x) &#x2227; <span class="hljs-built_in">Day</span>(x, AI))\n   <span class="hljs-string">&quot;C&#xf3; gi&#xe1;o vi&#xea;n d&#x1ea1;y AI&quot;</span>\n\n<span class="hljs-number">3</span>. <span class="hljs-built_in">SinhVien</span>(Nam) &#x2227; <span class="hljs-built_in">SinhVien</span>(Lan)\n   <span class="hljs-string">&quot;Nam v&#xe0; Lan &#x111;&#x1ec1;u l&#xe0; sinh vi&#xea;n&quot;</span>\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "228,248" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "226,227" },
+                },
+              ],
+              payload: { tag: "h2", lines: "188,189" },
+            },
+          ],
+          payload: { tag: "h1", lines: "9,10" },
+        },
+        {
+          colorFreezeLevel: 4,
+          maxWidth: 350,
+          activeNode: { placement: "center" },
+          initialExpandLevel: 2,
+        }
+      );
+    </script>
+    <script src="../assets/script.js"></script>
+  </body>
+</html>
