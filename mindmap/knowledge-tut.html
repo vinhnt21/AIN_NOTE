@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Markmap</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+      #mindmap {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+      }
+      .markmap-dark {
+        background: #27272a;
+        color: white;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.11.1/styles/default.min.css"
+    />
+  </head>
+  <body>
+    <svg id="mindmap"></svg>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script>
+    <script>
+      ((r) => {
+        setTimeout(r);
+      })(function renderToolbar() {
+        const { markmap, mm } = window;
+        const { el } = markmap.Toolbar.create(mm);
+        el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+        document.body.append(el);
+      });
+    </script>
+    <script>
+      ((getMarkmap, getOptions, root2, jsonOptions) => {
+        const markmap = getMarkmap();
+        window.mm = markmap.Markmap.create(
+          "svg#mindmap",
+          (getOptions || markmap.deriveOptions)(jsonOptions),
+          root2
+        );
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.classList.add("markmap-dark");
+        }
+      })(
+        () => window.markmap,
+        null,
+        {
+          content:
+            "H&#x1b0;&#x1edb;ng d&#x1eab;n gi&#x1ea3;i b&#xe0;i Tutorial: Knowledge Representation &amp; Reasoning",
+          children: [
+            {
+              content: "L&#xfd; thuy&#x1ebf;t c&#x1a1; b&#x1ea3;n",
+              children: [
+                {
+                  content:
+                    "1. Propositional Logic (Logic m&#x1ec7;nh &#x111;&#x1ec1;)",
+                  children: [
+                    {
+                      content:
+                        "<strong>Symbol</strong>: Bi&#x1ec3;u di&#x1ec5;n m&#x1ed9;t m&#x1ec7;nh &#x111;&#x1ec1; &#x111;&#x1a1;n gi&#x1ea3;n (c&#xf3; th&#x1ec3; &#x111;&#xfa;ng ho&#x1eb7;c sai)",
+                      children: [],
+                      payload: { tag: "li", lines: "15,16" },
+                    },
+                    {
+                      content:
+                        "<strong>Logical connectives</strong> (Ph&#xe9;p n&#x1ed1;i logic):",
+                      children: [
+                        {
+                          content:
+                            "<strong>NOT (&#xac;)</strong>: Ph&#x1ee7; &#x111;&#x1ecb;nh",
+                          children: [],
+                          payload: { tag: "li", lines: "17,18" },
+                        },
+                        {
+                          content:
+                            "<strong>AND (&#x2227;)</strong>: V&#xe0; (t&#x1ea5;t c&#x1ea3; &#x111;&#x1ec1;u ph&#x1ea3;i &#x111;&#xfa;ng)",
+                          children: [],
+                          payload: { tag: "li", lines: "18,19" },
+                        },
+                        {
+                          content:
+                            "<strong>OR (&#x2228;)</strong>: Ho&#x1eb7;c (&#xed;t nh&#x1ea5;t m&#x1ed9;t &#x111;&#xfa;ng)",
+                          children: [],
+                          payload: { tag: "li", lines: "19,20" },
+                        },
+                        {
+                          content:
+                            "<strong>IMPLICATION (&#x2192;)</strong>: Suy ra (n&#x1ebf;u... th&#xec;...)",
+                          children: [],
+                          payload: { tag: "li", lines: "20,21" },
+                        },
+                        {
+                          content:
+                            "<strong>BICONDITIONAL (&#x2194;)</strong>: T&#x1b0;&#x1a1;ng &#x111;&#x1b0;&#x1a1;ng (khi v&#xe0; ch&#x1ec9; khi)",
+                          children: [],
+                          payload: { tag: "li", lines: "21,23" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "16,23" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "13,14" },
+                },
+                {
+                  content: "2. Knowledge Base &amp; Model Checking",
+                  children: [
+                    {
+                      content:
+                        "<strong>Knowledge Base (KB)</strong>: T&#x1ead;p h&#x1ee3;p c&#xe1;c s&#x1ef1; th&#x1ead;t &#x111;&#xe3; bi&#x1ebf;t",
+                      children: [],
+                      payload: { tag: "li", lines: "25,26" },
+                    },
+                    {
+                      content:
+                        "<strong>Model</strong>: M&#x1ed9;t ph&#xe9;p g&#xe1;n gi&#xe1; tr&#x1ecb; truth value cho t&#x1ea5;t c&#x1ea3; symbols",
+                      children: [],
+                      payload: { tag: "li", lines: "26,27" },
+                    },
+                    {
+                      content:
+                        "<strong>Model Checking</strong>: Ki&#x1ec3;m tra xem KB c&#xf3; entail (suy ra) query kh&#xf4;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "27,29" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "23,24" },
+                },
+                {
+                  content: "3. Entailment",
+                  children: [],
+                  payload: { tag: "h3", lines: "29,30" },
+                },
+              ],
+              payload: { tag: "h2", lines: "11,12" },
+            },
+            {
+              content: "Hi&#x1ec3;u v&#x1ec1; c&#xe1;c l&#x1edb;p trong code",
+              children: [
+                {
+                  content: "1. Class Symbol",
+                  children: [
+                    {
+                      content:
+                        '<pre data-lines="39,42"><code class="language-python">rain = Symbol(<span class="hljs-string">&quot;rain&quot;</span>)\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "39,42" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "37,38" },
+                },
+                {
+                  content: "2. Class Not",
+                  children: [
+                    {
+                      content:
+                        '<pre data-lines="48,51"><code class="language-python">Not(rain)  <span class="hljs-comment"># &#xac;rain</span>\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "48,51" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "46,47" },
+                },
+                {
+                  content: "3. Class And",
+                  children: [
+                    {
+                      content:
+                        '<pre data-lines="56,59"><code class="language-python">And(rain, cold)  <span class="hljs-comment"># rain &#x2227; cold</span>\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "56,59" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "54,55" },
+                },
+                {
+                  content: "4. Class Or",
+                  children: [
+                    {
+                      content:
+                        '<pre data-lines="64,67"><code class="language-python">Or(rain, snow)  <span class="hljs-comment"># rain &#x2228; snow</span>\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "64,67" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "62,63" },
+                },
+                {
+                  content: "5. Class Implication",
+                  children: [
+                    {
+                      content:
+                        '<pre data-lines="72,75"><code class="language-python">Implication(rain, umbrella)  <span class="hljs-comment"># rain &#x2192; umbrella</span>\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "72,75" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "70,71" },
+                },
+                {
+                  content: "6. Class Biconditional",
+                  children: [
+                    {
+                      content:
+                        '<pre data-lines="81,84"><code class="language-python">Biconditional(rain, wet)  <span class="hljs-comment"># rain &#x2194; wet</span>\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "81,84" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "79,80" },
+                },
+              ],
+              payload: { tag: "h2", lines: "35,36" },
+            },
+            {
+              content:
+                "Ph&#x1b0;&#x1a1;ng ph&#xe1;p gi&#x1ea3;i b&#xe0;i t&#x1ead;p",
+              children: [
+                {
+                  content:
+                    "B&#x1b0;&#x1edb;c 1: X&#xe1;c &#x111;&#x1ecb;nh c&#xe1;c Symbol",
+                  children: [
+                    {
+                      content:
+                        "Li&#x1ec7;t k&#xea; t&#x1ea5;t c&#x1ea3; c&#xe1;c m&#x1ec7;nh &#x111;&#x1ec1; trong b&#xe0;i",
+                      children: [],
+                      payload: { tag: "li", lines: "94,95" },
+                    },
+                    {
+                      content:
+                        "T&#x1ea1;o Symbol cho m&#x1ed7;i m&#x1ec7;nh &#x111;&#x1ec1;",
+                      children: [],
+                      payload: { tag: "li", lines: "95,97" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "92,93" },
+                },
+                {
+                  content:
+                    "B&#x1b0;&#x1edb;c 2: D&#x1ecb;ch constraints th&#xe0;nh Logic",
+                  children: [
+                    {
+                      content:
+                        "&#x110;&#x1ecd;c k&#x1ef9; &#x111;&#x1ec1; b&#xe0;i",
+                      children: [],
+                      payload: { tag: "li", lines: "99,100" },
+                    },
+                    {
+                      content:
+                        "Chuy&#x1ec3;n &#x111;&#x1ed5;i c&#xe1;c r&#xe0;ng bu&#x1ed9;c th&#xe0;nh c&#xe1;c ph&#xe9;p logic",
+                      children: [],
+                      payload: { tag: "li", lines: "100,102" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "97,98" },
+                },
+                {
+                  content:
+                    "B&#x1b0;&#x1edb;c 3: X&#xe2;y d&#x1ef1;ng Knowledge Base",
+                  children: [
+                    {
+                      content:
+                        "Th&#xea;m t&#x1ea5;t c&#x1ea3; constraints v&#xe0;o KB",
+                      children: [],
+                      payload: { tag: "li", lines: "104,105" },
+                    },
+                    {
+                      content:
+                        "&#x110;&#x1ea3;m b&#x1ea3;o logic &#x111;&#xfa;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "105,107" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "102,103" },
+                },
+                {
+                  content:
+                    "B&#x1b0;&#x1edb;c 4: S&#x1eed; d&#x1ee5;ng Model Checking",
+                  children: [
+                    {
+                      content:
+                        "Ki&#x1ec3;m tra t&#x1eeb;ng symbol c&#xf3; &#x111;&#x1b0;&#x1ee3;c entail b&#x1edf;i KB kh&#xf4;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "109,110" },
+                    },
+                    {
+                      content:
+                        "Nh&#x1eef;ng symbol n&#xe0;o tr&#x1ea3; v&#x1ec1; YES l&#xe0; c&#xe2;u tr&#x1ea3; l&#x1edd;i",
+                      children: [],
+                      payload: { tag: "li", lines: "110,112" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "107,108" },
+                },
+              ],
+              payload: { tag: "h2", lines: "90,91" },
+            },
+            {
+              content:
+                "H&#x1b0;&#x1edb;ng d&#x1eab;n gi&#x1ea3;i t&#x1eeb;ng Exercise",
+              children: [
+                {
+                  content: "Exercise 1: Clue Game",
+                  children: [
+                    {
+                      content:
+                        '<pre data-lines="130,146"><code class="language-python"><span class="hljs-comment"># Characters</span>\nscarlet = Symbol(<span class="hljs-string">&quot;scarlet&quot;</span>)\nmustard = Symbol(<span class="hljs-string">&quot;mustard&quot;</span>)\nwhite = Symbol(<span class="hljs-string">&quot;white&quot;</span>)\n\n<span class="hljs-comment"># Rooms</span>\nlibrary = Symbol(<span class="hljs-string">&quot;library&quot;</span>)\nballroom = Symbol(<span class="hljs-string">&quot;ballroom&quot;</span>)\nkitchen = Symbol(<span class="hljs-string">&quot;kitchen&quot;</span>)\n\n<span class="hljs-comment"># Weapons</span>\nknife = Symbol(<span class="hljs-string">&quot;knife&quot;</span>)\nrevolver = Symbol(<span class="hljs-string">&quot;revolver&quot;</span>)\nwrench = Symbol(<span class="hljs-string">&quot;wrench&quot;</span>)\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "130,146" },
+                    },
+                    {
+                      content:
+                        '<pre data-lines="149,156"><code class="language-python"><span class="hljs-comment"># Exactly one character</span>\nknowledge.add(Or(scarlet, mustard, white))\nknowledge.add(Implication(scarlet, Not(mustard)))\nknowledge.add(Implication(scarlet, Not(white)))\nknowledge.add(Implication(mustard, Not(white)))\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "149,156" },
+                    },
+                    {
+                      content:
+                        '<pre data-lines="165,176"><code class="language-python"><span class="hljs-comment"># Initial cards - NOT the solution</span>\nknowledge.add(Not(scarlet))  <span class="hljs-comment"># Scarlet not murderer</span>\nknowledge.add(Not(library))  <span class="hljs-comment"># Library not room</span>\n\n<span class="hljs-comment"># Wrong guess: Mustard + Ballroom + Knife</span>\nknowledge.add(Or(Not(mustard), Not(ballroom), Not(knife)))\n\n<span class="hljs-comment"># Card shown: Kitchen (so Kitchen not the room)</span>\nknowledge.add(Not(kitchen))\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "165,176" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "116,117" },
+                },
+                {
+                  content: "Exercise 2: Mastermind Game",
+                  children: [
+                    {
+                      content:
+                        '<pre data-lines="191,198"><code class="language-python">colors = [<span class="hljs-string">&quot;red&quot;</span>, <span class="hljs-string">&quot;blue&quot;</span>, <span class="hljs-string">&quot;yellow&quot;</span>, <span class="hljs-string">&quot;green&quot;</span>]\nsymbols = []\n<span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> colors:\n    <span class="hljs-keyword">for</span> pos <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):\n        symbols.append(Symbol(<span class="hljs-string">f&quot;<span class="hljs-subst">{color}</span><span class="hljs-subst">{pos}</span>&quot;</span>))\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "191,198" },
+                    },
+                    {
+                      content:
+                        '<pre data-lines="201,221"><code class="language-python"><span class="hljs-comment"># M&#x1ed7;i m&#xe0;u c&#xf3; &#x111;&#xfa;ng 1 v&#x1ecb; tr&#xed;</span>\n<span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> colors:\n    knowledge.add(Or(*[Symbol(<span class="hljs-string">f&quot;<span class="hljs-subst">{color}</span><span class="hljs-subst">{i}</span>&quot;</span>) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>)]))\n    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):\n        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):\n            <span class="hljs-keyword">if</span> i != j:\n                knowledge.add(Implication(\n                    Symbol(<span class="hljs-string">f&quot;<span class="hljs-subst">{color}</span><span class="hljs-subst">{i}</span>&quot;</span>), Not(Symbol(<span class="hljs-string">f&quot;<span class="hljs-subst">{color}</span><span class="hljs-subst">{j}</span>&quot;</span>))\n                ))\n\n<span class="hljs-comment"># M&#x1ed7;i v&#x1ecb; tr&#xed; c&#xf3; &#x111;&#xfa;ng 1 m&#xe0;u</span>\n<span class="hljs-keyword">for</span> pos <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):\n    <span class="hljs-keyword">for</span> c1 <span class="hljs-keyword">in</span> colors:\n        <span class="hljs-keyword">for</span> c2 <span class="hljs-keyword">in</span> colors:\n            <span class="hljs-keyword">if</span> c1 != c2:\n                knowledge.add(Implication(\n                    Symbol(<span class="hljs-string">f&quot;<span class="hljs-subst">{c1}</span><span class="hljs-subst">{pos}</span>&quot;</span>), Not(Symbol(<span class="hljs-string">f&quot;<span class="hljs-subst">{c2}</span><span class="hljs-subst">{pos}</span>&quot;</span>))\n                ))\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "201,221" },
+                    },
+                    {
+                      content:
+                        '<pre data-lines="224,247"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add_guess_knowledge</span>(<span class="hljs-params">guess, correct_count</span>):\n    <span class="hljs-comment"># guess = [&quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;, &quot;green&quot;]</span>\n    <span class="hljs-comment"># correct_count = 1 (c&#xf3; &#x111;&#xfa;ng 1 m&#xe0;u &#x111;&#xfa;ng v&#x1ecb; tr&#xed;)</span>\n\n    symbols_in_guess = [Symbol(<span class="hljs-string">f&quot;<span class="hljs-subst">{color}</span><span class="hljs-subst">{i}</span>&quot;</span>) <span class="hljs-keyword">for</span> i, color <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(guess)]\n\n    <span class="hljs-comment"># T&#x1ea1;o t&#x1ea5;t c&#x1ea3; combinations c&#xf3; &#x111;&#xfa;ng correct_count symbols &#x111;&#xfa;ng</span>\n    correct_combinations = <span class="hljs-built_in">list</span>(combinations(symbols_in_guess, correct_count))\n\n    clauses = []\n    <span class="hljs-keyword">for</span> correct_combo <span class="hljs-keyword">in</span> correct_combinations:\n        clause = And()\n        <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> symbols_in_guess:\n            <span class="hljs-keyword">if</span> s <span class="hljs-keyword">in</span> correct_combo:\n                clause.add(s)  <span class="hljs-comment"># &#x110;&#xfa;ng</span>\n            <span class="hljs-keyword">else</span>:\n                clause.add(Not(s))  <span class="hljs-comment"># Sai</span>\n        clauses.append(clause)\n\n    <span class="hljs-comment"># M&#x1ed9;t trong c&#xe1;c clauses ph&#x1ea3;i &#x111;&#xfa;ng</span>\n    knowledge.add(Or(*clauses))\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "224,247" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "177,178" },
+                },
+                {
+                  content: "Exercise 3: Harry Potter Houses",
+                  children: [
+                    {
+                      content:
+                        '<pre data-lines="262,267"><code class="language-python">people = [<span class="hljs-string">&quot;Gilderoy&quot;</span>, <span class="hljs-string">&quot;Pomona&quot;</span>, <span class="hljs-string">&quot;Minerva&quot;</span>, <span class="hljs-string">&quot;Horace&quot;</span>]\nhouses = [<span class="hljs-string">&quot;Gryffindor&quot;</span>, <span class="hljs-string">&quot;Hufflepuff&quot;</span>, <span class="hljs-string">&quot;Ravenclaw&quot;</span>, <span class="hljs-string">&quot;Slytherin&quot;</span>]\nsymbols = [Symbol(<span class="hljs-string">f&quot;<span class="hljs-subst">{person}</span><span class="hljs-subst">{house}</span>&quot;</span>) <span class="hljs-keyword">for</span> person <span class="hljs-keyword">in</span> people <span class="hljs-keyword">for</span> house <span class="hljs-keyword">in</span> houses]\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "262,267" },
+                    },
+                    {
+                      content:
+                        '<pre data-lines="270,290"><code class="language-python"><span class="hljs-comment"># M&#x1ed7;i ng&#x1b0;&#x1edd;i thu&#x1ed9;c 1 house</span>\n<span class="hljs-keyword">for</span> person <span class="hljs-keyword">in</span> people:\n    knowledge.add(Or(*[Symbol(<span class="hljs-string">f&quot;<span class="hljs-subst">{person}</span><span class="hljs-subst">{house}</span>&quot;</span>) <span class="hljs-keyword">for</span> house <span class="hljs-keyword">in</span> houses]))\n    <span class="hljs-keyword">for</span> h1 <span class="hljs-keyword">in</span> houses:\n        <span class="hljs-keyword">for</span> h2 <span class="hljs-keyword">in</span> houses:\n            <span class="hljs-keyword">if</span> h1 != h2:\n                knowledge.add(Implication(\n                    Symbol(<span class="hljs-string">f&quot;<span class="hljs-subst">{person}</span><span class="hljs-subst">{h1}</span>&quot;</span>), Not(Symbol(<span class="hljs-string">f&quot;<span class="hljs-subst">{person}</span><span class="hljs-subst">{h2}</span>&quot;</span>))\n                ))\n\n<span class="hljs-comment"># M&#x1ed7;i house c&#xf3; 1 ng&#x1b0;&#x1edd;i</span>\n<span class="hljs-keyword">for</span> house <span class="hljs-keyword">in</span> houses:\n    <span class="hljs-keyword">for</span> p1 <span class="hljs-keyword">in</span> people:\n        <span class="hljs-keyword">for</span> p2 <span class="hljs-keyword">in</span> people:\n            <span class="hljs-keyword">if</span> p1 != p2:\n                knowledge.add(Implication(\n                    Symbol(<span class="hljs-string">f&quot;<span class="hljs-subst">{p1}</span><span class="hljs-subst">{house}</span>&quot;</span>), Not(Symbol(<span class="hljs-string">f&quot;<span class="hljs-subst">{p2}</span><span class="hljs-subst">{house}</span>&quot;</span>))\n                ))\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "270,290" },
+                    },
+                    {
+                      content:
+                        '<pre data-lines="293,303"><code class="language-python"><span class="hljs-comment"># 1. Pomona thu&#x1ed9;c Hufflepuff ho&#x1eb7;c Slytherin</span>\nknowledge.add(Or(Symbol(<span class="hljs-string">&quot;PomonaHufflepuff&quot;</span>), Symbol(<span class="hljs-string">&quot;PomonaSlytherin&quot;</span>)))\n\n<span class="hljs-comment"># 2. Minerva kh&#xf4;ng thu&#x1ed9;c Ravenclaw</span>\nknowledge.add(Not(Symbol(<span class="hljs-string">&quot;MinervaRavenclaw&quot;</span>)))\n\n<span class="hljs-comment"># 3. Horace thu&#x1ed9;c Slytherin</span>\nknowledge.add(Symbol(<span class="hljs-string">&quot;HoraceSlytherin&quot;</span>))\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "293,303" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "248,249" },
+                },
+              ],
+              payload: { tag: "h2", lines: "114,115" },
+            },
+            {
+              content: "Tips v&#xe0; tricks",
+              children: [
+                {
+                  content: "1. Debugging Knowledge Base",
+                  children: [
+                    {
+                      content:
+                        '<pre data-lines="310,317"><code class="language-python"><span class="hljs-comment"># In ra t&#x1ea5;t c&#x1ea3; symbols &#x111;&#x1b0;&#x1ee3;c entail</span>\n<span class="hljs-keyword">def</span> <span class="hljs-title function_">check_all</span>(<span class="hljs-params">knowledge</span>):\n    <span class="hljs-keyword">for</span> symbol <span class="hljs-keyword">in</span> all_symbols:\n        <span class="hljs-keyword">if</span> model_check(knowledge, symbol):\n            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">{symbol}</span>: YES&quot;</span>)\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "310,317" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "308,309" },
+                },
+                {
+                  content: "2. Ki&#x1ec3;m tra consistency",
+                  children: [
+                    {
+                      content:
+                        '<pre data-lines="320,324"><code class="language-python"><span class="hljs-comment"># KB ph&#x1ea3;i consistent (kh&#xf4;ng t&#x1ef1; m&#xe2;u thu&#x1eab;n)</span>\n<span class="hljs-comment"># N&#x1ebf;u KB entail c&#x1ea3; P v&#xe0; Not(P) th&#xec; c&#xf3; l&#x1ed7;i</span>\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "320,324" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "318,319" },
+                },
+                {
+                  content: "3. Common patterns",
+                  children: [
+                    {
+                      content:
+                        '<pre data-lines="329,337"><code class="language-python"><span class="hljs-comment"># &#xcd;t nh&#x1ea5;t 1</span>\nknowledge.add(Or(A, B, C))\n<span class="hljs-comment"># Nhi&#x1ec1;u nh&#x1ea5;t 1</span>\nknowledge.add(Implication(A, And(Not(B), Not(C))))\nknowledge.add(Implication(B, And(Not(A), Not(C))))\nknowledge.add(Implication(C, And(Not(A), Not(B))))\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "329,337" },
+                    },
+                    {
+                      content:
+                        '<pre data-lines="340,347"><code class="language-python"><span class="hljs-comment"># &quot;N&#x1ebf;u A th&#xec; B&quot;</span>\nknowledge.add(Implication(A, B))\n\n<span class="hljs-comment"># &quot;A khi v&#xe0; ch&#x1ec9; khi B&quot;</span>\nknowledge.add(Biconditional(A, B))\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "340,347" },
+                    },
+                    {
+                      content:
+                        '<pre data-lines="350,354"><code class="language-python"><span class="hljs-comment"># Guess sai: Not(A and B and C) = (Not A) or (Not B) or (Not C)</span>\nknowledge.add(Or(Not(A), Not(B), Not(C)))\n</code></pre>',
+                      children: [],
+                      payload: { tag: "pre", lines: "350,354" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "325,326" },
+                },
+                {
+                  content: "4. Ki&#x1ec3;m tra k&#x1ebf;t qu&#x1ea3;",
+                  children: [
+                    {
+                      content:
+                        "&#x110;&#x1ebf;m s&#x1ed1; symbols &#x111;&#x1b0;&#x1ee3;c entail",
+                      children: [],
+                      payload: { tag: "li", lines: "357,358" },
+                    },
+                    {
+                      content:
+                        "&#x110;&#x1ea3;m b&#x1ea3;o logic h&#x1ee3;p l&#xfd;",
+                      children: [],
+                      payload: { tag: "li", lines: "358,359" },
+                    },
+                    {
+                      content:
+                        "Ki&#x1ec3;m tra l&#x1ea1;i v&#x1edb;i &#x111;&#x1ec1; b&#xe0;i",
+                      children: [],
+                      payload: { tag: "li", lines: "359,361" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "355,356" },
+                },
+                {
+                  content: "5. L&#x1ed7;i th&#x1b0;&#x1edd;ng g&#x1eb7;p",
+                  children: [
+                    {
+                      content:
+                        "Qu&#xea;n th&#xea;m constraint &quot;exactly one&quot;",
+                      children: [],
+                      payload: { tag: "li", lines: "363,364" },
+                    },
+                    {
+                      content:
+                        "Sai logic khi convert t&#x1eeb; natural language",
+                      children: [],
+                      payload: { tag: "li", lines: "364,365" },
+                    },
+                    {
+                      content:
+                        "Kh&#xf4;ng x&#x1eed; l&#xfd; &#x111;&#xfa;ng &quot;wrong guess&quot;",
+                      children: [],
+                      payload: { tag: "li", lines: "365,366" },
+                    },
+                    {
+                      content: "Qu&#xea;n case &#x111;&#x1eb7;c bi&#x1ec7;t",
+                      children: [],
+                      payload: { tag: "li", lines: "366,368" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "361,362" },
+                },
+              ],
+              payload: { tag: "h2", lines: "306,307" },
+            },
+            {
+              content: "T&#x1ed5;ng k&#x1ebf;t",
+              children: [
+                {
+                  content:
+                    "1. <strong>Hi&#x1ec3;u r&#xf5; l&#xfd; thuy&#x1ebf;t</strong> - Propositional logic v&#xe0; model checking",
+                  children: [],
+                  payload: { tag: "li", lines: "374,375", listIndex: 1 },
+                },
+                {
+                  content:
+                    "2. <strong>X&#xe1;c &#x111;&#x1ecb;nh &#x111;&#xfa;ng symbols</strong> - M&#x1ed7;i m&#x1ec7;nh &#x111;&#x1ec1; c&#x1ea7;n 1 symbol",
+                  children: [],
+                  payload: { tag: "li", lines: "375,376", listIndex: 2 },
+                },
+                {
+                  content:
+                    "3. <strong>D&#x1ecb;ch &#x111;&#xfa;ng constraints</strong> - T&#x1eeb; ng&#xf4;n ng&#x1eef; t&#x1ef1; nhi&#xea;n sang logic",
+                  children: [],
+                  payload: { tag: "li", lines: "376,377", listIndex: 3 },
+                },
+                {
+                  content:
+                    "4. <strong>X&#xe2;y d&#x1ef1;ng KB &#x111;&#x1ea7;y &#x111;&#x1ee7;</strong> - Kh&#xf4;ng b&#x1ecf; s&#xf3;t r&#xe0;ng bu&#x1ed9;c n&#xe0;o",
+                  children: [],
+                  payload: { tag: "li", lines: "377,378", listIndex: 4 },
+                },
+                {
+                  content:
+                    "5. <strong>Ki&#x1ec3;m tra k&#x1ebf;t qu&#x1ea3;</strong> - &#x110;&#x1ea3;m b&#x1ea3;o h&#x1ee3;p l&#xfd; v&#x1edb;i &#x111;&#x1ec1; b&#xe0;i",
+                  children: [],
+                  payload: { tag: "li", lines: "378,380", listIndex: 5 },
+                },
+              ],
+              payload: { tag: "h2", lines: "370,371" },
+            },
+          ],
+          payload: { tag: "h1", lines: "9,10" },
+        },
+        {
+          colorFreezeLevel: 4,
+          maxWidth: 350,
+          activeNode: { placement: "center" },
+          initialExpandLevel: 2,
+        }
+      );
+    </script>
+    <script src="../assets/script.js"></script>
+  </body>
+</html>
