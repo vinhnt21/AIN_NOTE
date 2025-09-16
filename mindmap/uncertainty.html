@@ -1,0 +1,3450 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Markmap</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+      #mindmap {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+      }
+      .markmap-dark {
+        background: #27272a;
+        color: white;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.11.1/styles/default.min.css"
+    />
+  </head>
+  <body>
+    <svg id="mindmap"></svg>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script>
+    <script>
+      ((r) => {
+        setTimeout(r);
+      })(function renderToolbar() {
+        const { markmap, mm } = window;
+        const { el } = markmap.Toolbar.create(mm);
+        el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+        document.body.append(el);
+      });
+    </script>
+    <script>
+      ((getMarkmap, getOptions, root2, jsonOptions) => {
+        const markmap = getMarkmap();
+        window.mm = markmap.Markmap.create(
+          "svg#mindmap",
+          (getOptions || markmap.deriveOptions)(jsonOptions),
+          root2
+        );
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.classList.add("markmap-dark");
+        }
+      })(
+        () => window.markmap,
+        null,
+        {
+          content: "<strong>Uncertainty in AI</strong> &#x1f3b2;",
+          children: [
+            {
+              content:
+                "<strong>I. V&#x1ea5;n &#x111;&#x1ec1; Uncertainty</strong> &#x26a0;&#xfe0f;",
+              children: [
+                {
+                  content: "<strong>Th&#x1ef1;c t&#x1ebf; AI</strong>",
+                  children: [
+                    {
+                      content:
+                        "<strong>Th&#xf4;ng tin kh&#xf4;ng &#x111;&#x1ea7;y &#x111;&#x1ee7;</strong>: AI kh&#xf4;ng bi&#x1ebf;t h&#x1ebf;t v&#x1ec1; th&#x1ebf; gi&#x1edb;i",
+                      children: [],
+                      payload: { tag: "li", lines: "15,16" },
+                    },
+                    {
+                      content:
+                        "<strong>D&#x1ef1; &#x111;o&#xe1;n kh&#xf4;ng ch&#x1eaf;c ch&#x1eaf;n</strong>: Kh&#xf4;ng th&#x1ec3; 100% ch&#xed;nh x&#xe1;c",
+                      children: [],
+                      payload: { tag: "li", lines: "16,17" },
+                    },
+                    {
+                      content:
+                        "<strong>C&#x1ea7;n &#x111;&#x1b0;a ra quy&#x1ebf;t &#x111;&#x1ecb;nh</strong>: D&#xf9; thi&#x1ebf;u th&#xf4;ng tin",
+                      children: [],
+                      payload: { tag: "li", lines: "17,19" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "13,14" },
+                },
+                {
+                  content:
+                    "<strong>V&#xed; d&#x1ee5; th&#x1ef1;c t&#x1ebf;</strong>",
+                  children: [
+                    {
+                      content:
+                        "<strong>D&#x1ef1; &#x111;o&#xe1;n th&#x1edd;i ti&#x1ebf;t</strong> &#x1f326;&#xfe0f;",
+                      children: [
+                        {
+                          content:
+                            "Bi&#x1ebf;t: th&#x1edd;i ti&#x1ebf;t h&#xf4;m nay",
+                          children: [],
+                          payload: { tag: "li", lines: "22,23" },
+                        },
+                        {
+                          content:
+                            "Kh&#xf4;ng bi&#x1ebf;t: th&#x1edd;i ti&#x1ebf;t ng&#xe0;y mai ch&#x1eaf;c ch&#x1eaf;n",
+                          children: [],
+                          payload: { tag: "li", lines: "23,24" },
+                        },
+                        {
+                          content:
+                            "C&#x1ea7;n: d&#x1ef1; &#x111;o&#xe1;n kh&#x1ea3; n&#x103;ng m&#x1b0;a",
+                          children: [],
+                          payload: { tag: "li", lines: "24,25" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "21,25" },
+                    },
+                    {
+                      content:
+                        "<strong>Ch&#x1ea9;n &#x111;o&#xe1;n y t&#x1ebf;</strong> &#x1f3e5;",
+                      children: [
+                        {
+                          content:
+                            "Bi&#x1ebf;t: tri&#x1ec7;u ch&#x1ee9;ng b&#x1ec7;nh nh&#xe2;n",
+                          children: [],
+                          payload: { tag: "li", lines: "26,27" },
+                        },
+                        {
+                          content:
+                            "Kh&#xf4;ng bi&#x1ebf;t: b&#x1ec7;nh ch&#xed;nh x&#xe1;c",
+                          children: [],
+                          payload: { tag: "li", lines: "27,28" },
+                        },
+                        {
+                          content:
+                            "C&#x1ea7;n: kh&#x1ea3; n&#x103;ng m&#x1eaf;c t&#x1eeb;ng lo&#x1ea1;i b&#x1ec7;nh",
+                          children: [],
+                          payload: { tag: "li", lines: "28,29" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "25,29" },
+                    },
+                    {
+                      content:
+                        "<strong>Robot t&#x1ef1; h&#xe0;nh</strong> &#x1f916;",
+                      children: [
+                        {
+                          content: "Bi&#x1ebf;t: d&#x1eef; li&#x1ec7;u sensor",
+                          children: [],
+                          payload: { tag: "li", lines: "30,31" },
+                        },
+                        {
+                          content:
+                            "Kh&#xf4;ng bi&#x1ebf;t: v&#x1ecb; tr&#xed; ch&#xed;nh x&#xe1;c",
+                          children: [],
+                          payload: { tag: "li", lines: "31,32" },
+                        },
+                        {
+                          content:
+                            "C&#x1ea7;n: &#x1b0;&#x1edb;c t&#xed;nh v&#x1ecb; tr&#xed;",
+                          children: [],
+                          payload: { tag: "li", lines: "32,34" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "29,34" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "19,20" },
+                },
+              ],
+              payload: { tag: "h2", lines: "11,12" },
+            },
+            {
+              content:
+                "<strong>II. Probability Fundamentals</strong> &#x1f4ca;",
+              children: [
+                {
+                  content:
+                    "<strong>A. X&#xe1;c su&#x1ea5;t l&#xe0; g&#xec;?</strong> &#x1f914;",
+                  children: [
+                    {
+                      content:
+                        "<strong>Kh&#xe1;i ni&#x1ec7;m &#x111;&#x1a1;n gi&#x1ea3;n nh&#x1ea5;t</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>X&#xe1;c su&#x1ea5;t = Kh&#x1ea3; n&#x103;ng x&#x1ea3;y ra c&#x1ee7;a s&#x1ef1; ki&#x1ec7;n</strong>",
+                          children: [],
+                          payload: { tag: "li", lines: "42,43" },
+                        },
+                        {
+                          content:
+                            "<strong>Thang &#x111;o t&#x1eeb; 0 &#x111;&#x1ebf;n 1</strong>:",
+                          children: [
+                            {
+                              content:
+                                "0 = Kh&#xf4;ng bao gi&#x1edd; x&#x1ea3;y ra (0%)",
+                              children: [],
+                              payload: { tag: "li", lines: "44,45" },
+                            },
+                            {
+                              content:
+                                "0.5 = C&#xf3; th&#x1ec3; x&#x1ea3;y ra (50%)",
+                              children: [],
+                              payload: { tag: "li", lines: "45,46" },
+                            },
+                            {
+                              content:
+                                "1 = Ch&#x1eaf;c ch&#x1eaf;n x&#x1ea3;y ra (100%)",
+                              children: [],
+                              payload: { tag: "li", lines: "46,48" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "43,48" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "40,41" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5; h&#xe0;ng ng&#xe0;y</strong> &#x1f3e0;",
+                      children: [
+                        {
+                          content:
+                            "<strong>Tung &#x111;&#x1ed3;ng xu</strong>: P(S&#x1ea5;p) = 0.5 = 50%",
+                          children: [],
+                          payload: { tag: "li", lines: "50,51" },
+                        },
+                        {
+                          content:
+                            "<strong>Sinh nh&#x1ead;t</strong>: P(sinh v&#xe0;o th&#x1ee9; 7) = 1/7 &#x2248; 14%",
+                          children: [],
+                          payload: { tag: "li", lines: "51,52" },
+                        },
+                        {
+                          content:
+                            "<strong>Th&#x1edd;i ti&#x1ebf;t</strong>: P(m&#x1b0;a m&#xf9;a kh&#xf4;) = 0.1 = 10%",
+                          children: [],
+                          payload: { tag: "li", lines: "52,53" },
+                        },
+                        {
+                          content:
+                            "<strong>Ch&#x1eaf;c ch&#x1eaf;n</strong>: P(m&#x1eb7;t tr&#x1edd;i m&#x1ecd;c) = 1 = 100%",
+                          children: [],
+                          payload: { tag: "li", lines: "53,55" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "48,49" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "38,39" },
+                },
+                {
+                  content:
+                    "<strong>B. Possible Worlds (Th&#x1ebf; gi&#x1edb;i c&#xf3; th&#x1ec3;)</strong> &#x1f30d;",
+                  children: [
+                    {
+                      content:
+                        "<strong>Kh&#xe1;i ni&#x1ec7;m c&#x1a1; b&#x1ea3;n</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Th&#x1ebf; gi&#x1edb;i (&#x3c9;)</strong>: M&#x1ed9;t k&#x1ebf;t qu&#x1ea3; c&#x1ee5; th&#x1ec3; c&#xf3; th&#x1ec3; x&#x1ea3;y ra",
+                          children: [],
+                          payload: { tag: "li", lines: "59,60" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; sinh &#x111;&#x1ed9;ng</strong>:",
+                          children: [
+                            {
+                              content:
+                                "Tung &#x111;&#x1ed3;ng xu: 2 th&#x1ebf; gi&#x1edb;i {S&#x1ea5;p, Ng&#x1eed;a}",
+                              children: [],
+                              payload: { tag: "li", lines: "61,62" },
+                            },
+                            {
+                              content:
+                                "Thi &#x111;&#x1ea1;i h&#x1ecd;c: 3 th&#x1ebf; gi&#x1edb;i {&#x110;&#x1ed7;, Tr&#x1b0;&#x1ee3;t, B&#x1ea3;o l&#x1b0;u}",
+                              children: [],
+                              payload: { tag: "li", lines: "62,63" },
+                            },
+                            {
+                              content:
+                                "Th&#x1edd;i ti&#x1ebf;t: 3 th&#x1ebf; gi&#x1edb;i {N&#x1eaf;ng, M&#x1b0;a, &#xc2;m u}",
+                              children: [],
+                              payload: { tag: "li", lines: "63,65" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "60,65" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "57,58" },
+                    },
+                    {
+                      content:
+                        "<strong>T&#xed;nh x&#xe1;c su&#x1ea5;t c&#x1a1; b&#x1ea3;n</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>C&#xf4;ng th&#x1ee9;c</strong>: P(s&#x1ef1; ki&#x1ec7;n) = (S&#x1ed1; c&#xe1;ch thu&#x1ead;n l&#x1ee3;i) / (T&#x1ed5;ng s&#x1ed1; c&#xe1;ch)",
+                          children: [],
+                          payload: { tag: "li", lines: "67,68" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; &#x111;&#x1ed3;ng xu</strong>:",
+                          children: [
+                            {
+                              content:
+                                "T&#x1ed5;ng c&#xe1;ch: 2 (S&#x1ea5;p ho&#x1eb7;c Ng&#x1eed;a)",
+                              children: [],
+                              payload: { tag: "li", lines: "69,70" },
+                            },
+                            {
+                              content:
+                                "C&#xe1;ch thu&#x1ead;n l&#x1ee3;i cho S&#x1ea5;p: 1",
+                              children: [],
+                              payload: { tag: "li", lines: "70,71" },
+                            },
+                            {
+                              content: "P(S&#x1ea5;p) = 1/2 = 0.5",
+                              children: [],
+                              payload: { tag: "li", lines: "71,73" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "68,73" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "65,66" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "55,56" },
+                },
+                {
+                  content:
+                    "<strong>C. Axioms (Quy t&#x1eaf;c c&#x1a1; b&#x1ea3;n)</strong> &#x2696;&#xfe0f;",
+                  children: [
+                    {
+                      content:
+                        "<strong>Quy t&#x1eaf;c 1: Gi&#x1edb;i h&#x1ea1;n</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>0 &#x2264; P(&#x3c9;) &#x2264; 1</strong>: X&#xe1;c su&#x1ea5;t lu&#xf4;n t&#x1eeb; 0 &#x111;&#x1ebf;n 1",
+                          children: [],
+                          payload: { tag: "li", lines: "77,78" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; th&#x1ef1;c t&#x1ebf;</strong>:",
+                          children: [
+                            {
+                              content:
+                                "&#x274c; Sai: P(m&#x1b0;a) = 1.5 (&gt; 1)",
+                              children: [],
+                              payload: { tag: "li", lines: "79,80" },
+                            },
+                            {
+                              content:
+                                "&#x274c; Sai: P(n&#x1eaf;ng) = -0.2 (&lt; 0)",
+                              children: [],
+                              payload: { tag: "li", lines: "80,81" },
+                            },
+                            {
+                              content:
+                                "&#x2705; &#x110;&#xfa;ng: P(m&#xe2;y) = 0.7",
+                              children: [],
+                              payload: { tag: "li", lines: "81,83" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "78,83" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "75,76" },
+                    },
+                    {
+                      content:
+                        "<strong>Quy t&#x1eaf;c 2: T&#x1ed5;ng = 1</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>&#x2211;P(&#x3c9;) = 1</strong>: T&#x1ea5;t c&#x1ea3; kh&#x1ea3; n&#x103;ng c&#x1ed9;ng l&#x1ea1;i = 1",
+                          children: [],
+                          payload: { tag: "li", lines: "85,86" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; th&#x1edd;i ti&#x1ebf;t</strong>:",
+                          children: [
+                            {
+                              content:
+                                "P(N&#x1eaf;ng) + P(M&#x1b0;a) + P(&#xc2;m u) = 0.6 + 0.3 + 0.1 = 1.0 &#x2705;",
+                              children: [],
+                              payload: { tag: "li", lines: "87,89" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "86,89" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "83,84" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "73,74" },
+                },
+                {
+                  content:
+                    "<strong>D. V&#xed; d&#x1ee5; t&#x1eeb;ng b&#x1b0;&#x1edb;c</strong> &#x1f4da;",
+                  children: [
+                    {
+                      content:
+                        "<strong>B&#xe0;i to&#xe1;n 1: Tung x&#xfa;c x&#x1eaf;c</strong> &#x1f3b2;",
+                      children: [
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "Th&#x1ebf; gi&#x1edb;i: {1, 2, 3, 4, 5, 6}",
+                              children: [],
+                              payload: { tag: "li", lines: "96,97" },
+                            },
+                            {
+                              content: "T&#x1ed5;ng: 6 c&#xe1;ch",
+                              children: [],
+                              payload: { tag: "li", lines: "97,99" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "96,99" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content: "S&#x1ed1; ch&#x1eb5;n: {2, 4, 6}",
+                              children: [],
+                              payload: { tag: "li", lines: "100,101" },
+                            },
+                            {
+                              content:
+                                "C&#xf3;: 3 c&#xe1;ch thu&#x1ead;n l&#x1ee3;i",
+                              children: [],
+                              payload: { tag: "li", lines: "101,103" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "100,103" },
+                        },
+                        {
+                          content:
+                            "P(s&#x1ed1; ch&#x1eb5;n) = 3/6 = 1/2 = 0.5 = 50%",
+                          children: [],
+                          payload: { tag: "li", lines: "104,106" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "91,92" },
+                    },
+                    {
+                      content:
+                        "<strong>B&#xe0;i to&#xe1;n 2: R&#xfa;t th&#x1ebb;</strong> &#x1f0cf;",
+                      children: [
+                        {
+                          content: "T&#x1ed5;ng l&#xe1;: 52",
+                          children: [],
+                          payload: { tag: "li", lines: "112,113" },
+                        },
+                        {
+                          content:
+                            "S&#x1ed1; l&#xe1; K: 4 (K&#x2660;, K&#x2665;, K&#x2666;, K&#x2663;)",
+                          children: [],
+                          payload: { tag: "li", lines: "113,114" },
+                        },
+                        {
+                          content: "P(K) = 4/52 = 1/13 &#x2248; 0.077 = 7.7%",
+                          children: [],
+                          payload: { tag: "li", lines: "114,116" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "106,107" },
+                    },
+                    {
+                      content:
+                        "<strong>B&#xe0;i to&#xe1;n 3: Sinh vi&#xea;n trong l&#x1edb;p</strong> &#x1f465;",
+                      children: [
+                        {
+                          content: "T&#x1ed5;ng sinh vi&#xea;n: 40",
+                          children: [],
+                          payload: { tag: "li", lines: "122,123" },
+                        },
+                        {
+                          content: "Sinh vi&#xea;n n&#x1eef;: 25",
+                          children: [],
+                          payload: { tag: "li", lines: "123,124" },
+                        },
+                        {
+                          content: "P(n&#x1eef;) = 25/40 = 5/8 = 0.625 = 62.5%",
+                          children: [],
+                          payload: { tag: "li", lines: "124,126" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "116,117" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "89,90" },
+                },
+                {
+                  content:
+                    "<strong>E. Tung hai x&#xfa;c x&#x1eaf;c</strong> &#x1f3b2;&#x1f3b2;",
+                  children: [
+                    {
+                      content:
+                        "<strong>Kh&#xf4;ng gian m&#x1eab;u ho&#xe0;n ch&#x1ec9;nh</strong>",
+                      children: [
+                        {
+                          content:
+                            '<pre data-lines="131,139"><code data-lines="131,139">(<span class="hljs-number">1</span><span class="hljs-punctuation">,</span><span class="hljs-number">1</span>) (<span class="hljs-number">1</span><span class="hljs-punctuation">,</span><span class="hljs-number">2</span>) (<span class="hljs-number">1</span><span class="hljs-punctuation">,</span><span class="hljs-number">3</span>) (<span class="hljs-number">1</span><span class="hljs-punctuation">,</span><span class="hljs-number">4</span>) (<span class="hljs-number">1</span><span class="hljs-punctuation">,</span><span class="hljs-number">5</span>) (<span class="hljs-number">1</span><span class="hljs-punctuation">,</span><span class="hljs-number">6</span>)\n(<span class="hljs-number">2</span><span class="hljs-punctuation">,</span><span class="hljs-number">1</span>) (<span class="hljs-number">2</span><span class="hljs-punctuation">,</span><span class="hljs-number">2</span>) (<span class="hljs-number">2</span><span class="hljs-punctuation">,</span><span class="hljs-number">3</span>) (<span class="hljs-number">2</span><span class="hljs-punctuation">,</span><span class="hljs-number">4</span>) (<span class="hljs-number">2</span><span class="hljs-punctuation">,</span><span class="hljs-number">5</span>) (<span class="hljs-number">2</span><span class="hljs-punctuation">,</span><span class="hljs-number">6</span>)\n(<span class="hljs-number">3</span><span class="hljs-punctuation">,</span><span class="hljs-number">1</span>) (<span class="hljs-number">3</span><span class="hljs-punctuation">,</span><span class="hljs-number">2</span>) (<span class="hljs-number">3</span><span class="hljs-punctuation">,</span><span class="hljs-number">3</span>) (<span class="hljs-number">3</span><span class="hljs-punctuation">,</span><span class="hljs-number">4</span>) (<span class="hljs-number">3</span><span class="hljs-punctuation">,</span><span class="hljs-number">5</span>) (<span class="hljs-number">3</span><span class="hljs-punctuation">,</span><span class="hljs-number">6</span>)\n(<span class="hljs-number">4</span><span class="hljs-punctuation">,</span><span class="hljs-number">1</span>) (<span class="hljs-number">4</span><span class="hljs-punctuation">,</span><span class="hljs-number">2</span>) (<span class="hljs-number">4</span><span class="hljs-punctuation">,</span><span class="hljs-number">3</span>) (<span class="hljs-number">4</span><span class="hljs-punctuation">,</span><span class="hljs-number">4</span>) (<span class="hljs-number">4</span><span class="hljs-punctuation">,</span><span class="hljs-number">5</span>) (<span class="hljs-number">4</span><span class="hljs-punctuation">,</span><span class="hljs-number">6</span>)\n(<span class="hljs-number">5</span><span class="hljs-punctuation">,</span><span class="hljs-number">1</span>) (<span class="hljs-number">5</span><span class="hljs-punctuation">,</span><span class="hljs-number">2</span>) (<span class="hljs-number">5</span><span class="hljs-punctuation">,</span><span class="hljs-number">3</span>) (<span class="hljs-number">5</span><span class="hljs-punctuation">,</span><span class="hljs-number">4</span>) (<span class="hljs-number">5</span><span class="hljs-punctuation">,</span><span class="hljs-number">5</span>) (<span class="hljs-number">5</span><span class="hljs-punctuation">,</span><span class="hljs-number">6</span>)\n(<span class="hljs-number">6</span><span class="hljs-punctuation">,</span><span class="hljs-number">1</span>) (<span class="hljs-number">6</span><span class="hljs-punctuation">,</span><span class="hljs-number">2</span>) (<span class="hljs-number">6</span><span class="hljs-punctuation">,</span><span class="hljs-number">3</span>) (<span class="hljs-number">6</span><span class="hljs-punctuation">,</span><span class="hljs-number">4</span>) (<span class="hljs-number">6</span><span class="hljs-punctuation">,</span><span class="hljs-number">5</span>) (<span class="hljs-number">6</span><span class="hljs-punctuation">,</span><span class="hljs-number">6</span>)\n</code></pre>',
+                          children: [],
+                          payload: { tag: "pre", lines: "131,139" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "128,129" },
+                    },
+                    {
+                      content:
+                        "<strong>Ph&#xe2;n t&#xed;ch t&#x1eeb;ng t&#x1ed5;ng</strong>",
+                      children: [
+                        {
+                          content:
+                            '<table data-lines="142,148">\n<thead data-lines="142,143">\n<tr data-lines="142,143">\n<th>T&#x1ed5;ng</th>\n<th>C&#xe1;ch th&#x1ef1;c hi&#x1ec7;n</th>\n<th>S&#x1ed1; c&#xe1;ch</th>\n<th>X&#xe1;c su&#x1ea5;t</th>\n</tr>\n</thead>\n<tbody data-lines="144,148">\n<tr data-lines="144,145">\n<td>2</td>\n<td>(1,1)</td>\n<td>1</td>\n<td>1/36</td>\n</tr>\n<tr data-lines="145,146">\n<td>3</td>\n<td>(1,2), (2,1)</td>\n<td>2</td>\n<td>2/36</td>\n</tr>\n<tr data-lines="146,147">\n<td>7</td>\n<td>(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)</td>\n<td>6</td>\n<td>6/36</td>\n</tr>\n<tr data-lines="147,148">\n<td>12</td>\n<td>(6,6)</td>\n<td>1</td>\n<td>1/36</td>\n</tr>\n</tbody>\n</table>',
+                          children: [],
+                          payload: { tag: "table", lines: "142,148" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "140,141" },
+                    },
+                    {
+                      content:
+                        "<strong>Nh&#x1ead;n x&#xe9;t quan tr&#x1ecd;ng</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>T&#x1ed5;ng 7</strong>: X&#xe1;c su&#x1ea5;t cao nh&#x1ea5;t (6/36 = 1/6)",
+                          children: [],
+                          payload: { tag: "li", lines: "151,152" },
+                        },
+                        {
+                          content:
+                            "<strong>T&#x1ed5;ng 2 v&#xe0; 12</strong>: X&#xe1;c su&#x1ea5;t th&#x1ea5;p nh&#x1ea5;t (1/36)",
+                          children: [],
+                          payload: { tag: "li", lines: "152,153" },
+                        },
+                        {
+                          content:
+                            "<strong>T&#xed;nh &#x111;&#x1ed1;i x&#x1ee9;ng</strong>: P(t&#x1ed5;ng = n) = P(t&#x1ed5;ng = 14-n)",
+                          children: [],
+                          payload: { tag: "li", lines: "153,155" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "149,150" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "126,127" },
+                },
+                {
+                  content:
+                    "<strong>F. Unconditional Probability</strong> &#x1f4dd;",
+                  children: [
+                    {
+                      content:
+                        "<strong>&#x110;&#x1ecb;nh ngh&#x129;a chi ti&#x1ebf;t</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Unconditional</strong>: Kh&#xf4;ng ph&#x1ee5; thu&#x1ed9;c v&#xe0;o th&#xf4;ng tin kh&#xe1;c",
+                          children: [],
+                          payload: { tag: "li", lines: "159,160" },
+                        },
+                        {
+                          content:
+                            "<strong>C&#xf2;n g&#x1ecd;i</strong>: Prior probability (x&#xe1;c su&#x1ea5;t ti&#xea;n nghi&#x1ec7;m)",
+                          children: [],
+                          payload: { tag: "li", lines: "160,161" },
+                        },
+                        {
+                          content:
+                            "<strong>&#x110;&#x1eb7;c &#x111;i&#x1ec3;m</strong>: T&#xed;nh to&#xe1;n &#x111;&#x1ed9;c l&#x1ead;p",
+                          children: [],
+                          payload: { tag: "li", lines: "161,163" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "157,158" },
+                    },
+                    {
+                      content:
+                        "<strong>So s&#xe1;nh Conditional vs Unconditional</strong>",
+                      children: [
+                        {
+                          content:
+                            '<table data-lines="165,169">\n<thead data-lines="165,166">\n<tr data-lines="165,166">\n<th>Lo&#x1ea1;i</th>\n<th>V&#xed; d&#x1ee5;</th>\n<th>Ph&#x1ee5; thu&#x1ed9;c</th>\n</tr>\n</thead>\n<tbody data-lines="167,169">\n<tr data-lines="167,168">\n<td><strong>Unconditional</strong></td>\n<td>P(m&#x1b0;a) = 0.3</td>\n<td>Kh&#xf4;ng</td>\n</tr>\n<tr data-lines="168,169">\n<td><strong>Conditional</strong></td>\n<td>P(m&#x1b0;a | c&#xf3; m&#xe2;y) = 0.8</td>\n<td>C&#xf3;</td>\n</tr>\n</tbody>\n</table>',
+                          children: [],
+                          payload: { tag: "table", lines: "165,169" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "163,164" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5; th&#x1ef1;c t&#x1ebf; chi ti&#x1ebf;t</strong>",
+                      children: [
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "<strong>P(m&#x1b0;a)</strong> = 0.3 (30% ng&#xe0;y trong n&#x103;m c&#xf3; m&#x1b0;a)",
+                              children: [],
+                              payload: { tag: "li", lines: "173,174" },
+                            },
+                            {
+                              content:
+                                "<strong>Gi&#x1ea3;i th&#xed;ch</strong>: Kh&#xf4;ng c&#x1ea7;n bi&#x1ebf;t th&#xea;m th&#xf4;ng tin g&#xec;",
+                              children: [],
+                              payload: { tag: "li", lines: "174,175" },
+                            },
+                            {
+                              content:
+                                "<strong>C&#x1a1; s&#x1edf;</strong>: D&#x1eef; li&#x1ec7;u l&#x1ecb;ch s&#x1eed; trung b&#xec;nh",
+                              children: [],
+                              payload: { tag: "li", lines: "175,177" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "173,177" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "<strong>P(&#x111;&#x1ed7; m&#xf4;n AI)</strong> = 0.7 (70% sinh vi&#xea;n &#x111;&#x1ed7;)",
+                              children: [],
+                              payload: { tag: "li", lines: "178,179" },
+                            },
+                            {
+                              content:
+                                "<strong>Gi&#x1ea3;i th&#xed;ch</strong>: D&#x1ef1;a tr&#xea;n th&#x1ed1;ng k&#xea; chung",
+                              children: [],
+                              payload: { tag: "li", lines: "179,180" },
+                            },
+                            {
+                              content:
+                                "<strong>Kh&#xf4;ng quan t&#xe2;m</strong>: &#x110;i&#x1ec3;m s&#x1ed1; c&#xe1; nh&#xe2;n, th&#x1edd;i gian h&#x1ecd;c",
+                              children: [],
+                              payload: { tag: "li", lines: "180,182" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "178,182" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "170,171" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "155,156" },
+                },
+              ],
+              payload: { tag: "h2", lines: "36,37" },
+            },
+            {
+              content:
+                "<strong>III. Conditional Probability</strong> &#x1f517;",
+              children: [
+                {
+                  content:
+                    "<strong>A. Kh&#xe1;i ni&#x1ec7;m t&#x1eeb; &#x111;&#x1ea7;u</strong> &#x1f9e0;",
+                  children: [
+                    {
+                      content:
+                        "<strong>Conditional Probability l&#xe0; g&#xec;?</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>&#x110;&#x1ecb;nh ngh&#x129;a &#x111;&#x1a1;n gi&#x1ea3;n</strong>: X&#xe1;c su&#x1ea5;t c&#x1ee7;a A khi &#x111;&#xe3; bi&#x1ebf;t B x&#x1ea3;y ra",
+                          children: [],
+                          payload: { tag: "li", lines: "190,191" },
+                        },
+                        {
+                          content:
+                            "<strong>K&#xfd; hi&#x1ec7;u</strong>: P(A|B) &#x111;&#x1ecd;c l&#xe0; &quot;P c&#x1ee7;a A given B&quot;",
+                          children: [],
+                          payload: { tag: "li", lines: "191,192" },
+                        },
+                        {
+                          content:
+                            "<strong>&#xdd; t&#x1b0;&#x1edf;ng</strong>: Th&#xf4;ng tin m&#x1edb;i thay &#x111;&#x1ed5;i x&#xe1;c su&#x1ea5;t",
+                          children: [],
+                          payload: { tag: "li", lines: "192,194" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "188,189" },
+                    },
+                    {
+                      content:
+                        "<strong>T&#x1ea1;i sao c&#x1ea7;n Conditional Probability?</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Th&#x1ef1;c t&#x1ebf;</strong>: Ta th&#x1b0;&#x1edd;ng c&#xf3; th&#xea;m th&#xf4;ng tin",
+                          children: [],
+                          payload: { tag: "li", lines: "196,197" },
+                        },
+                        {
+                          content:
+                            "<strong>V&#xed; d&#x1ee5; h&#xe0;ng ng&#xe0;y</strong>:",
+                          children: [
+                            {
+                              content:
+                                "X&#xe1;c su&#x1ea5;t m&#x1b0;a thay &#x111;&#x1ed5;i khi bi&#x1ebf;t c&#xf3; m&#xe2;y",
+                              children: [],
+                              payload: { tag: "li", lines: "198,199" },
+                            },
+                            {
+                              content:
+                                "X&#xe1;c su&#x1ea5;t &#x111;&#x1ed7; thi thay &#x111;&#x1ed5;i khi bi&#x1ebf;t &#x111;i&#x1ec3;m gi&#x1eef;a k&#x1ef3;",
+                              children: [],
+                              payload: { tag: "li", lines: "199,200" },
+                            },
+                            {
+                              content:
+                                "X&#xe1;c su&#x1ea5;t t&#x1eaf;c &#x111;&#x1b0;&#x1edd;ng thay &#x111;&#x1ed5;i khi bi&#x1ebf;t gi&#x1edd; cao &#x111;i&#x1ec3;m",
+                              children: [],
+                              payload: { tag: "li", lines: "200,202" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "197,202" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "194,195" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "186,187" },
+                },
+                {
+                  content:
+                    "<strong>B. C&#xf4;ng th&#x1ee9;c v&#xe0; &#xfd; ngh&#x129;a</strong> &#x1f4a1;",
+                  children: [
+                    {
+                      content:
+                        "<strong>C&#xf4;ng th&#x1ee9;c ch&#xed;nh</strong>",
+                      children: [
+                        {
+                          content:
+                            '<pre data-lines="206,209"><code data-lines="206,209"><span class="hljs-function"><span class="hljs-title">P</span><span class="hljs-params">(A|B)</span></span> = <span class="hljs-built_in">P</span>(A &#x2227; B) / <span class="hljs-built_in">P</span>(B)\n</code></pre>',
+                          children: [],
+                          payload: { tag: "pre", lines: "206,209" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "204,205" },
+                    },
+                    {
+                      content:
+                        "<strong>Gi&#x1ea3;i th&#xed;ch t&#x1eeb;ng ph&#x1ea7;n</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>P(A|B)</strong>: X&#xe1;c su&#x1ea5;t A khi bi&#x1ebf;t B",
+                          children: [],
+                          payload: { tag: "li", lines: "212,213" },
+                        },
+                        {
+                          content:
+                            "<strong>P(A &#x2227; B)</strong>: X&#xe1;c su&#x1ea5;t c&#x1ea3; A v&#xe0; B c&#xf9;ng x&#x1ea3;y ra",
+                          children: [],
+                          payload: { tag: "li", lines: "213,214" },
+                        },
+                        {
+                          content:
+                            "<strong>P(B)</strong>: X&#xe1;c su&#x1ea5;t B x&#x1ea3;y ra",
+                          children: [],
+                          payload: { tag: "li", lines: "214,215" },
+                        },
+                        {
+                          content:
+                            "<strong>&#xdd; ngh&#x129;a</strong>: &quot;Trong nh&#x1eef;ng l&#x1ea7;n B x&#x1ea3;y ra, bao nhi&#xea;u l&#x1ea7;n A c&#x169;ng x&#x1ea3;y ra?&quot;",
+                          children: [],
+                          payload: { tag: "li", lines: "215,217" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "210,211" },
+                    },
+                    {
+                      content:
+                        "<strong>C&#xe1;c d&#x1ea1;ng t&#x1b0;&#x1a1;ng &#x111;&#x1b0;&#x1a1;ng</strong>",
+                      children: [
+                        {
+                          content: "P(A &#x2227; B) = P(A|B) &#xd7; P(B)",
+                          children: [],
+                          payload: { tag: "li", lines: "219,220" },
+                        },
+                        {
+                          content: "P(A &#x2227; B) = P(B|A) &#xd7; P(A)",
+                          children: [],
+                          payload: { tag: "li", lines: "220,221" },
+                        },
+                        {
+                          content:
+                            "<strong>&#xdd; ngh&#x129;a</strong>: C&#xf3; th&#x1ec3; t&#xed;nh x&#xe1;c su&#x1ea5;t chung t&#x1eeb; x&#xe1;c su&#x1ea5;t c&#xf3; &#x111;i&#x1ec1;u ki&#x1ec7;n",
+                          children: [],
+                          payload: { tag: "li", lines: "221,223" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "217,218" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "202,203" },
+                },
+                {
+                  content:
+                    "<strong>C. V&#xed; d&#x1ee5; chi ti&#x1ebf;t t&#x1eeb;ng b&#x1b0;&#x1edb;c</strong> &#x1f4da;",
+                  children: [
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5; 1: Tung 2 x&#xfa;c x&#x1eaf;c</strong> &#x1f3b2;&#x1f3b2;",
+                      children: [
+                        {
+                          content:
+                            "T&#x1ea5;t c&#x1ea3; 36 k&#x1ebf;t qu&#x1ea3;: (1,1), (1,2), ..., (6,6)",
+                          children: [],
+                          payload: { tag: "li", lines: "230,232" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "Ch&#x1ec9; x&#xe9;t: (6,1), (6,2), (6,3), (6,4), (6,5), (6,6)",
+                              children: [],
+                              payload: { tag: "li", lines: "233,234" },
+                            },
+                            {
+                              content:
+                                "C&#xf2;n l&#x1ea1;i: 6 k&#x1ebf;t qu&#x1ea3; thay v&#xec; 36",
+                              children: [],
+                              payload: { tag: "li", lines: "234,236" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "233,236" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "T&#x1ed5;ng = 12: ch&#x1ec9; c&#xf3; (6,6)",
+                              children: [],
+                              payload: { tag: "li", lines: "237,238" },
+                            },
+                            {
+                              content:
+                                "S&#x1ed1; k&#x1ebf;t qu&#x1ea3; thu&#x1ead;n l&#x1ee3;i: 1",
+                              children: [],
+                              payload: { tag: "li", lines: "238,240" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "237,240" },
+                        },
+                        {
+                          content:
+                            "P(t&#x1ed5;ng = 12 | x&#xfa;c x&#x1eaf;c &#x111;&#x1ea7;u = 6) = 1/6",
+                          children: [],
+                          payload: { tag: "li", lines: "241,243" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "P(t&#x1ed5;ng = 12) = 1/36 (kh&#xf4;ng &#x111;i&#x1ec1;u ki&#x1ec7;n)",
+                              children: [],
+                              payload: { tag: "li", lines: "244,245" },
+                            },
+                            {
+                              content:
+                                "P(t&#x1ed5;ng = 12 | x&#xfa;c x&#x1eaf;c &#x111;&#x1ea7;u = 6) = 1/6 (c&#xf3; &#x111;i&#x1ec1;u ki&#x1ec7;n)",
+                              children: [],
+                              payload: { tag: "li", lines: "245,246" },
+                            },
+                            {
+                              content:
+                                "<strong>Nh&#x1ead;n x&#xe9;t</strong>: Th&#xf4;ng tin l&#xe0;m t&#x103;ng x&#xe1;c su&#x1ea5;t!",
+                              children: [],
+                              payload: { tag: "li", lines: "246,248" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "244,248" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "225,226" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5; 2: Sinh vi&#xea;n v&#xe0; &#x111;i&#x1ec3;m s&#x1ed1;</strong> &#x1f393;",
+                      children: [
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "60 sinh vi&#xea;n ch&#x103;m h&#x1ecd;c",
+                              children: [],
+                              payload: { tag: "li", lines: "251,252" },
+                            },
+                            {
+                              content:
+                                "40 sinh vi&#xea;n kh&#xf4;ng ch&#x103;m h&#x1ecd;c",
+                              children: [],
+                              payload: { tag: "li", lines: "252,253" },
+                            },
+                            {
+                              content:
+                                "Trong nh&#xf3;m ch&#x103;m h&#x1ecd;c: 50 ng&#x1b0;&#x1edd;i &#x111;&#x1ed7;, 10 ng&#x1b0;&#x1edd;i tr&#x1b0;&#x1ee3;t",
+                              children: [],
+                              payload: { tag: "li", lines: "253,254" },
+                            },
+                            {
+                              content:
+                                "Trong nh&#xf3;m kh&#xf4;ng ch&#x103;m h&#x1ecd;c: 20 ng&#x1b0;&#x1edd;i &#x111;&#x1ed7;, 20 ng&#x1b0;&#x1edd;i tr&#x1b0;&#x1ee3;t",
+                              children: [],
+                              payload: { tag: "li", lines: "254,256" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "251,256" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "T&#x1ed5;ng sinh vi&#xea;n ch&#x103;m h&#x1ecd;c: 60",
+                              children: [],
+                              payload: { tag: "li", lines: "259,260" },
+                            },
+                            {
+                              content:
+                                "Sinh vi&#xea;n ch&#x103;m h&#x1ecd;c v&#xe0; &#x111;&#x1ed7;: 50",
+                              children: [],
+                              payload: { tag: "li", lines: "260,261" },
+                            },
+                            {
+                              content:
+                                "P(&#x111;&#x1ed7; | ch&#x103;m h&#x1ecd;c) = 50/60 = 5/6 &#x2248; 83.3%",
+                              children: [],
+                              payload: { tag: "li", lines: "261,263" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "259,263" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "P(&#x111;&#x1ed7; | ch&#x103;m h&#x1ecd;c) = 50/60 = 83.3%",
+                              children: [],
+                              payload: { tag: "li", lines: "264,265" },
+                            },
+                            {
+                              content:
+                                "P(&#x111;&#x1ed7; | kh&#xf4;ng ch&#x103;m h&#x1ecd;c) = 20/40 = 50%",
+                              children: [],
+                              payload: { tag: "li", lines: "265,266" },
+                            },
+                            {
+                              content:
+                                "P(&#x111;&#x1ed7;) = 70/100 = 70% (t&#x1ed5;ng qu&#xe1;t)",
+                              children: [],
+                              payload: { tag: "li", lines: "266,268" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "264,268" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "248,249" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5; 3: Th&#x1edd;i ti&#x1ebf;t chi ti&#x1ebf;t</strong> &#x1f326;&#xfe0f;",
+                      children: [
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "40 ng&#xe0;y c&#xf3; m&#xe2;y s&#xe1;ng",
+                              children: [],
+                              payload: { tag: "li", lines: "271,272" },
+                            },
+                            {
+                              content: "10 ng&#xe0;y m&#x1b0;a chi&#x1ec1;u",
+                              children: [],
+                              payload: { tag: "li", lines: "272,273" },
+                            },
+                            {
+                              content:
+                                "8 ng&#xe0;y v&#x1eeb;a c&#xf3; m&#xe2;y s&#xe1;ng v&#x1eeb;a m&#x1b0;a chi&#x1ec1;u",
+                              children: [],
+                              payload: { tag: "li", lines: "273,275" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "271,275" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "P(m&#x1b0;a &#x2227; m&#xe2;y) = 8/100 = 0.08",
+                              children: [],
+                              payload: { tag: "li", lines: "278,279" },
+                            },
+                            {
+                              content: "P(m&#xe2;y) = 40/100 = 0.4",
+                              children: [],
+                              payload: { tag: "li", lines: "279,280" },
+                            },
+                            {
+                              content:
+                                "P(m&#x1b0;a | m&#xe2;y) = 0.08/0.4 = 0.2 = 20%",
+                              children: [],
+                              payload: { tag: "li", lines: "280,282" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "278,282" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "Trong 40 ng&#xe0;y c&#xf3; m&#xe2;y s&#xe1;ng",
+                              children: [],
+                              payload: { tag: "li", lines: "283,284" },
+                            },
+                            {
+                              content:
+                                "C&#xf3; 8 ng&#xe0;y m&#x1b0;a chi&#x1ec1;u",
+                              children: [],
+                              payload: { tag: "li", lines: "284,285" },
+                            },
+                            {
+                              content: "P(m&#x1b0;a | m&#xe2;y) = 8/40 = 20%",
+                              children: [],
+                              payload: { tag: "li", lines: "285,287" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "283,287" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "268,269" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "223,224" },
+                },
+                {
+                  content:
+                    "<strong>D. S&#x1ef1; kh&#xe1;c bi&#x1ec7;t quan tr&#x1ecd;ng</strong> &#x2696;&#xfe0f;",
+                  children: [
+                    {
+                      content: "<strong>Unconditional vs Conditional</strong>",
+                      children: [
+                        {
+                          content:
+                            '<table data-lines="291,297">\n<thead data-lines="291,292">\n<tr data-lines="291,292">\n<th></th>\n<th>Unconditional</th>\n<th>Conditional</th>\n</tr>\n</thead>\n<tbody data-lines="293,297">\n<tr data-lines="293,294">\n<td><strong>&#x110;&#x1ecb;nh ngh&#x129;a</strong></td>\n<td>P(A)</td>\n<td>P(A|B)</td>\n</tr>\n<tr data-lines="294,295">\n<td><strong>Th&#xf4;ng tin</strong></td>\n<td>Kh&#xf4;ng c&#xf3; th&#xea;m</td>\n<td>Bi&#x1ebf;t B x&#x1ea3;y ra</td>\n</tr>\n<tr data-lines="295,296">\n<td><strong>V&#xed; d&#x1ee5;</strong></td>\n<td>P(m&#x1b0;a) = 0.1</td>\n<td>P(m&#x1b0;a|m&#xe2;y) = 0.8</td>\n</tr>\n<tr data-lines="296,297">\n<td><strong>&#x1ee8;ng d&#x1ee5;ng</strong></td>\n<td>D&#x1ef1; &#x111;o&#xe1;n t&#x1ed5;ng qu&#xe1;t</td>\n<td>D&#x1ef1; &#x111;o&#xe1;n c&#x1ee5; th&#x1ec3;</td>\n</tr>\n</tbody>\n</table>',
+                          children: [],
+                          payload: { tag: "table", lines: "291,297" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "289,290" },
+                    },
+                    {
+                      content: "<strong>P(A|B) vs P(B|A)</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>P(A|B) &#x2260; P(B|A)</strong> (th&#x1b0;&#x1edd;ng kh&#xe1;c nhau!)",
+                          children: [],
+                          payload: { tag: "li", lines: "300,301" },
+                        },
+                        {
+                          content: "<strong>V&#xed; d&#x1ee5;</strong>:",
+                          children: [
+                            {
+                              content:
+                                "P(c&#xf3; m&#xe2;y | m&#x1b0;a) = 0.9 (m&#x1b0;a th&#xec; th&#x1b0;&#x1edd;ng c&#xf3; m&#xe2;y)",
+                              children: [],
+                              payload: { tag: "li", lines: "302,303" },
+                            },
+                            {
+                              content:
+                                "P(m&#x1b0;a | c&#xf3; m&#xe2;y) = 0.2 (c&#xf3; m&#xe2;y ch&#x1b0;a ch&#x1eaf;c m&#x1b0;a)",
+                              children: [],
+                              payload: { tag: "li", lines: "303,305" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "301,305" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "298,299" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "287,288" },
+                },
+                {
+                  content:
+                    "<strong>E. V&#xed; d&#x1ee5; th&#x1ef1;c t&#x1ebf; ph&#x1ee9;c t&#x1ea1;p</strong> &#x1f3e5;",
+                  children: [
+                    {
+                      content:
+                        "<strong>Ch&#x1ea9;n &#x111;o&#xe1;n y t&#x1ebf;</strong>",
+                      children: [
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "1% d&#xe2;n s&#x1ed1; nhi&#x1ec5;m COVID (P(COVID) = 0.01)",
+                              children: [],
+                              payload: { tag: "li", lines: "310,311" },
+                            },
+                            {
+                              content:
+                                "Test c&#xf3; &#x111;&#x1ed9; ch&#xed;nh x&#xe1;c 99% (P(d&#x1b0;&#x1a1;ng t&#xed;nh | COVID) = 0.99)",
+                              children: [],
+                              payload: { tag: "li", lines: "311,312" },
+                            },
+                            {
+                              content:
+                                "Test c&#xf3; t&#x1ef7; l&#x1ec7; d&#x1b0;&#x1a1;ng t&#xed;nh gi&#x1ea3; 2% (P(d&#x1b0;&#x1a1;ng t&#xed;nh | kh&#xf4;ng COVID) = 0.02)",
+                              children: [],
+                              payload: { tag: "li", lines: "312,314" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "310,314" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "K&#x1ebf;t qu&#x1ea3;: Ch&#x1ec9; kho&#x1ea3;ng 33%!",
+                              children: [],
+                              payload: { tag: "li", lines: "317,318" },
+                            },
+                            {
+                              content:
+                                "<strong>B&#xe0;i h&#x1ecd;c</strong>: Test d&#x1b0;&#x1a1;ng t&#xed;nh kh&#xf4;ng c&#xf3; ngh&#x129;a ch&#x1eaf;c ch&#x1eaf;n nhi&#x1ec5;m b&#x1ec7;nh",
+                              children: [],
+                              payload: { tag: "li", lines: "318,320" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "317,320" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "307,308" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "305,306" },
+                },
+                {
+                  content:
+                    "<strong>F. L&#x1ed7;i th&#x1b0;&#x1edd;ng g&#x1eb7;p</strong> &#x26a0;&#xfe0f;",
+                  children: [
+                    {
+                      content:
+                        "<strong>L&#x1ed7;i 1: Nh&#x1ea7;m l&#x1eab;n P(A|B) v&#xe0; P(B|A)</strong>",
+                      children: [],
+                      payload: { tag: "h4", lines: "322,323" },
+                    },
+                    {
+                      content:
+                        "<strong>L&#x1ed7;i 2: Qu&#xea;n ki&#x1ec3;m tra &#x111;i&#x1ec1;u ki&#x1ec7;n P(B) &gt; 0</strong>",
+                      children: [
+                        {
+                          content:
+                            "P(A|B) ch&#x1ec9; c&#xf3; ngh&#x129;a khi P(B) &gt; 0",
+                          children: [],
+                          payload: { tag: "li", lines: "329,330" },
+                        },
+                        {
+                          content:
+                            "Kh&#xf4;ng th&#x1ec3; t&#xed;nh P(A|B) n&#x1ebf;u B kh&#xf4;ng bao gi&#x1edd; x&#x1ea3;y ra",
+                          children: [],
+                          payload: { tag: "li", lines: "330,332" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "327,328" },
+                    },
+                    {
+                      content:
+                        "<strong>L&#x1ed7;i 3: Nh&#x1ea7;m l&#x1eab;n independence</strong>",
+                      children: [
+                        {
+                          content:
+                            "N&#x1ebf;u A v&#xe0; B &#x111;&#x1ed9;c l&#x1ead;p: P(A|B) = P(A)",
+                          children: [],
+                          payload: { tag: "li", lines: "334,335" },
+                        },
+                        {
+                          content:
+                            "N&#x1ebf;u P(A|B) &#x2260; P(A): A v&#xe0; B KH&#xd4;NG &#x111;&#x1ed9;c l&#x1ead;p",
+                          children: [],
+                          payload: { tag: "li", lines: "335,337" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "332,333" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "320,321" },
+                },
+                {
+                  content:
+                    "<strong>G. B&#xe0;i t&#x1ead;p luy&#x1ec7;n t&#x1ead;p c&#x1a1; b&#x1ea3;n</strong> &#x1f4dd;",
+                  children: [
+                    {
+                      content:
+                        "<strong>B&#xe0;i 1: Tung x&#xfa;c x&#x1eaf;c c&#x1a1; b&#x1ea3;n</strong>",
+                      children: [
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content: "a) P(s&#x1ed1; l&#x1ebb;)",
+                              children: [],
+                              payload: { tag: "li", lines: "342,343" },
+                            },
+                            {
+                              content: "b) P(s&#x1ed1; &gt; 4)",
+                              children: [],
+                              payload: { tag: "li", lines: "343,344" },
+                            },
+                            {
+                              content: "c) P(s&#x1ed1; chia h&#x1ebf;t cho 3)",
+                              children: [],
+                              payload: { tag: "li", lines: "344,346" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "342,346" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content: "a) {1,3,5} &#x2192; 3/6 = 1/2",
+                              children: [],
+                              payload: { tag: "li", lines: "347,348" },
+                            },
+                            {
+                              content: "b) {5,6} &#x2192; 2/6 = 1/3",
+                              children: [],
+                              payload: { tag: "li", lines: "348,349" },
+                            },
+                            {
+                              content: "c) {3,6} &#x2192; 2/6 = 1/3",
+                              children: [],
+                              payload: { tag: "li", lines: "349,351" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "347,351" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "339,340" },
+                    },
+                    {
+                      content:
+                        "<strong>B&#xe0;i 2: R&#xfa;t bi t&#x1eeb; h&#x1ed9;p</strong>",
+                      children: [
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content: "a) P(bi &#x111;&#x1ecf;)",
+                              children: [],
+                              payload: { tag: "li", lines: "354,355" },
+                            },
+                            {
+                              content:
+                                "b) P(kh&#xf4;ng ph&#x1ea3;i bi v&#xe0;ng)",
+                              children: [],
+                              payload: { tag: "li", lines: "355,356" },
+                            },
+                            {
+                              content:
+                                "c) P(bi &#x111;&#x1ecf; | kh&#xf4;ng ph&#x1ea3;i bi xanh)",
+                              children: [],
+                              payload: { tag: "li", lines: "356,358" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "354,358" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content: "a) 5/10 = 1/2",
+                              children: [],
+                              payload: { tag: "li", lines: "359,360" },
+                            },
+                            {
+                              content: "b) 8/10 = 4/5",
+                              children: [],
+                              payload: { tag: "li", lines: "360,361" },
+                            },
+                            {
+                              content:
+                                "c) Trong 7 bi kh&#xf4;ng xanh, c&#xf3; 5 bi &#x111;&#x1ecf; &#x2192; 5/7",
+                              children: [],
+                              payload: { tag: "li", lines: "361,363" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "359,363" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "351,352" },
+                    },
+                    {
+                      content:
+                        "<strong>B&#xe0;i 3: &#x110;i&#x1ec3;m s&#x1ed1; sinh vi&#xea;n</strong>",
+                      children: [
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content:
+                                "30 sinh vi&#xea;n nam: 20 &#x111;&#x1ed7;, 10 tr&#x1b0;&#x1ee3;t",
+                              children: [],
+                              payload: { tag: "li", lines: "366,367" },
+                            },
+                            {
+                              content:
+                                "20 sinh vi&#xea;n n&#x1eef;: 15 &#x111;&#x1ed7;, 5 tr&#x1b0;&#x1ee3;t",
+                              children: [],
+                              payload: { tag: "li", lines: "367,369" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "366,369" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content: "a) P(&#x111;&#x1ed7;)",
+                              children: [],
+                              payload: { tag: "li", lines: "370,371" },
+                            },
+                            {
+                              content: "b) P(nam | &#x111;&#x1ed7;)",
+                              children: [],
+                              payload: { tag: "li", lines: "371,372" },
+                            },
+                            {
+                              content: "c) P(&#x111;&#x1ed7; | n&#x1eef;)",
+                              children: [],
+                              payload: { tag: "li", lines: "372,374" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "370,374" },
+                        },
+                        {
+                          content: "",
+                          children: [
+                            {
+                              content: "a) 35/50 = 7/10",
+                              children: [],
+                              payload: { tag: "li", lines: "375,376" },
+                            },
+                            {
+                              content: "b) 20/35 = 4/7",
+                              children: [],
+                              payload: { tag: "li", lines: "376,377" },
+                            },
+                            {
+                              content: "c) 15/20 = 3/4",
+                              children: [],
+                              payload: { tag: "li", lines: "377,379" },
+                            },
+                          ],
+                          payload: { tag: "ul", lines: "375,379" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "363,364" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "337,338" },
+                },
+                {
+                  content:
+                    "<strong>H. T&#xf3;m t&#x1eaf;t nhanh Probability</strong> &#x1f4cb;",
+                  children: [
+                    {
+                      content:
+                        "<strong>C&#xf4;ng th&#x1ee9;c c&#x1ea7;n nh&#x1edb;</strong>",
+                      children: [
+                        {
+                          content:
+                            "1. <strong>P(s&#x1ef1; ki&#x1ec7;n) = (S&#x1ed1; c&#xe1;ch thu&#x1ead;n l&#x1ee3;i) / (T&#x1ed5;ng s&#x1ed1; c&#xe1;ch)</strong>",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "383,384",
+                            listIndex: 1,
+                          },
+                        },
+                        {
+                          content:
+                            "2. <strong>P(A|B) = P(A &#x2227; B) / P(B)</strong>",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "384,385",
+                            listIndex: 2,
+                          },
+                        },
+                        {
+                          content:
+                            "3. <strong>P(A &#x2227; B) = P(A|B) &#xd7; P(B)</strong>",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "385,386",
+                            listIndex: 3,
+                          },
+                        },
+                        {
+                          content:
+                            "4. <strong>0 &#x2264; P(A) &#x2264; 1</strong> v&#xe0; <strong>&#x2211;P(t&#x1ea5;t c&#x1ea3;) = 1</strong>",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "386,388",
+                            listIndex: 4,
+                          },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "381,382" },
+                    },
+                    {
+                      content:
+                        "<strong>C&#xe1;c b&#x1b0;&#x1edb;c gi&#x1ea3;i b&#xe0;i t&#x1ead;p</strong>",
+                      children: [
+                        {
+                          content:
+                            "1. <strong>X&#xe1;c &#x111;&#x1ecb;nh kh&#xf4;ng gian m&#x1eab;u</strong>: Li&#x1ec7;t k&#xea; t&#x1ea5;t c&#x1ea3; kh&#x1ea3; n&#x103;ng",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "390,391",
+                            listIndex: 1,
+                          },
+                        },
+                        {
+                          content:
+                            "2. <strong>X&#xe1;c &#x111;&#x1ecb;nh s&#x1ef1; ki&#x1ec7;n</strong>: T&#xec;m c&#xe1;c k&#x1ebf;t qu&#x1ea3; thu&#x1ead;n l&#x1ee3;i",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "391,392",
+                            listIndex: 2,
+                          },
+                        },
+                        {
+                          content:
+                            "3. <strong>&#xc1;p d&#x1ee5;ng c&#xf4;ng th&#x1ee9;c</strong>: T&#xed;nh t&#x1ef7; l&#x1ec7;",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "392,393",
+                            listIndex: 3,
+                          },
+                        },
+                        {
+                          content:
+                            "4. <strong>Ki&#x1ec3;m tra k&#x1ebf;t qu&#x1ea3;</strong>: 0 &#x2264; P &#x2264; 1",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "393,395",
+                            listIndex: 4,
+                          },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "388,389" },
+                    },
+                    {
+                      content:
+                        "<strong>L&#x1b0;u &#xfd; quan tr&#x1ecd;ng</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>P(A|B) &#x2260; P(B|A)</strong>: Kh&#xf4;ng &#x111;&#x1b0;&#x1ee3;c nh&#x1ea7;m l&#x1eab;n!",
+                          children: [],
+                          payload: { tag: "li", lines: "397,398" },
+                        },
+                        {
+                          content:
+                            "<strong>&#x110;i&#x1ec1;u ki&#x1ec7;n</strong>: P(B) &gt; 0 m&#x1edb;i t&#xed;nh &#x111;&#x1b0;&#x1ee3;c P(A|B)",
+                          children: [],
+                          payload: { tag: "li", lines: "398,399" },
+                        },
+                        {
+                          content:
+                            "<strong>Independence</strong>: P(A|B) = P(A) n&#x1ebf;u A, B &#x111;&#x1ed9;c l&#x1ead;p",
+                          children: [],
+                          payload: { tag: "li", lines: "399,400" },
+                        },
+                        {
+                          content:
+                            "<strong>Complement</strong>: P(not A) = 1 - P(A)",
+                          children: [],
+                          payload: { tag: "li", lines: "400,402" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "395,396" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "379,380" },
+                },
+              ],
+              payload: { tag: "h2", lines: "184,185" },
+            },
+            {
+              content: "<strong>IV. Random Variables</strong> &#x1f3b0;",
+              children: [
+                {
+                  content:
+                    "<strong>A. Kh&#xe1;i ni&#x1ec7;m</strong> &#x1f4cb;",
+                  children: [
+                    {
+                      content: "<strong>&#x110;&#x1ecb;nh ngh&#x129;a</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Random Variable</strong>: Bi&#x1ebf;n c&#xf3; th&#x1ec3; nh&#x1ead;n nhi&#x1ec1;u gi&#xe1; tr&#x1ecb; v&#x1edb;i x&#xe1;c su&#x1ea5;t kh&#xe1;c nhau",
+                          children: [],
+                          payload: { tag: "li", lines: "410,411" },
+                        },
+                        {
+                          content:
+                            "<strong>Domain</strong>: T&#x1ead;p gi&#xe1; tr&#x1ecb; c&#xf3; th&#x1ec3;",
+                          children: [],
+                          payload: { tag: "li", lines: "411,412" },
+                        },
+                        {
+                          content:
+                            "<strong>Distribution</strong>: Ph&#xe2;n ph&#x1ed1;i x&#xe1;c su&#x1ea5;t",
+                          children: [],
+                          payload: { tag: "li", lines: "412,414" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "408,409" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5;: Chuy&#x1ebf;n bay</strong> &#x2708;&#xfe0f;",
+                      children: [
+                        {
+                          content: "<strong>Bi&#x1ebf;n</strong>: Flight",
+                          children: [],
+                          payload: { tag: "li", lines: "416,417" },
+                        },
+                        {
+                          content:
+                            "<strong>Domain</strong>: {on time, delayed, canceled}",
+                          children: [],
+                          payload: { tag: "li", lines: "417,418" },
+                        },
+                        {
+                          content: "<strong>Distribution</strong>:",
+                          children: [
+                            {
+                              content: "P(on time) = 0.6",
+                              children: [],
+                              payload: { tag: "li", lines: "419,420" },
+                            },
+                            {
+                              content: "P(delayed) = 0.3",
+                              children: [],
+                              payload: { tag: "li", lines: "420,421" },
+                            },
+                            {
+                              content: "P(canceled) = 0.1",
+                              children: [],
+                              payload: { tag: "li", lines: "421,422" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "418,422" },
+                        },
+                        {
+                          content:
+                            "<strong>Vector</strong>: P(Flight) = &#x27e8;0.6, 0.3, 0.1&#x27e9;",
+                          children: [],
+                          payload: { tag: "li", lines: "422,424" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "414,415" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "406,407" },
+                },
+                {
+                  content: "<strong>B. Independence</strong> &#x1f504;",
+                  children: [
+                    {
+                      content: "<strong>&#x110;&#x1ecb;nh ngh&#x129;a</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>C&#xf4;ng th&#x1ee9;c</strong>: P(a &#x2227; b) = P(a) &#xd7; P(b)",
+                          children: [],
+                          payload: { tag: "li", lines: "428,429" },
+                        },
+                        {
+                          content:
+                            "<strong>&#xdd; ngh&#x129;a</strong>: a kh&#xf4;ng &#x1ea3;nh h&#x1b0;&#x1edf;ng &#x111;&#x1ebf;n b v&#xe0; ng&#x1b0;&#x1ee3;c l&#x1ea1;i",
+                          children: [],
+                          payload: { tag: "li", lines: "429,431" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "426,427" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5; so s&#xe1;nh</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>&#x110;&#x1ed9;c l&#x1ead;p</strong>: Tung 2 x&#xfa;c x&#x1eaf;c",
+                          children: [
+                            {
+                              content:
+                                "X&#xfa;c x&#x1eaf;c 1 kh&#xf4;ng &#x1ea3;nh h&#x1b0;&#x1edf;ng x&#xfa;c x&#x1eaf;c 2",
+                              children: [],
+                              payload: { tag: "li", lines: "434,435" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "433,435" },
+                        },
+                        {
+                          content:
+                            "<strong>KH&#xd4;NG &#x111;&#x1ed9;c l&#x1ead;p</strong>: M&#xe2;y s&#xe1;ng &amp; M&#x1b0;a chi&#x1ec1;u",
+                          children: [
+                            {
+                              content:
+                                "C&#xf3; m&#xe2;y s&#xe1;ng &#x2192; t&#x103;ng kh&#x1ea3; n&#x103;ng m&#x1b0;a chi&#x1ec1;u",
+                              children: [],
+                              payload: { tag: "li", lines: "436,438" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "435,438" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "431,432" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "424,425" },
+                },
+              ],
+              payload: { tag: "h2", lines: "404,405" },
+            },
+            {
+              content: "<strong>V. Bayes&apos; Rule</strong> &#x1f504;",
+              children: [
+                {
+                  content:
+                    "<strong>A. C&#xf4;ng th&#x1ee9;c ch&#xed;nh</strong> &#x1f9ee;",
+                  children: [
+                    {
+                      content: "<strong>C&#xf4;ng th&#x1ee9;c Bayes</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>P(b|a) = P(a|b) &#xd7; P(b) / P(a)</strong>",
+                          children: [],
+                          payload: { tag: "li", lines: "446,447" },
+                        },
+                        {
+                          content:
+                            "<strong>&#xdd; ngh&#x129;a</strong>: T&#xed;nh x&#xe1;c su&#x1ea5;t &quot;ng&#x1b0;&#x1ee3;c&quot;",
+                          children: [],
+                          payload: { tag: "li", lines: "447,448" },
+                        },
+                        {
+                          content:
+                            "<strong>T&#x1eeb;</strong>: P(a|b) &#x2192; <strong>Suy ra</strong>: P(b|a)",
+                          children: [],
+                          payload: { tag: "li", lines: "448,450" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "444,445" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "442,443" },
+                },
+                {
+                  content:
+                    "<strong>B. V&#xed; d&#x1ee5; chi ti&#x1ebf;t</strong> &#x1f326;&#xfe0f;",
+                  children: [
+                    {
+                      content:
+                        "<strong>B&#xe0;i to&#xe1;n th&#x1edd;i ti&#x1ebf;t</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>T&#xed;nh</strong>: P(m&#x1b0;a chi&#x1ec1;u | m&#xe2;y s&#xe1;ng)",
+                          children: [],
+                          payload: { tag: "li", lines: "454,455" },
+                        },
+                        {
+                          content: "<strong>D&#x1eef; li&#x1ec7;u</strong>:",
+                          children: [
+                            {
+                              content:
+                                "P(m&#xe2;y s&#xe1;ng | m&#x1b0;a chi&#x1ec1;u) = 0.8",
+                              children: [],
+                              payload: { tag: "li", lines: "456,457" },
+                            },
+                            {
+                              content: "P(m&#xe2;y s&#xe1;ng) = 0.4",
+                              children: [],
+                              payload: { tag: "li", lines: "457,458" },
+                            },
+                            {
+                              content: "P(m&#x1b0;a chi&#x1ec1;u) = 0.1",
+                              children: [],
+                              payload: { tag: "li", lines: "458,460" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "455,460" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "452,453" },
+                    },
+                    {
+                      content:
+                        "<strong>T&#xed;nh to&#xe1;n t&#x1eeb;ng b&#x1b0;&#x1edb;c</strong>",
+                      children: [
+                        {
+                          content:
+                            '<pre data-lines="462,467"><code data-lines="462,467"><span class="hljs-function"><span class="hljs-title">P</span><span class="hljs-params">(m&#x1b0;a chi&#x1ec1;u | m&#xe2;y s&#xe1;ng)</span></span> = (<span class="hljs-number">0.8</span> &#xd7; <span class="hljs-number">0.1</span>) / <span class="hljs-number">0.4</span>\n                        = <span class="hljs-number">0.08</span> / <span class="hljs-number">0.4</span>\n                        = <span class="hljs-number">0.2</span> = <span class="hljs-number">20%</span>\n</code></pre>',
+                          children: [],
+                          payload: { tag: "pre", lines: "462,467" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "460,461" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "450,451" },
+                },
+                {
+                  content:
+                    "<strong>C. &#x1ee8;ng d&#x1ee5;ng th&#x1ef1;c t&#x1ebf;</strong> &#x1f3af;",
+                  children: [
+                    {
+                      content: "<strong>Y t&#x1ebf;</strong> &#x1f3e5;",
+                      children: [
+                        {
+                          content: "P(b&#x1ec7;nh | tri&#x1ec7;u ch&#x1ee9;ng)",
+                          children: [],
+                          payload: { tag: "li", lines: "472,473" },
+                        },
+                        {
+                          content:
+                            "T&#x1eeb; P(tri&#x1ec7;u ch&#x1ee9;ng | b&#x1ec7;nh) &#x2192; P(b&#x1ec7;nh | tri&#x1ec7;u ch&#x1ee9;ng)",
+                          children: [],
+                          payload: { tag: "li", lines: "473,475" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "470,471" },
+                    },
+                    {
+                      content:
+                        "<strong>C&#xf4;ng ngh&#x1ec7;</strong> &#x1f4bb;",
+                      children: [
+                        {
+                          content:
+                            "<strong>Spam detection</strong>: P(spam | t&#x1eeb; kh&#xf3;a)",
+                          children: [],
+                          payload: { tag: "li", lines: "477,478" },
+                        },
+                        {
+                          content:
+                            "<strong>Speech recognition</strong>: P(t&#x1eeb; | &#xe2;m thanh)",
+                          children: [],
+                          payload: { tag: "li", lines: "478,479" },
+                        },
+                        {
+                          content:
+                            "<strong>Computer vision</strong>: P(object | pixels)",
+                          children: [],
+                          payload: { tag: "li", lines: "479,481" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "475,476" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "468,469" },
+                },
+              ],
+              payload: { tag: "h2", lines: "440,441" },
+            },
+            {
+              content: "<strong>VI. Joint Probability</strong> &#x1f91d;",
+              children: [
+                {
+                  content:
+                    "<strong>A. &#x110;&#x1ecb;nh ngh&#x129;a</strong> &#x1f4ca;",
+                  children: [
+                    {
+                      content: "<strong>Kh&#xe1;i ni&#x1ec7;m</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Joint Probability</strong>: X&#xe1;c su&#x1ea5;t nhi&#x1ec1;u s&#x1ef1; ki&#x1ec7;n c&#xf9;ng x&#x1ea3;y ra",
+                          children: [],
+                          payload: { tag: "li", lines: "489,490" },
+                        },
+                        {
+                          content:
+                            "<strong>P(A &#x2227; B)</strong>: X&#xe1;c su&#x1ea5;t A v&#xe0; B c&#xf9;ng &#x111;&#xfa;ng",
+                          children: [],
+                          payload: { tag: "li", lines: "490,492" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "487,488" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "485,486" },
+                },
+                {
+                  content:
+                    "<strong>B. V&#xed; d&#x1ee5;: M&#xe2;y &amp; M&#x1b0;a</strong> &#x2601;&#xfe0f;&#x1f327;&#xfe0f;",
+                  children: [
+                    {
+                      content: "<strong>B&#x1ea3;ng Joint Probability</strong>",
+                      children: [
+                        {
+                          content:
+                            '<table data-lines="496,500">\n<thead data-lines="496,497">\n<tr data-lines="496,497">\n<th></th>\n<th>R = rain</th>\n<th>R = &#xac;rain</th>\n</tr>\n</thead>\n<tbody data-lines="498,500">\n<tr data-lines="498,499">\n<td><strong>C = cloud</strong></td>\n<td>0.08</td>\n<td>0.32</td>\n</tr>\n<tr data-lines="499,500">\n<td><strong>C = &#xac;cloud</strong></td>\n<td>0.02</td>\n<td>0.58</td>\n</tr>\n</tbody>\n</table>',
+                          children: [],
+                          payload: { tag: "table", lines: "496,500" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "494,495" },
+                    },
+                    {
+                      content:
+                        "<strong>Gi&#x1ea3;i th&#xed;ch s&#x1ed1; li&#x1ec7;u</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>P(m&#xe2;y &#x2227; m&#x1b0;a) = 0.08</strong> (8% ng&#xe0;y v&#x1eeb;a c&#xf3; m&#xe2;y v&#x1eeb;a m&#x1b0;a)",
+                          children: [],
+                          payload: { tag: "li", lines: "503,504" },
+                        },
+                        {
+                          content:
+                            "<strong>P(kh&#xf4;ng m&#xe2;y &#x2227; kh&#xf4;ng m&#x1b0;a) = 0.58</strong> (58% ng&#xe0;y kh&#xf4;ng m&#xe2;y kh&#xf4;ng m&#x1b0;a)",
+                          children: [],
+                          payload: { tag: "li", lines: "504,505" },
+                        },
+                        {
+                          content:
+                            "<strong>T&#x1ed5;ng ki&#x1ec3;m tra</strong>: 0.08 + 0.32 + 0.02 + 0.58 = 1.0 &#x2713;",
+                          children: [],
+                          payload: { tag: "li", lines: "505,507" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "501,502" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "492,493" },
+                },
+                {
+                  content:
+                    "<strong>C. T&#x1eeb; Joint &#x2192; Conditional</strong> &#x1f504;",
+                  children: [
+                    {
+                      content: "<strong>T&#xed;nh P(C | m&#x1b0;a)</strong>",
+                      children: [
+                        {
+                          content:
+                            '<pre data-lines="511,517"><code data-lines="511,517"><span class="hljs-attribute">P</span>(C | rain) = P(C, rain) / P(rain)\n<span class="hljs-attribute">P</span>(rain) = <span class="hljs-number">0</span>.<span class="hljs-number">08</span> + <span class="hljs-number">0</span>.<span class="hljs-number">02</span> = <span class="hljs-number">0</span>.<span class="hljs-number">1</span>\n<span class="hljs-attribute">P</span>(C = cloud | rain) = <span class="hljs-number">0</span>.<span class="hljs-number">08</span> / <span class="hljs-number">0</span>.<span class="hljs-number">1</span> = <span class="hljs-number">0</span>.<span class="hljs-number">8</span>\n<span class="hljs-attribute">P</span>(C = &#xac;cloud | rain) = <span class="hljs-number">0</span>.<span class="hljs-number">02</span> / <span class="hljs-number">0</span>.<span class="hljs-number">1</span> = <span class="hljs-number">0</span>.<span class="hljs-number">2</span>\n</code></pre>',
+                          children: [],
+                          payload: { tag: "pre", lines: "511,517" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "509,510" },
+                    },
+                    {
+                      content: "<strong>K&#x1ebf;t qu&#x1ea3;</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>P(C | rain) = &#x27e8;0.8, 0.2&#x27e9;</strong>",
+                          children: [],
+                          payload: { tag: "li", lines: "520,521" },
+                        },
+                        {
+                          content:
+                            "<strong>&#xdd; ngh&#x129;a</strong>: N&#x1ebf;u m&#x1b0;a, 80% c&#xf3; m&#xe2;y, 20% kh&#xf4;ng m&#xe2;y",
+                          children: [],
+                          payload: { tag: "li", lines: "521,523" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "518,519" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "507,508" },
+                },
+              ],
+              payload: { tag: "h2", lines: "483,484" },
+            },
+            {
+              content:
+                "<strong>VII. Probability Rules</strong> &#x2696;&#xfe0f;",
+              children: [
+                {
+                  content: "<strong>A. Negation</strong> &#x274c;",
+                  children: [
+                    {
+                      content: "<strong>C&#xf4;ng th&#x1ee9;c</strong>",
+                      children: [
+                        {
+                          content: "<strong>P(&#xac;a) = 1 - P(a)</strong>",
+                          children: [],
+                          payload: { tag: "li", lines: "531,532" },
+                        },
+                        {
+                          content:
+                            "<strong>&#xdd; ngh&#x129;a</strong>: X&#xe1;c su&#x1ea5;t &quot;kh&#xf4;ng a&quot; = 1 - x&#xe1;c su&#x1ea5;t &quot;a&quot;",
+                          children: [],
+                          payload: { tag: "li", lines: "532,534" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "529,530" },
+                    },
+                    {
+                      content: "<strong>V&#xed; d&#x1ee5;</strong>",
+                      children: [
+                        {
+                          content:
+                            "P(kh&#xf4;ng m&#x1b0;a) = 1 - P(m&#x1b0;a) = 1 - 0.3 = 0.7",
+                          children: [],
+                          payload: { tag: "li", lines: "536,538" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "534,535" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "527,528" },
+                },
+                {
+                  content:
+                    "<strong>B. Inclusion-Exclusion</strong> &#x2795;&#x2796;",
+                  children: [
+                    {
+                      content: "<strong>C&#xf4;ng th&#x1ee9;c</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>P(a &#x2228; b) = P(a) + P(b) - P(a &#x2227; b)</strong>",
+                          children: [],
+                          payload: { tag: "li", lines: "542,543" },
+                        },
+                        {
+                          content:
+                            "<strong>L&#xfd; do tr&#x1eeb;</strong>: Tr&#xe1;nh &#x111;&#x1ebf;m 2 l&#x1ea7;n tr&#x1b0;&#x1edd;ng h&#x1ee3;p c&#x1ea3; a v&#xe0; b &#x111;&#x1ec1;u &#x111;&#xfa;ng",
+                          children: [],
+                          payload: { tag: "li", lines: "543,545" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "540,541" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5;: &#x102;n kem ho&#x1eb7;c b&#xe1;nh</strong>",
+                      children: [
+                        {
+                          content:
+                            "P(kem) = 0.8, P(b&#xe1;nh) = 0.7, P(kem &#x2227; b&#xe1;nh) = 0.6",
+                          children: [],
+                          payload: { tag: "li", lines: "547,548" },
+                        },
+                        {
+                          content:
+                            "P(kem &#x2228; b&#xe1;nh) = 0.8 + 0.7 - 0.6 = 0.9",
+                          children: [],
+                          payload: { tag: "li", lines: "548,550" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "545,546" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "538,539" },
+                },
+                {
+                  content: "<strong>C. Marginalization</strong> &#x1f4ca;",
+                  children: [
+                    {
+                      content: "<strong>C&#xf4;ng th&#x1ee9;c</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>P(a) = P(a, b) + P(a, &#xac;b)</strong>",
+                          children: [],
+                          payload: { tag: "li", lines: "554,555" },
+                        },
+                        {
+                          content:
+                            "<strong>&#xdd; ngh&#x129;a</strong>: T&#xed;nh P(a) t&#x1eeb; joint probabilities",
+                          children: [],
+                          payload: { tag: "li", lines: "555,557" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "552,553" },
+                    },
+                    {
+                      content: "<strong>V&#xed; d&#x1ee5;</strong>",
+                      children: [
+                        {
+                          content:
+                            '<pre data-lines="559,563"><code data-lines="559,563"><span class="hljs-function"><span class="hljs-title">P</span><span class="hljs-params">(C = cloud)</span></span> = <span class="hljs-built_in">P</span>(cloud, rain) + <span class="hljs-built_in">P</span>(cloud, &#xac;rain)\n             = <span class="hljs-number">0.08</span> + <span class="hljs-number">0.32</span> = <span class="hljs-number">0.4</span>\n</code></pre>',
+                          children: [],
+                          payload: { tag: "pre", lines: "559,563" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "557,558" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "550,551" },
+                },
+                {
+                  content: "<strong>D. Conditioning</strong> &#x1f517;",
+                  children: [
+                    {
+                      content: "<strong>C&#xf4;ng th&#x1ee9;c</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>P(a) = P(a|b)&#xd7;P(b) + P(a|&#xac;b)&#xd7;P(&#xac;b)</strong>",
+                          children: [],
+                          payload: { tag: "li", lines: "568,569" },
+                        },
+                        {
+                          content:
+                            "<strong>&#xdd; ngh&#x129;a</strong>: T&#xed;nh P(a) t&#x1eeb; conditional probabilities",
+                          children: [],
+                          payload: { tag: "li", lines: "569,571" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "566,567" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5;: T&#x1ed5;ng x&#xe1;c su&#x1ea5;t m&#x1b0;a</strong>",
+                      children: [
+                        {
+                          content:
+                            '<pre data-lines="573,577"><code data-lines="573,577"><span class="hljs-keyword">P</span>(m&#x1b0;a) = <span class="hljs-keyword">P</span>(m&#x1b0;a|m&#xe2;y)&#xd7;<span class="hljs-keyword">P</span>(m&#xe2;y) + <span class="hljs-keyword">P</span>(m&#x1b0;a|kh&#xf4;ng m&#xe2;y)&#xd7;<span class="hljs-keyword">P</span>(kh&#xf4;ng m&#xe2;y)\n       = <span class="hljs-number">0</span><span class="hljs-number">.2</span> &#xd7; <span class="hljs-number">0</span><span class="hljs-number">.4</span> + <span class="hljs-number">0</span><span class="hljs-number">.05</span> &#xd7; <span class="hljs-number">0</span><span class="hljs-number">.6</span> = <span class="hljs-number">0</span><span class="hljs-number">.08</span> + <span class="hljs-number">0</span><span class="hljs-number">.03</span> = <span class="hljs-number">0</span><span class="hljs-number">.11</span>\n</code></pre>',
+                          children: [],
+                          payload: { tag: "pre", lines: "573,577" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "571,572" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "564,565" },
+                },
+              ],
+              payload: { tag: "h2", lines: "525,526" },
+            },
+            {
+              content:
+                "<strong>VIII. Bayesian Networks</strong> &#x1f578;&#xfe0f;",
+              children: [
+                {
+                  content:
+                    "<strong>A. &#x110;&#x1ecb;nh ngh&#x129;a</strong> &#x1f517;",
+                  children: [
+                    {
+                      content: "<strong>C&#x1ea5;u tr&#xfa;c</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>&#x110;&#x1ed3; th&#x1ecb; c&#xf3; h&#x1b0;&#x1edb;ng</strong>: Nodes + Arrows",
+                          children: [],
+                          payload: { tag: "li", lines: "586,587" },
+                        },
+                        {
+                          content:
+                            "<strong>Node</strong>: Bi&#x1ebf;n ng&#x1eab;u nhi&#xea;n",
+                          children: [],
+                          payload: { tag: "li", lines: "587,588" },
+                        },
+                        {
+                          content:
+                            "<strong>Arrow</strong>: X &#x2192; Y means X is parent of Y",
+                          children: [],
+                          payload: { tag: "li", lines: "588,589" },
+                        },
+                        {
+                          content:
+                            "<strong>Ph&#xe2;n ph&#x1ed1;i</strong>: P(X | Parents(X))",
+                          children: [],
+                          payload: { tag: "li", lines: "589,591" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "584,585" },
+                    },
+                    {
+                      content: "<strong>&#xdd; ngh&#x129;a</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Bi&#x1ec3;u di&#x1ec5;n</strong>: S&#x1ef1; ph&#x1ee5; thu&#x1ed9;c gi&#x1eef;a c&#xe1;c bi&#x1ebf;n",
+                          children: [],
+                          payload: { tag: "li", lines: "593,594" },
+                        },
+                        {
+                          content:
+                            "<strong>M&#x1ee5;c &#x111;&#xed;ch</strong>: M&#xf4; h&#xec;nh h&#xf3;a uncertainty ph&#x1ee9;c t&#x1ea1;p",
+                          children: [],
+                          payload: { tag: "li", lines: "594,596" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "591,592" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "582,583" },
+                },
+                {
+                  content:
+                    "<strong>B. V&#xed; d&#x1ee5;: &#x110;&#x1ebf;n h&#x1eb9;n &#x111;&#xfa;ng gi&#x1edd;</strong> &#x23f0;",
+                  children: [
+                    {
+                      content: "<strong>M&#xf4; h&#xec;nh</strong>",
+                      children: [
+                        {
+                          content:
+                            '<pre data-lines="600,604"><code data-lines="600,604"><span class="hljs-attribute">Rain</span> &#x2192; Maintenance &#x2192; Train &#x2192; Appointment\n  &#x2198;              &#x2197;\n</code></pre>',
+                          children: [],
+                          payload: { tag: "pre", lines: "600,604" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "598,599" },
+                    },
+                    {
+                      content: "<strong>C&#xe1;c bi&#x1ebf;n</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Rain</strong>: {none, light, heavy}",
+                          children: [],
+                          payload: { tag: "li", lines: "607,608" },
+                        },
+                        {
+                          content: "<strong>Maintenance</strong>: {yes, no}",
+                          children: [],
+                          payload: { tag: "li", lines: "608,609" },
+                        },
+                        {
+                          content: "<strong>Train</strong>: {on time, delayed}",
+                          children: [],
+                          payload: { tag: "li", lines: "609,610" },
+                        },
+                        {
+                          content:
+                            "<strong>Appointment</strong>: {attend, miss}",
+                          children: [],
+                          payload: { tag: "li", lines: "610,612" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "605,606" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "596,597" },
+                },
+                {
+                  content:
+                    "<strong>C. B&#x1ea3;ng x&#xe1;c su&#x1ea5;t</strong> &#x1f4cb;",
+                  children: [
+                    {
+                      content: "<strong>Rain (root node)</strong>",
+                      children: [
+                        {
+                          content:
+                            '<table data-lines="616,619">\n<thead data-lines="616,617">\n<tr data-lines="616,617">\n<th>none</th>\n<th>light</th>\n<th>heavy</th>\n</tr>\n</thead>\n<tbody data-lines="618,619">\n<tr data-lines="618,619">\n<td>0.7</td>\n<td>0.2</td>\n<td>0.1</td>\n</tr>\n</tbody>\n</table>',
+                          children: [],
+                          payload: { tag: "table", lines: "616,619" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "614,615" },
+                    },
+                    {
+                      content: "<strong>Train (key probabilities)</strong>",
+                      children: [
+                        {
+                          content:
+                            '<table data-lines="622,627">\n<thead data-lines="622,623">\n<tr data-lines="622,623">\n<th>Rain+Maintenance</th>\n<th>on time</th>\n<th>delayed</th>\n</tr>\n</thead>\n<tbody data-lines="624,627">\n<tr data-lines="624,625">\n<td>none + no</td>\n<td>0.9</td>\n<td>0.1</td>\n</tr>\n<tr data-lines="625,626">\n<td>light + no</td>\n<td>0.7</td>\n<td>0.3</td>\n</tr>\n<tr data-lines="626,627">\n<td>heavy + yes</td>\n<td>0.4</td>\n<td>0.6</td>\n</tr>\n</tbody>\n</table>',
+                          children: [],
+                          payload: { tag: "table", lines: "622,627" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "620,621" },
+                    },
+                    {
+                      content: "<strong>Appointment</strong>",
+                      children: [
+                        {
+                          content:
+                            '<table data-lines="630,634">\n<thead data-lines="630,631">\n<tr data-lines="630,631">\n<th>Train</th>\n<th>attend</th>\n<th>miss</th>\n</tr>\n</thead>\n<tbody data-lines="632,634">\n<tr data-lines="632,633">\n<td>on time</td>\n<td>0.9</td>\n<td>0.1</td>\n</tr>\n<tr data-lines="633,634">\n<td>delayed</td>\n<td>0.6</td>\n<td>0.4</td>\n</tr>\n</tbody>\n</table>',
+                          children: [],
+                          payload: { tag: "table", lines: "630,634" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "628,629" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "612,613" },
+                },
+                {
+                  content: "<strong>D. T&#xed;nh to&#xe1;n</strong> &#x1f9ee;",
+                  children: [
+                    {
+                      content: "<strong>V&#xed; d&#x1ee5; computation</strong>",
+                      children: [
+                        {
+                          content:
+                            '<pre data-lines="639,642"><code data-lines="639,642"><span class="hljs-attribute">P</span>(light, no, delayed, miss) = <span class="hljs-number">0</span>.<span class="hljs-number">2</span> &#xd7; <span class="hljs-number">0</span>.<span class="hljs-number">8</span> &#xd7; <span class="hljs-number">0</span>.<span class="hljs-number">3</span> &#xd7; <span class="hljs-number">0</span>.<span class="hljs-number">4</span> = <span class="hljs-number">0</span>.<span class="hljs-number">0192</span>\n</code></pre>',
+                          children: [],
+                          payload: { tag: "pre", lines: "639,642" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "637,638" },
+                    },
+                    {
+                      content:
+                        "<strong>Gi&#x1ea3;i th&#xed;ch chi ti&#x1ebf;t t&#x1eeb;ng th&#xe0;nh ph&#x1ea7;n:</strong>",
+                      children: [
+                        {
+                          content: "<strong>1. P(Rain = light) = 0.2</strong>",
+                          children: [
+                            {
+                              content:
+                                "T&#x1eeb; b&#x1ea3;ng x&#xe1;c su&#x1ea5;t c&#x1ee7;a Rain (root node)",
+                              children: [],
+                              payload: { tag: "li", lines: "646,647" },
+                            },
+                            {
+                              content:
+                                "P(none) = 0.7, P(light) = 0.2, P(heavy) = 0.1",
+                              children: [],
+                              payload: { tag: "li", lines: "647,648" },
+                            },
+                            {
+                              content:
+                                "&#x110;&#xe2;y l&#xe0; x&#xe1;c su&#x1ea5;t c&#xf3; m&#x1b0;a nh&#x1eb9;",
+                              children: [],
+                              payload: { tag: "li", lines: "648,651" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "645,646" },
+                        },
+                        {
+                          content:
+                            "<strong>2. P(Maintenance = no | Rain = light) = 0.8</strong>",
+                          children: [
+                            {
+                              content:
+                                "X&#xe1;c su&#x1ea5;t kh&#xf4;ng b&#x1ea3;o tr&#xec; khi c&#xf3; m&#x1b0;a nh&#x1eb9;",
+                              children: [],
+                              payload: { tag: "li", lines: "652,653" },
+                            },
+                            {
+                              content:
+                                "C&#xf3; th&#x1ec3; ph&#x1ee5; thu&#x1ed9;c v&#xe0;o &#x111;i&#x1ec1;u ki&#x1ec7;n th&#x1edd;i ti&#x1ebf;t",
+                              children: [],
+                              payload: { tag: "li", lines: "653,656" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "651,652" },
+                        },
+                        {
+                          content:
+                            "<strong>3. P(Train = delayed | Rain = light, Maintenance = no) = 0.3</strong>",
+                          children: [
+                            {
+                              content:
+                                "T&#x1eeb; b&#x1ea3;ng Train probabilities",
+                              children: [],
+                              payload: { tag: "li", lines: "657,658" },
+                            },
+                            {
+                              content:
+                                "Khi Rain = light v&#xe0; Maintenance = no &#x2192; P(delayed) = 0.3",
+                              children: [],
+                              payload: { tag: "li", lines: "658,659" },
+                            },
+                            {
+                              content:
+                                "X&#xe1;c su&#x1ea5;t t&#xe0;u b&#x1ecb; tr&#x1ec5; khi c&#xf3; m&#x1b0;a nh&#x1eb9; v&#xe0; kh&#xf4;ng b&#x1ea3;o tr&#xec;",
+                              children: [],
+                              payload: { tag: "li", lines: "659,661" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "656,657" },
+                        },
+                        {
+                          content:
+                            "<strong>4. P(Appointment = miss | Train = delayed) = 0.4</strong>",
+                          children: [
+                            {
+                              content: "T&#x1eeb; b&#x1ea3;ng Appointment",
+                              children: [],
+                              payload: { tag: "li", lines: "662,663" },
+                            },
+                            {
+                              content:
+                                "Khi Train = delayed &#x2192; P(miss) = 0.4",
+                              children: [],
+                              payload: { tag: "li", lines: "663,664" },
+                            },
+                            {
+                              content:
+                                "X&#xe1;c su&#x1ea5;t b&#x1ecf; l&#x1ee1; cu&#x1ed9;c h&#x1eb9;n khi t&#xe0;u b&#x1ecb; tr&#x1ec5;",
+                              children: [],
+                              payload: { tag: "li", lines: "664,666" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "661,662" },
+                        },
+                        {
+                          content:
+                            "<strong>C&#xf4;ng th&#x1ee9;c t&#x1ed5;ng qu&#xe1;t:</strong>",
+                          children: [
+                            {
+                              content:
+                                '<pre data-lines="670,673"><code data-lines="670,673"><span class="hljs-keyword">P</span>(<span class="hljs-keyword">X</span>&#x2081;, <span class="hljs-keyword">X</span>&#x2082;, ..., <span class="hljs-keyword">X</span>&#x2099;) = &#x220f;&#x1d62; <span class="hljs-keyword">P</span>(<span class="hljs-keyword">X</span>&#x1d62; | Parents(<span class="hljs-keyword">X</span>&#x1d62;))\n</code></pre>',
+                              children: [],
+                              payload: { tag: "pre", lines: "670,673" },
+                            },
+                            {
+                              content:
+                                '<pre data-lines="675,679"><code data-lines="675,679">P(<span class="hljs-attribute">Rain</span>=light, <span class="hljs-attribute">Maintenance</span>=<span class="hljs-literal">no</span>, <span class="hljs-attribute">Train</span>=delayed, <span class="hljs-attribute">Appointment</span>=miss) = \nP(<span class="hljs-attribute">Rain</span>=light) &#xd7; P(<span class="hljs-attribute">Maintenance</span>=<span class="hljs-literal">no</span>|Rain=light) &#xd7; P(<span class="hljs-attribute">Train</span>=delayed|Rain=light,Maintenance=no) &#xd7; P(<span class="hljs-attribute">Appointment</span>=miss|Train=delayed)\n</code></pre>',
+                              children: [],
+                              payload: { tag: "pre", lines: "675,679" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "666,667" },
+                        },
+                        {
+                          content:
+                            "<strong>&#xdd; ngh&#x129;a th&#x1ef1;c t&#x1ebf;:</strong>",
+                          children: [
+                            {
+                              content:
+                                "K&#x1ebf;t qu&#x1ea3; <strong>0.0192</strong> = <strong>1.92%</strong> kh&#x1ea3; n&#x103;ng x&#x1ea3;y ra t&#xec;nh hu&#x1ed1;ng: c&#xf3; m&#x1b0;a nh&#x1eb9;, kh&#xf4;ng b&#x1ea3;o tr&#xec;, t&#xe0;u b&#x1ecb; tr&#x1ec5;, v&#xe0; b&#x1ecf; l&#x1ee1; cu&#x1ed9;c h&#x1eb9;n",
+                              children: [],
+                              payload: { tag: "li", lines: "682,683" },
+                            },
+                            {
+                              content:
+                                "&#x110;&#xe2;y l&#xe0; m&#x1ed9;t t&#xec;nh hu&#x1ed1;ng kh&#xe1; hi&#x1ebf;m nh&#x1b0;ng v&#x1eab;n c&#xf3; th&#x1ec3; x&#x1ea3;y ra",
+                              children: [],
+                              payload: { tag: "li", lines: "683,685" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "680,681" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "643,644" },
+                    },
+                    {
+                      content: "<strong>&#x1ee8;ng d&#x1ee5;ng:</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>D&#x1ef1; &#x111;o&#xe1;n</strong>: X&#xe1;c su&#x1ea5;t c&#xe1;c t&#xec;nh hu&#x1ed1;ng x&#x1ea5;u x&#x1ea3;y ra",
+                          children: [],
+                          payload: { tag: "li", lines: "687,688" },
+                        },
+                        {
+                          content:
+                            "<strong>Ra quy&#x1ebf;t &#x111;&#x1ecb;nh</strong>: C&#xf3; n&#xea;n &#x111;i h&#x1eb9;n trong &#x111;i&#x1ec1;u ki&#x1ec7;n th&#x1edd;i ti&#x1ebf;t kh&#xf4;ng t&#x1ed1;t kh&#xf4;ng?",
+                          children: [],
+                          payload: { tag: "li", lines: "688,689" },
+                        },
+                        {
+                          content:
+                            "<strong>T&#x1ed1;i &#x1b0;u h&#xf3;a</strong>: &#x110;&#x1ea7;u t&#x1b0; v&#xe0;o b&#x1ea3;o tr&#xec; &#x111;&#x1ec3; gi&#x1ea3;m x&#xe1;c su&#x1ea5;t t&#xe0;u tr&#x1ec5;",
+                          children: [],
+                          payload: { tag: "li", lines: "689,691" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "685,686" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "635,636" },
+                },
+                {
+                  content: "<strong>E. Inference Types</strong> &#x1f50d;",
+                  children: [
+                    {
+                      content:
+                        "<strong>C&#xe1;c lo&#x1ea1;i suy lu&#x1ead;n</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Query X</strong>: Bi&#x1ebf;n c&#x1ea7;n t&#xec;m",
+                          children: [],
+                          payload: { tag: "li", lines: "695,696" },
+                        },
+                        {
+                          content:
+                            "<strong>Evidence E</strong>: Bi&#x1ebf;n &#x111;&#xe3; bi&#x1ebf;t",
+                          children: [],
+                          payload: { tag: "li", lines: "696,697" },
+                        },
+                        {
+                          content:
+                            "<strong>Hidden Y</strong>: Bi&#x1ebf;n ch&#x1b0;a bi&#x1ebf;t",
+                          children: [],
+                          payload: { tag: "li", lines: "697,698" },
+                        },
+                        {
+                          content: "<strong>Goal</strong>: T&#xed;nh P(X|e)",
+                          children: [],
+                          payload: { tag: "li", lines: "698,700" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "693,694" },
+                    },
+                    {
+                      content:
+                        "<strong>Gi&#x1ea3;i th&#xed;ch chi ti&#x1ebf;t c&#xe1;c th&#xe0;nh ph&#x1ea7;n:</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>1. Query X (Bi&#x1ebf;n c&#x1ea7;n t&#xec;m)</strong>",
+                          children: [
+                            {
+                              content:
+                                "<strong>&#x110;&#x1ecb;nh ngh&#x129;a</strong>: Bi&#x1ebf;n m&#xe0; ta mu&#x1ed1;n t&#xed;nh x&#xe1;c su&#x1ea5;t",
+                              children: [],
+                              payload: { tag: "li", lines: "703,704" },
+                            },
+                            {
+                              content:
+                                "<strong>V&#xed; d&#x1ee5;</strong>: P(Train = delayed | Rain = heavy)",
+                              children: [],
+                              payload: { tag: "li", lines: "704,705" },
+                            },
+                            {
+                              content:
+                                "<strong>&#xdd; ngh&#x129;a</strong>: T&#xec;m x&#xe1;c su&#x1ea5;t t&#xe0;u b&#x1ecb; tr&#x1ec5; khi c&#xf3; m&#x1b0;a to",
+                              children: [],
+                              payload: { tag: "li", lines: "705,707" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "702,703" },
+                        },
+                        {
+                          content:
+                            "<strong>2. Evidence E (Bi&#x1ebf;n &#x111;&#xe3; bi&#x1ebf;t)</strong>",
+                          children: [
+                            {
+                              content:
+                                "<strong>&#x110;&#x1ecb;nh ngh&#x129;a</strong>: C&#xe1;c bi&#x1ebf;n c&#xf3; gi&#xe1; tr&#x1ecb; c&#x1ee5; th&#x1ec3; &#x111;&#xe3; &#x111;&#x1b0;&#x1ee3;c quan s&#xe1;t",
+                              children: [],
+                              payload: { tag: "li", lines: "708,709" },
+                            },
+                            {
+                              content:
+                                "<strong>V&#xed; d&#x1ee5;</strong>: Rain = heavy, Maintenance = yes",
+                              children: [],
+                              payload: { tag: "li", lines: "709,710" },
+                            },
+                            {
+                              content:
+                                "<strong>&#xdd; ngh&#x129;a</strong>: &#x110;i&#x1ec1;u ki&#x1ec7;n &#x111;&#xe3; bi&#x1ebf;t &#x111;&#x1ec3; t&#xed;nh to&#xe1;n",
+                              children: [],
+                              payload: { tag: "li", lines: "710,712" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "707,708" },
+                        },
+                        {
+                          content:
+                            "<strong>3. Hidden Y (Bi&#x1ebf;n ch&#x1b0;a bi&#x1ebf;t)</strong>",
+                          children: [
+                            {
+                              content:
+                                "<strong>&#x110;&#x1ecb;nh ngh&#x129;a</strong>: C&#xe1;c bi&#x1ebf;n kh&#xf4;ng c&#xf3; gi&#xe1; tr&#x1ecb; c&#x1ee5; th&#x1ec3;",
+                              children: [],
+                              payload: { tag: "li", lines: "713,714" },
+                            },
+                            {
+                              content:
+                                "<strong>V&#xed; d&#x1ee5;</strong>: Appointment (ch&#x1b0;a bi&#x1ebf;t attend hay miss)",
+                              children: [],
+                              payload: { tag: "li", lines: "714,715" },
+                            },
+                            {
+                              content:
+                                "<strong>&#xdd; ngh&#x129;a</strong>: C&#x1ea7;n t&#xed;ch ph&#xe2;n qua t&#x1ea5;t c&#x1ea3; gi&#xe1; tr&#x1ecb; c&#xf3; th&#x1ec3;",
+                              children: [],
+                              payload: { tag: "li", lines: "715,717" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "712,713" },
+                        },
+                        {
+                          content: "<strong>4. Goal: T&#xed;nh P(X|e)</strong>",
+                          children: [
+                            {
+                              content:
+                                "<strong>C&#xf4;ng th&#x1ee9;c</strong>: P(X|e) = P(X,e) / P(e)",
+                              children: [],
+                              payload: { tag: "li", lines: "718,719" },
+                            },
+                            {
+                              content:
+                                "<strong>V&#xed; d&#x1ee5;</strong>: P(Train=delayed | Rain=heavy) = P(Train=delayed, Rain=heavy) / P(Rain=heavy)",
+                              children: [],
+                              payload: { tag: "li", lines: "719,720" },
+                            },
+                            {
+                              content:
+                                "<strong>&#xdd; ngh&#x129;a</strong>: X&#xe1;c su&#x1ea5;t c&#xf3; &#x111;i&#x1ec1;u ki&#x1ec7;n c&#x1ee7;a bi&#x1ebf;n query",
+                              children: [],
+                              payload: { tag: "li", lines: "720,722" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "717,718" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "700,701" },
+                    },
+                    {
+                      content: "<strong>Ph&#x1b0;&#x1a1;ng ph&#xe1;p</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Exact Methods (Ph&#x1b0;&#x1a1;ng ph&#xe1;p ch&#xed;nh x&#xe1;c):</strong>",
+                          children: [
+                            {
+                              content: "",
+                              children: [
+                                {
+                                  content:
+                                    "<strong>&#x110;&#x1ecb;nh ngh&#x129;a</strong>: Ki&#x1ec3;m tra t&#x1ea5;t c&#x1ea3; c&#xe1;c tr&#x1b0;&#x1edd;ng h&#x1ee3;p c&#xf3; th&#x1ec3;",
+                                  children: [],
+                                  payload: { tag: "li", lines: "730,731" },
+                                },
+                                {
+                                  content:
+                                    "<strong>&#x1af;u &#x111;i&#x1ec3;m</strong>: K&#x1ebf;t qu&#x1ea3; ch&#xed;nh x&#xe1;c 100%",
+                                  children: [],
+                                  payload: { tag: "li", lines: "731,732" },
+                                },
+                                {
+                                  content:
+                                    "<strong>Nh&#x1b0;&#x1ee3;c &#x111;i&#x1ec3;m</strong>: T&#xed;nh to&#xe1;n ph&#x1ee9;c t&#x1ea1;p v&#x1edb;i nhi&#x1ec1;u bi&#x1ebf;n",
+                                  children: [],
+                                  payload: { tag: "li", lines: "732,733" },
+                                },
+                                {
+                                  content:
+                                    "<strong>V&#xed; d&#x1ee5;</strong>: T&#xed;nh P(Train=delayed) b&#x1eb1;ng c&#xe1;ch c&#x1ed9;ng t&#x1ea5;t c&#x1ea3; c&#xe1;c tr&#x1b0;&#x1edd;ng h&#x1ee3;p c&#xf3; Train=delayed",
+                                  children: [],
+                                  payload: { tag: "li", lines: "733,735" },
+                                },
+                              ],
+                              payload: { tag: "ul", lines: "730,735" },
+                            },
+                            {
+                              content: "",
+                              children: [
+                                {
+                                  content:
+                                    "<strong>&#x110;&#x1ecb;nh ngh&#x129;a</strong>: Li&#x1ec7;t k&#xea; v&#xe0; t&#xed;nh to&#xe1;n t&#x1eeb;ng tr&#x1b0;&#x1edd;ng h&#x1ee3;p",
+                                  children: [],
+                                  payload: { tag: "li", lines: "736,737" },
+                                },
+                                {
+                                  content:
+                                    "<strong>C&#xf4;ng th&#x1ee9;c</strong>: P(X|e) = &#x3a3; P(X,e,y) / &#x3a3; P(e,y)",
+                                  children: [],
+                                  payload: { tag: "li", lines: "737,738" },
+                                },
+                                {
+                                  content:
+                                    "<strong>V&#xed; d&#x1ee5;</strong>: T&#xed;nh P(Train=delayed | Rain=heavy) b&#x1eb1;ng c&#xe1;ch li&#x1ec7;t k&#xea; t&#x1ea5;t c&#x1ea3; combinations",
+                                  children: [],
+                                  payload: { tag: "li", lines: "738,740" },
+                                },
+                              ],
+                              payload: { tag: "ul", lines: "736,740" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "727,728" },
+                        },
+                        {
+                          content:
+                            "<strong>Approximate Methods (Ph&#x1b0;&#x1a1;ng ph&#xe1;p x&#x1ea5;p x&#x1ec9;):</strong>",
+                          children: [
+                            {
+                              content:
+                                "<strong>&#x110;&#x1ecb;nh ngh&#x129;a</strong>: T&#x1ea1;o nhi&#x1ec1;u m&#x1eab;u ng&#x1eab;u nhi&#xea;n &#x111;&#x1ec3; &#x1b0;&#x1edb;c l&#x1b0;&#x1ee3;ng",
+                              children: [],
+                              payload: { tag: "li", lines: "743,744" },
+                            },
+                            {
+                              content:
+                                "<strong>&#x1af;u &#x111;i&#x1ec3;m</strong>: Nhanh, c&#xf3; th&#x1ec3; x&#x1eed; l&#xfd; m&#x1ea1;ng ph&#x1ee9;c t&#x1ea1;p",
+                              children: [],
+                              payload: { tag: "li", lines: "744,745" },
+                            },
+                            {
+                              content:
+                                "<strong>Nh&#x1b0;&#x1ee3;c &#x111;i&#x1ec3;m</strong>: K&#x1ebf;t qu&#x1ea3; x&#x1ea5;p x&#x1ec9;, c&#xf3; sai s&#x1ed1;",
+                              children: [],
+                              payload: { tag: "li", lines: "745,746" },
+                            },
+                            {
+                              content:
+                                "<strong>V&#xed; d&#x1ee5;</strong>: T&#x1ea1;o 10,000 m&#x1eab;u &#x111;&#x1ec3; &#x1b0;&#x1edb;c l&#x1b0;&#x1ee3;ng P(Train=delayed)",
+                              children: [],
+                              payload: { tag: "li", lines: "746,748" },
+                            },
+                          ],
+                          payload: { tag: "h5", lines: "740,741" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "722,723" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5; th&#x1ef1;c t&#x1ebf;:</strong>",
+                      children: [
+                        {
+                          content:
+                            '<pre data-lines="758,763"><code data-lines="758,763">P(<span class="hljs-attribute">Train</span>=delayed | <span class="hljs-attribute">Rain</span>=heavy) = \nP(<span class="hljs-attribute">Train</span>=delayed, <span class="hljs-attribute">Rain</span>=heavy) / P(<span class="hljs-attribute">Rain</span>=heavy) =\n[P(<span class="hljs-attribute">Train</span>=delayed, <span class="hljs-attribute">Rain</span>=heavy, <span class="hljs-attribute">Maintenance</span>=<span class="hljs-literal">yes</span>) + P(<span class="hljs-attribute">Train</span>=delayed, <span class="hljs-attribute">Rain</span>=heavy, <span class="hljs-attribute">Maintenance</span>=<span class="hljs-literal">no</span>)] / P(<span class="hljs-attribute">Rain</span>=heavy)\n</code></pre>',
+                          children: [],
+                          payload: { tag: "pre", lines: "758,763" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "748,749" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "691,692" },
+                },
+              ],
+              payload: { tag: "h2", lines: "580,581" },
+            },
+            {
+              content: "<strong>IX. Sampling</strong> &#x1f3af;",
+              children: [
+                {
+                  content:
+                    "<strong>A. Kh&#xe1;i ni&#x1ec7;m</strong> &#x1f4ca;",
+                  children: [
+                    {
+                      content: "<strong>&#x110;&#x1ecb;nh ngh&#x129;a</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Sampling</strong>: Suy lu&#x1ead;n x&#x1ea5;p x&#x1ec9; b&#x1eb1;ng c&#xe1;ch t&#x1ea1;o nhi&#x1ec1;u m&#x1eab;u",
+                          children: [],
+                          payload: { tag: "li", lines: "777,778" },
+                        },
+                        {
+                          content:
+                            "<strong>M&#x1ee5;c &#x111;&#xed;ch</strong>: &#x1af;&#x1edb;c l&#x1b0;&#x1ee3;ng x&#xe1;c su&#x1ea5;t t&#x1eeb; t&#x1ea7;n su&#x1ea5;t",
+                          children: [],
+                          payload: { tag: "li", lines: "778,780" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "775,776" },
+                    },
+                    {
+                      content:
+                        "<strong>Quy tr&#xec;nh 4 b&#x1b0;&#x1edb;c</strong>",
+                      children: [
+                        {
+                          content:
+                            "1. <strong>T&#x1ea1;o m&#x1eab;u</strong>: Theo ph&#xe2;n ph&#x1ed1;i x&#xe1;c su&#x1ea5;t",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "782,783",
+                            listIndex: 1,
+                          },
+                        },
+                        {
+                          content:
+                            "2. <strong>L&#x1eb7;p l&#x1ea1;i</strong>: Nhi&#x1ec1;u l&#x1ea7;n (VD: 10,000 m&#x1eab;u)",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "783,784",
+                            listIndex: 2,
+                          },
+                        },
+                        {
+                          content:
+                            "3. <strong>&#x110;&#x1ebf;m</strong>: S&#x1ed1; l&#x1ea7;n s&#x1ef1; ki&#x1ec7;n x&#x1ea3;y ra",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "784,785",
+                            listIndex: 3,
+                          },
+                        },
+                        {
+                          content:
+                            "4. <strong>&#x1af;&#x1edb;c l&#x1b0;&#x1ee3;ng</strong>: P &#x2248; (s&#x1ed1; l&#x1ea7;n) / (t&#x1ed5;ng m&#x1eab;u)",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "785,787",
+                            listIndex: 4,
+                          },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "780,781" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "773,774" },
+                },
+                {
+                  content:
+                    "<strong>B. V&#xed; d&#x1ee5;: P(Train = on time)</strong> &#x1f682;",
+                  children: [
+                    {
+                      content: "<strong>T&#x1ea1;o 1 m&#x1eab;u</strong>",
+                      children: [
+                        {
+                          content:
+                            "1. Rain &#x2192; &quot;none&quot; (P = 0.7)",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "791,792",
+                            listIndex: 1,
+                          },
+                        },
+                        {
+                          content:
+                            "2. Maintenance &#x2192; &quot;no&quot; (P = 0.6)",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "792,793",
+                            listIndex: 2,
+                          },
+                        },
+                        {
+                          content:
+                            "3. Train &#x2192; &quot;on time&quot; (P = 0.9)",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "793,794",
+                            listIndex: 3,
+                          },
+                        },
+                        {
+                          content:
+                            "4. Appointment &#x2192; &quot;attend&quot; (P = 0.9)",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "794,796",
+                            listIndex: 4,
+                          },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "789,790" },
+                    },
+                    {
+                      content:
+                        "<strong>K&#x1ebf;t qu&#x1ea3; 10,000 m&#x1eab;u</strong>",
+                      children: [
+                        {
+                          content:
+                            "Train = &quot;on time&quot;: 7,500 l&#x1ea7;n",
+                          children: [],
+                          payload: { tag: "li", lines: "798,799" },
+                        },
+                        {
+                          content:
+                            "<strong>P(Train = on time) &#x2248; 0.75</strong>",
+                          children: [],
+                          payload: { tag: "li", lines: "799,801" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "796,797" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "787,788" },
+                },
+                {
+                  content: "<strong>C. Advanced Techniques</strong> &#x1f504;",
+                  children: [
+                    {
+                      content: "<strong>Rejection Sampling</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>M&#x1ee5;c &#x111;&#xed;ch</strong>: P(Appointment | Train = delayed)",
+                          children: [],
+                          payload: { tag: "li", lines: "805,806" },
+                        },
+                        {
+                          content:
+                            "<strong>C&#xe1;ch l&#xe0;m</strong>: Ch&#x1ec9; gi&#x1eef; m&#x1eab;u c&#xf3; Train = delayed",
+                          children: [],
+                          payload: { tag: "li", lines: "806,807" },
+                        },
+                        {
+                          content:
+                            "<strong>Nh&#x1b0;&#x1ee3;c &#x111;i&#x1ec3;m</strong>: L&#xe3;ng ph&#xed; nhi&#x1ec1;u m&#x1eab;u",
+                          children: [],
+                          payload: { tag: "li", lines: "807,809" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "803,804" },
+                    },
+                    {
+                      content: "<strong>Likelihood Weighting</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>C&#x1ea3;i ti&#x1ebf;n</strong>: G&#xe1;n tr&#x1ecd;ng s&#x1ed1; thay v&#xec; lo&#x1ea1;i b&#x1ecf;",
+                          children: [],
+                          payload: { tag: "li", lines: "811,812" },
+                        },
+                        {
+                          content:
+                            "<strong>&#x1af;u &#x111;i&#x1ec3;m</strong>: S&#x1eed; d&#x1ee5;ng t&#x1ea5;t c&#x1ea3; m&#x1eab;u",
+                          children: [],
+                          payload: { tag: "li", lines: "812,813" },
+                        },
+                        {
+                          content:
+                            "<strong>Tr&#x1ecd;ng s&#x1ed1;</strong>: P(evidence | parents)",
+                          children: [],
+                          payload: { tag: "li", lines: "813,815" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "809,810" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "801,802" },
+                },
+              ],
+              payload: { tag: "h2", lines: "771,772" },
+            },
+            {
+              content: "<strong>X. Markov Models</strong> &#x26d3;&#xfe0f;",
+              children: [
+                {
+                  content: "<strong>A. Markov Assumption</strong> &#x1f3af;",
+                  children: [
+                    {
+                      content:
+                        "<strong>Gi&#x1ea3; &#x111;&#x1ecb;nh c&#x1ed1;t l&#xf5;i</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>T&#xed;nh ch&#x1ea5;t</strong>: Tr&#x1ea1;ng th&#xe1;i hi&#x1ec7;n t&#x1ea1;i ch&#x1ec9; ph&#x1ee5; thu&#x1ed9;c s&#x1ed1; h&#x1eef;u h&#x1ea1;n tr&#x1ea1;ng th&#xe1;i tr&#x1b0;&#x1edb;c",
+                          children: [],
+                          payload: { tag: "li", lines: "823,824" },
+                        },
+                        {
+                          content:
+                            "<strong>L&#x1ee3;i &#xed;ch</strong>: Gi&#x1ea3;m &#x111;&#x1ed9; ph&#x1ee9;c t&#x1ea1;p t&#xed;nh to&#xe1;n",
+                          children: [],
+                          payload: { tag: "li", lines: "824,825" },
+                        },
+                        {
+                          content:
+                            "<strong>Trade-off</strong>: &#x110;&#x1ed9; ch&#xed;nh x&#xe1;c vs. Kh&#x1ea3; thi",
+                          children: [],
+                          payload: { tag: "li", lines: "825,827" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "821,822" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5; th&#x1edd;i ti&#x1ebf;t</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>D&#x1ef1; &#x111;o&#xe1;n ng&#xe0;y mai</strong>: Ch&#x1ec9; c&#x1ea7;n bi&#x1ebf;t h&#xf4;m nay",
+                          children: [],
+                          payload: { tag: "li", lines: "829,830" },
+                        },
+                        {
+                          content:
+                            "<strong>Kh&#xf4;ng c&#x1ea7;n</strong>: Th&#x1edd;i ti&#x1ebf;t 365 ng&#xe0;y tr&#x1b0;&#x1edb;c",
+                          children: [],
+                          payload: { tag: "li", lines: "830,831" },
+                        },
+                        {
+                          content:
+                            "<strong>Reasonable</strong>: Th&#x1edd;i ti&#x1ebf;t c&#xf3; t&#xed;nh li&#xea;n t&#x1ee5;c ng&#x1eaf;n h&#x1ea1;n",
+                          children: [],
+                          payload: { tag: "li", lines: "831,833" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "827,828" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "819,820" },
+                },
+                {
+                  content: "<strong>B. Markov Chain</strong> &#x1f517;",
+                  children: [
+                    {
+                      content: "<strong>Transition Model</strong>",
+                      children: [
+                        {
+                          content:
+                            '<table data-lines="837,841">\n<thead data-lines="837,838">\n<tr data-lines="837,838">\n<th>Today</th>\n<th>Tomorrow Sunny</th>\n<th>Tomorrow Rainy</th>\n</tr>\n</thead>\n<tbody data-lines="839,841">\n<tr data-lines="839,840">\n<td>Sunny</td>\n<td>0.8</td>\n<td>0.2</td>\n</tr>\n<tr data-lines="840,841">\n<td>Rainy</td>\n<td>0.3</td>\n<td>0.7</td>\n</tr>\n</tbody>\n</table>',
+                          children: [],
+                          payload: { tag: "table", lines: "837,841" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "835,836" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5; chu&#x1ed7;i</strong>",
+                      children: [
+                        {
+                          content:
+                            "Sunny &#x2192; Sunny &#x2192; Rainy &#x2192; Rainy &#x2192; Sunny",
+                          children: [],
+                          payload: { tag: "li", lines: "844,845" },
+                        },
+                        {
+                          content:
+                            "<strong>Pattern</strong>: Th&#x1edd;i ti&#x1ebf;t c&#xf3; xu h&#x1b0;&#x1edb;ng duy tr&#xec;",
+                          children: [],
+                          payload: { tag: "li", lines: "845,847" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "842,843" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "833,834" },
+                },
+                {
+                  content: "<strong>C. Implementation</strong> &#x1f4bb;",
+                  children: [
+                    {
+                      content: "<strong>Python v&#x1edb;i pomegranate</strong>",
+                      children: [
+                        {
+                          content:
+                            '<pre data-lines="851,865"><code class="language-python"><span class="hljs-comment"># Starting probabilities</span>\nstart = DiscreteDistribution({<span class="hljs-string">&quot;sun&quot;</span>: <span class="hljs-number">0.5</span>, <span class="hljs-string">&quot;rain&quot;</span>: <span class="hljs-number">0.5</span>})\n\n<span class="hljs-comment"># Transition model  </span>\ntransitions = ConditionalProbabilityTable([\n    [<span class="hljs-string">&quot;sun&quot;</span>, <span class="hljs-string">&quot;sun&quot;</span>, <span class="hljs-number">0.8</span>], [<span class="hljs-string">&quot;sun&quot;</span>, <span class="hljs-string">&quot;rain&quot;</span>, <span class="hljs-number">0.2</span>],\n    [<span class="hljs-string">&quot;rain&quot;</span>, <span class="hljs-string">&quot;sun&quot;</span>, <span class="hljs-number">0.3</span>], [<span class="hljs-string">&quot;rain&quot;</span>, <span class="hljs-string">&quot;rain&quot;</span>, <span class="hljs-number">0.7</span>]\n], [start])\n\n<span class="hljs-comment"># Create &amp; sample</span>\nmodel = MarkovChain([start, transitions])\n<span class="hljs-built_in">print</span>(model.sample(<span class="hljs-number">50</span>))\n</code></pre>',
+                          children: [],
+                          payload: { tag: "pre", lines: "851,865" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "849,850" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "847,848" },
+                },
+              ],
+              payload: { tag: "h2", lines: "817,818" },
+            },
+            {
+              content:
+                "<strong>XI. Hidden Markov Models</strong> &#x1f575;&#xfe0f;",
+              children: [
+                {
+                  content:
+                    "<strong>A. V&#x1ea5;n &#x111;&#x1ec1;</strong> &#x2753;",
+                  children: [
+                    {
+                      content: "<strong>Th&#xe1;ch th&#x1ee9;c</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>AI c&#x1ea7;n</strong>: Suy lu&#x1ead;n tr&#x1ea1;ng th&#xe1;i &#x1ea9;n t&#x1eeb; quan s&#xe1;t",
+                          children: [],
+                          payload: { tag: "li", lines: "874,875" },
+                        },
+                        {
+                          content:
+                            "<strong>Hidden state</strong>: Kh&#xf4;ng th&#x1ec3; quan s&#xe1;t tr&#x1ef1;c ti&#x1ebf;p",
+                          children: [],
+                          payload: { tag: "li", lines: "875,876" },
+                        },
+                        {
+                          content:
+                            "<strong>Observation</strong>: D&#x1eef; li&#x1ec7;u c&#xf3; th&#x1ec3; thu th&#x1ead;p",
+                          children: [],
+                          payload: { tag: "li", lines: "876,878" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "872,873" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5; &#x1ee9;ng d&#x1ee5;ng</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Robot</strong> &#x1f916;: V&#x1ecb; tr&#xed; th&#x1ef1;c (&#x1ea9;n) &#x2190; Sensor data (quan s&#xe1;t)",
+                          children: [],
+                          payload: { tag: "li", lines: "880,881" },
+                        },
+                        {
+                          content:
+                            "<strong>Speech recognition</strong> &#x1f3a4;: T&#x1eeb; n&#xf3;i (&#x1ea9;n) &#x2190; Audio waves (quan s&#xe1;t)",
+                          children: [],
+                          payload: { tag: "li", lines: "881,882" },
+                        },
+                        {
+                          content:
+                            "<strong>Weather</strong> &#x1f326;&#xfe0f;: Th&#x1edd;i ti&#x1ebf;t th&#x1ef1;c (&#x1ea9;n) &#x2190; Umbrella count (quan s&#xe1;t)",
+                          children: [],
+                          payload: { tag: "li", lines: "882,884" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "878,879" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "870,871" },
+                },
+                {
+                  content:
+                    "<strong>B. V&#xed; d&#x1ee5;: D&#x1ef1; &#x111;o&#xe1;n th&#x1edd;i ti&#x1ebf;t qua &#xf4;</strong> &#x2602;&#xfe0f;",
+                  children: [
+                    {
+                      content: "<strong>Setup</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Hidden</strong>: Weather {sunny, rainy}",
+                          children: [],
+                          payload: { tag: "li", lines: "888,889" },
+                        },
+                        {
+                          content:
+                            "<strong>Observable</strong>: Umbrella {umbrella, no umbrella}",
+                          children: [],
+                          payload: { tag: "li", lines: "889,891" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "886,887" },
+                    },
+                    {
+                      content: "<strong>Sensor Model</strong>",
+                      children: [
+                        {
+                          content:
+                            '<table data-lines="893,897">\n<thead data-lines="893,894">\n<tr data-lines="893,894">\n<th>Weather</th>\n<th>Umbrella</th>\n<th>No Umbrella</th>\n</tr>\n</thead>\n<tbody data-lines="895,897">\n<tr data-lines="895,896">\n<td>Sunny</td>\n<td>0.2</td>\n<td>0.8</td>\n</tr>\n<tr data-lines="896,897">\n<td>Rainy</td>\n<td>0.9</td>\n<td>0.1</td>\n</tr>\n</tbody>\n</table>',
+                          children: [],
+                          payload: { tag: "table", lines: "893,897" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "891,892" },
+                    },
+                    {
+                      content:
+                        "<strong>Transition Model</strong> (nh&#x1b0; Markov Chain)",
+                      children: [
+                        {
+                          content:
+                            '<table data-lines="900,904">\n<thead data-lines="900,901">\n<tr data-lines="900,901">\n<th>Today</th>\n<th>Tomorrow Sunny</th>\n<th>Tomorrow Rainy</th>\n</tr>\n</thead>\n<tbody data-lines="902,904">\n<tr data-lines="902,903">\n<td>Sunny</td>\n<td>0.8</td>\n<td>0.2</td>\n</tr>\n<tr data-lines="903,904">\n<td>Rainy</td>\n<td>0.3</td>\n<td>0.7</td>\n</tr>\n</tbody>\n</table>',
+                          children: [],
+                          payload: { tag: "table", lines: "900,904" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "898,899" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "884,885" },
+                },
+                {
+                  content:
+                    "<strong>C. C&#xe1;c b&#xe0;i to&#xe1;n HMM</strong> &#x1f3af;",
+                  children: [
+                    {
+                      content: "<strong>4 lo&#x1ea1;i ch&#xed;nh</strong>",
+                      children: [
+                        {
+                          content:
+                            "1. <strong>Filtering</strong>: P(Xt | e1:t) - Hi&#x1ec7;n t&#x1ea1;i t&#x1eeb; qu&#xe1; kh&#x1ee9; &#x111;&#x1ebf;n nay",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "909,910",
+                            listIndex: 1,
+                          },
+                        },
+                        {
+                          content:
+                            "2. <strong>Prediction</strong>: P(Xt+k | e1:t) - T&#x1b0;&#x1a1;ng lai t&#x1eeb; qu&#xe1; kh&#x1ee9; &#x111;&#x1ebf;n nay",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "910,911",
+                            listIndex: 2,
+                          },
+                        },
+                        {
+                          content:
+                            "3. <strong>Smoothing</strong>: P(Xt | e1:T) - Qu&#xe1; kh&#x1ee9; t&#x1eeb; to&#xe0;n b&#x1ed9; d&#x1eef; li&#x1ec7;u",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "911,912",
+                            listIndex: 3,
+                          },
+                        },
+                        {
+                          content:
+                            "4. <strong>Most Likely</strong>: Chu&#x1ed7;i tr&#x1ea1;ng th&#xe1;i kh&#x1ea3; n&#x103;ng cao nh&#x1ea5;t",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "912,914",
+                            listIndex: 4,
+                          },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "907,908" },
+                    },
+                    {
+                      content:
+                        "<strong>V&#xed; d&#x1ee5; k&#x1ebf;t qu&#x1ea3;</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Quan s&#xe1;t</strong>: [&#x2602;&#xfe0f;, &#x2602;&#xfe0f;, &#x274c;, &#x2602;&#xfe0f;, &#x2602;&#xfe0f;, &#x2602;&#xfe0f;, &#x2602;&#xfe0f;, &#x274c;, &#x274c;]",
+                          children: [],
+                          payload: { tag: "li", lines: "916,917" },
+                        },
+                        {
+                          content:
+                            "<strong>D&#x1ef1; &#x111;o&#xe1;n</strong>: [&#x1f327;&#xfe0f;, &#x1f327;&#xfe0f;, &#x2600;&#xfe0f;, &#x1f327;&#xfe0f;, &#x1f327;&#xfe0f;, &#x1f327;&#xfe0f;, &#x1f327;&#xfe0f;, &#x2600;&#xfe0f;, &#x2600;&#xfe0f;]",
+                          children: [],
+                          payload: { tag: "li", lines: "917,919" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "914,915" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "905,906" },
+                },
+              ],
+              payload: { tag: "h2", lines: "868,869" },
+            },
+            {
+              content: "<strong>XII. T&#x1ed5;ng k&#x1ebf;t</strong> &#x1f4da;",
+              children: [
+                {
+                  content:
+                    "<strong>A. Ki&#x1ebf;n th&#x1ee9;c c&#x1ed1;t l&#xf5;i</strong> &#x1f3af;",
+                  children: [
+                    {
+                      content:
+                        "<strong>7 kh&#xe1;i ni&#x1ec7;m ch&#xed;nh</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Probability</strong>: Bi&#x1ec3;u di&#x1ec5;n uncertainty b&#x1eb1;ng s&#x1ed1;",
+                          children: [],
+                          payload: { tag: "li", lines: "927,928" },
+                        },
+                        {
+                          content:
+                            "<strong>Conditional Probability</strong>: P(A|B)",
+                          children: [],
+                          payload: { tag: "li", lines: "928,929" },
+                        },
+                        {
+                          content:
+                            "<strong>Bayes&apos; Rule</strong>: Suy lu&#x1ead;n ng&#x1b0;&#x1ee3;c",
+                          children: [],
+                          payload: { tag: "li", lines: "929,930" },
+                        },
+                        {
+                          content:
+                            "<strong>Bayesian Networks</strong>: M&#xf4; h&#xec;nh ph&#x1ee5; thu&#x1ed9;c",
+                          children: [],
+                          payload: { tag: "li", lines: "930,931" },
+                        },
+                        {
+                          content:
+                            "<strong>Sampling</strong>: Suy lu&#x1ead;n x&#x1ea5;p x&#x1ec9;",
+                          children: [],
+                          payload: { tag: "li", lines: "931,932" },
+                        },
+                        {
+                          content:
+                            "<strong>Markov Models</strong>: Chu&#x1ed7;i th&#x1edd;i gian",
+                          children: [],
+                          payload: { tag: "li", lines: "932,933" },
+                        },
+                        {
+                          content:
+                            "<strong>HMM</strong>: Tr&#x1ea1;ng th&#xe1;i &#x1ea9;n",
+                          children: [],
+                          payload: { tag: "li", lines: "933,935" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "925,926" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "923,924" },
+                },
+                {
+                  content:
+                    "<strong>B. &#x1ee8;ng d&#x1ee5;ng AI</strong> &#x1f680;",
+                  children: [
+                    {
+                      content:
+                        "<strong>L&#x129;nh v&#x1ef1;c ch&#xed;nh</strong>",
+                      children: [
+                        {
+                          content:
+                            "<strong>Y t&#x1ebf;</strong> &#x1f3e5;: Ch&#x1ea9;n &#x111;o&#xe1;n b&#x1ec7;nh",
+                          children: [],
+                          payload: { tag: "li", lines: "939,940" },
+                        },
+                        {
+                          content:
+                            "<strong>Th&#x1edd;i ti&#x1ebf;t</strong> &#x1f326;&#xfe0f;: D&#x1ef1; b&#xe1;o",
+                          children: [],
+                          payload: { tag: "li", lines: "940,941" },
+                        },
+                        {
+                          content:
+                            "<strong>Technology</strong> &#x1f4bb;: Speech/Image recognition",
+                          children: [],
+                          payload: { tag: "li", lines: "941,942" },
+                        },
+                        {
+                          content:
+                            "<strong>Robotics</strong> &#x1f916;: Navigation",
+                          children: [],
+                          payload: { tag: "li", lines: "942,943" },
+                        },
+                        {
+                          content:
+                            "<strong>NLP</strong> &#x1f4dd;: Language processing",
+                          children: [],
+                          payload: { tag: "li", lines: "943,944" },
+                        },
+                        {
+                          content:
+                            "<strong>Recommendation</strong> &#x1f3af;: Product suggestions",
+                          children: [],
+                          payload: { tag: "li", lines: "944,946" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "937,938" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "935,936" },
+                },
+                {
+                  content:
+                    "<strong>C. L&#x1edd;i khuy&#xea;n h&#x1ecd;c t&#x1ead;p</strong> &#x1f4a1;",
+                  children: [
+                    {
+                      content:
+                        "<strong>5 b&#x1b0;&#x1edb;c th&#xe0;nh c&#xf4;ng</strong>",
+                      children: [
+                        {
+                          content:
+                            "1. <strong>Th&#x1ef1;c h&#xe0;nh t&#xed;nh to&#xe1;n</strong>: L&#xe0;m b&#xe0;i v&#x1edb;i s&#x1ed1; c&#x1ee5; th&#x1ec3;",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "950,951",
+                            listIndex: 1,
+                          },
+                        },
+                        {
+                          content:
+                            "2. <strong>Hi&#x1ec3;u &#xfd; ngh&#x129;a</strong>: Kh&#xf4;ng ch&#x1ec9; nh&#x1edb; c&#xf4;ng th&#x1ee9;c",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "951,952",
+                            listIndex: 2,
+                          },
+                        },
+                        {
+                          content:
+                            "3. <strong>V&#x1ebd; s&#x1a1; &#x111;&#x1ed3;</strong>: D&#xf9;ng Bayesian Networks",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "952,953",
+                            listIndex: 3,
+                          },
+                        },
+                        {
+                          content:
+                            "4. <strong>Code th&#x1ef1;c t&#x1ebf;</strong>: Implement algorithms",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "953,954",
+                            listIndex: 4,
+                          },
+                        },
+                        {
+                          content:
+                            "5. <strong>&#x1ee8;ng d&#x1ee5;ng</strong>: K&#x1ebf;t n&#x1ed1;i v&#x1edb;i b&#xe0;i to&#xe1;n th&#x1ef1;c t&#x1ebf;",
+                          children: [],
+                          payload: {
+                            tag: "li",
+                            lines: "954,956",
+                            listIndex: 5,
+                          },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "948,949" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "946,947" },
+                },
+              ],
+              payload: { tag: "h2", lines: "921,922" },
+            },
+            {
+              content:
+                "<strong>XIII. B&#xe0;i t&#x1ead;p th&#x1ef1;c h&#xe0;nh</strong> &#x1f4dd;",
+              children: [
+                {
+                  content:
+                    "<strong>B&#xe0;i 1: Probability c&#x1a1; b&#x1ea3;n</strong> &#x1f3b2;",
+                  children: [
+                    {
+                      content: "<strong>&#x110;&#x1ec1; b&#xe0;i</strong>",
+                      children: [
+                        {
+                          content: "a) P(bi &#x111;&#x1ecf;)",
+                          children: [],
+                          payload: { tag: "li", lines: "966,967" },
+                        },
+                        {
+                          content: "b) P(kh&#xf4;ng ph&#x1ea3;i bi v&#xe0;ng)",
+                          children: [],
+                          payload: { tag: "li", lines: "967,968" },
+                        },
+                        {
+                          content:
+                            "c) P(bi &#x111;&#x1ecf; ho&#x1eb7;c bi xanh)",
+                          children: [],
+                          payload: { tag: "li", lines: "968,970" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "962,963" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "960,961" },
+                },
+                {
+                  content:
+                    "<strong>B&#xe0;i 2: Conditional Probability</strong> &#x1f393;",
+                  children: [
+                    {
+                      content: "<strong>&#x110;&#x1ec1; b&#xe0;i</strong>",
+                      children: [
+                        {
+                          content: "60% sinh vi&#xea;n h&#x1ecd;c AI",
+                          children: [],
+                          payload: { tag: "li", lines: "975,976" },
+                        },
+                        {
+                          content:
+                            "40% h&#x1ecd;c AI &#x2192; &#x111;&#x1ed7; thi",
+                          children: [],
+                          payload: { tag: "li", lines: "976,977" },
+                        },
+                        {
+                          content:
+                            "20% kh&#xf4;ng h&#x1ecd;c AI &#x2192; &#x111;&#x1ed7; thi",
+                          children: [],
+                          payload: { tag: "li", lines: "977,979" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "972,973" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "970,971" },
+                },
+                {
+                  content:
+                    "<strong>B&#xe0;i 3: Bayesian Network</strong> &#x1f578;&#xfe0f;",
+                  children: [
+                    {
+                      content:
+                        "<strong>Thi&#x1ebf;t k&#x1ebf; m&#x1ea1;ng</strong>",
+                      children: [
+                        {
+                          content:
+                            "Weather, Traffic, Transportation, OnTime<br>\n<strong>Y&#xea;u c&#x1ea7;u:</strong> &#x110;&#x1ecb;nh ngh&#x129;a m&#x1ed1;i quan h&#x1ec7; ph&#x1ee5; thu&#x1ed9;c",
+                          children: [],
+                          payload: { tag: "li", lines: "987,989" },
+                        },
+                      ],
+                      payload: { tag: "h4", lines: "983,984" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "981,982" },
+                },
+              ],
+              payload: { tag: "h2", lines: "958,959" },
+            },
+          ],
+          payload: { tag: "h1", lines: "9,10" },
+        },
+        {
+          colorFreezeLevel: 4,
+          maxWidth: 350,
+          activeNode: { placement: "center" },
+          initialExpandLevel: 2,
+        }
+      );
+    </script>
+    <script src="../assets/script.js"></script>
+  </body>
+</html>
