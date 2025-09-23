@@ -3,7 +3,8 @@
 venv/
 env/
 ENV/
-
+project
+midterm
 # Python cache files
 __pycache__/
 *.py[cod]
